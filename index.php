@@ -29,12 +29,9 @@ require_once($CFG->libdir.'/adminlib.php');
 
 $url = '/report/dropout/index.php';
 
-$PAGE->set_url('/report/log/index.php', array('id' => $id));
-$PAGE->set_pagelayout('report');
-$PAGE->set_title("Teste de título");
-
 echo $OUTPUT->header();
 echo $OUTPUT->heading(get_string('pluginname', 'report_dropout'));
+echo "Aqui vão estar as informações";
 echo $OUTPUT->footer();
 
 $event = \report_dropout\event\report_viewed::create(['context' => context_system::instance()]);
