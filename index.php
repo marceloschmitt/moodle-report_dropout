@@ -27,28 +27,14 @@ define('NO_OUTPUT_BUFFERING', true);
 require('../../config.php');
 require_once($CFG->libdir.'/adminlib.php');
 
-/*
-admin_externalpage_setup('reportsecurity', '', null, '', ['pagelayout' => 'report']);
+$url = '/report/dropout/index.php';
 
-$detail = optional_param('detail', '', PARAM_TEXT); // Show detailed info about one check only.
-*/
-
-$url = '/report/report/index.php';
-
-/*
-$table = new core\check\table('security', $url, $detail);
-
-if (!empty($table->detail)) {
-    $PAGE->set_docs_path($url . '?detail=' . $detail);
-    $PAGE->navbar->add($table->detail->get_name());
-}
-*/
+$PAGE->set_url('/report/log/index.php', array('id' => $id));
+$PAGE->set_pagelayout('report');
+$PAGE->set_title("Teste de título");
 
 echo $OUTPUT->header();
 echo $OUTPUT->heading(get_string('pluginname', 'report_dropout'));
-
-//echo $table->render($OUTPUT);
-//echo $table->render($OUTPUT);
 echo $OUTPUT->footer();
 
 $event = \report_dropout\event\report_viewed::create(['context' => context_system::instance()]);
