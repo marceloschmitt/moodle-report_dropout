@@ -28,7 +28,7 @@ $capabilities = array(
     'report/dropout:view' => array(
         'riskbitmask' => RISK_CONFIG,
         'captype' => 'read',
-        'contextlevel' => CONTEXT_SYSTEM,
+        'contextlevel' => CONTEXT_SYSTEM | CONTEXT_COURSE,
         'archetypes' => array(
             'manager' => CAP_ALLOW
         ),
