@@ -27,6 +27,9 @@ define('NO_OUTPUT_BUFFERING', true);
 require('../../config.php');
 require_once($CFG->libdir.'/adminlib.php');
 
+/* Colocar depois o teste de capability */
+
+
 $url = '/report/dropout/index.php';
 
 echo $OUTPUT->header();
