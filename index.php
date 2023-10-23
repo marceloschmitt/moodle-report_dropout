@@ -39,11 +39,12 @@ $PAGE->set_pagelayout('standard');
 $PAGE->set_title('Nome da disciplina');
 //$PAGE->set_heading(get_string('pluginname', 'report_dropout'));
 
-echo $OUTPUT->header();
-echo $OUTPUT->heading(get_string('pluginname', 'report_dropout'));
+$output = $PAGE->get_renderer('report_dropout');
+echo $output->header();
+echo $output->heading(get_string('pluginname', 'report_dropout'));
 $renderable = new \report_dropout\output\index_page('Some text');
 echo $output->render($renderable);
-echo $OUTPUT->footer();
+echo $output->footer();
 
 $event = \report_dropout\event\report_viewed::create(['context' => context_system::instance()]);
 $event->trigger();
