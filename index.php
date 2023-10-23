@@ -26,11 +26,18 @@ define('NO_OUTPUT_BUFFERING', true);
 
 require('../../config.php');
 require_once($CFG->libdir.'/adminlib.php');
+$courseid = required_param('id', PARAM_INT);
 
 /* Colocar depois o teste de capability */
 
-
-$url = '/report/dropout/index.php';
+/**
+ * Set $PAGE parameters
+ */
+$PAGE->set_url('/report/dropout/index.php');
+$PAGE->set_context(context_course::instance($courseid));
+$PAGE->set_pagelayout('standard');
+$PAGE->set_title('Dropout Report');
+$PAGE->set_heading(get_string('pluginname', 'report_dropout'));
 
 echo $OUTPUT->header();
 echo $OUTPUT->heading(get_string('pluginname', 'report_dropout'));
