@@ -41,7 +41,7 @@ $PAGE->set_title('Nome da disciplina');
 
 echo $OUTPUT->header();
 echo $OUTPUT->heading(get_string('pluginname', 'report_dropout'));
-$renderable = new \tool_demo\output\index_page('Some text');
+$renderable = new \report_dropout\output\index_page('Some text');
 echo $output->render($renderable);
 echo $OUTPUT->footer();
 
