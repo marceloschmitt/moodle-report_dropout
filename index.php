@@ -47,5 +47,5 @@ echo $output->render($renderable);
 echo $output->footer();
 
 // Log.
-$event = \report_dropout\event\report_viewed::create(['context' => context_system::instance()]);
-$event->trigger();
+//$event = \report_dropout\event\report_viewed::create(['context' => context_system::instance()]);
+//$event->trigger();
