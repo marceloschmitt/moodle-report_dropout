@@ -27,15 +27,14 @@ define('NO_OUTPUT_BUFFERING', true);
 require('../../config.php');
 require_once($CFG->libdir.'/adminlib.php');
 $courseid = required_param('id', PARAM_INT);
-
 /* Colocar depois o teste de capability */
 
 /**
  * Set $PAGE parameters
  */
-$PAGE->set_url('/report/dropout/index.php');
+$PAGE->set_url('/report/dropout/index.php', array('id' => $courseida));
 $PAGE->set_context(context_course::instance($courseid));
-$PAGE->set_pagelayout('course');
+//$PAGE->set_pagelayout('course');
 $PAGE->set_heading('Nome da disciplina');
 
 $output = $PAGE->get_renderer('report_dropout');
