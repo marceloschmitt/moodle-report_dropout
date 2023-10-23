@@ -26,14 +26,20 @@ define('NO_OUTPUT_BUFFERING', true);
 
 require('../../config.php');
 require_once($CFG->libdir.'/adminlib.php');
-$courseid = required_param('id', PARAM_INT);
-/* Colocar depois o teste de capability */
 
-/**
- * Set $PAGE parameters
- */
-$PAGE->set_url('/report/dropout/index.php', array('id' => $courseida));
-$PAGE->set_context(context_course::instance($courseid));
+// Security.
+$courseid = required_param('id', PARAM_INT);
+require_login($courseid);
+$context = context_course::instance($courseid);
+require_capability('report/dropout:view', $context);
+
+// Log.
+$event = \report_dropout\event\report_viewed::create(['context' => context_system::instance()]);
+$event->trigger();
+
+// Set $PAGE parameters.
+$PAGE->set_url('/report/dropout/index.php', array('id' => $courseid));
+//$PAGE->set_context(context_course::instance($courseid));
 //$PAGE->set_pagelayout('course');
 $PAGE->set_heading('Nome da disciplina');
 
@@ -44,5 +50,4 @@ $renderable = new \report_dropout\output\index_page('Some text');
 echo $output->render($renderable);
 echo $output->footer();
 
-$event = \report_dropout\event\report_viewed::create(['context' => context_system::instance()]);
-$event->trigger();
+
