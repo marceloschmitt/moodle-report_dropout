@@ -36,11 +36,11 @@ $courseid = required_param('id', PARAM_INT);
 $PAGE->set_url('/report/dropout/index.php');
 $PAGE->set_context(context_course::instance($courseid));
 $PAGE->set_pagelayout('incourse');
-$PAGE->set_heading(get_string('pluginname', 'report_dropout'));
+$PAGE->set_heading('Nome da disciplina');
 
 $output = $PAGE->get_renderer('report_dropout');
 echo $output->header();
-echo $output->heading(get_string('pluginname', 'report_dropout'));
+//echo $output->heading(get_string('pluginname', 'report_dropout'));
 $renderable = new \report_dropout\output\index_page('Some text');
 echo $output->render($renderable);
 echo $output->footer();
