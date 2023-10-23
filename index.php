@@ -23,10 +23,10 @@
  */
 
 define('NO_OUTPUT_BUFFERING', true);
-$courseid = required_param('id', PARAM_INT);
 
 require('../../config.php');
 require_once($CFG->libdir.'/adminlib.php');
+$courseid = required_param('id', PARAM_INT);
 
 /* Colocar depois o teste de capability */
 
