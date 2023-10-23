@@ -23,9 +23,10 @@
  */
 
 defined('MOODLE_INTERNAL') || die;
-  
-$ADMIN->add('reports', new admin_externalpage('reportdropout', get_string('pluginname', 'report_dropout'),
-    "$CFG->wwwroot/report/dropout/index.php", 'report/dropout:view'));
+
+/* descomentar quando implementarmos a gerência geral */
+// $ADMIN->add('reports', new admin_externalpage('reportdropout', get_string('pluginname', 'report_dropout'),
+//    "$CFG->wwwroot/report/dropout/index.php", 'report/dropout:view'));
 
 // No report settings.
 $settings = null;
