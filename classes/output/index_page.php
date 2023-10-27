@@ -15,7 +15,7 @@ class index_page implements renderable, templatable {
         $this->sometext = $sometext;
         //$this->students[] = (object) array('name' => 'Marcelo');
         //$this->students[] = (object) array('name' => 'Mariana');
-        $this->students = get_enrolled_users($context);
+        $this->students = (object) get_enrolled_users($context);
     }
                                                                                                                             
     public function export_for_template(renderer_base $output) {                                                                    
