@@ -13,10 +13,7 @@ class index_page implements renderable, templatable {
             
     public function __construct($sometext) {                                                                                        
         $this->sometext = $sometext;
-        $this->students[]->name = "Marcelo";
-        $this->students[]->name = "André";
-        $this->students[]->name = "Mariana";
-        $this->students[]->name = "Pablo";
+        $this->students = array({"name": "Marcelo"}, {"name": "Mariana"});
     }
                                                                                                                             
     public function export_for_template(renderer_base $output) {                                                                    
