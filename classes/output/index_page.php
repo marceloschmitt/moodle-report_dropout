@@ -8,30 +8,21 @@ use templatable;
 use stdClass;                                                                                                                       
              
 class index_page implements renderable, templatable {                                                                               
-    /** @var string $sometext Some text to show how to pass data to a template. */                                                  
-    var $sometext = null;                                                                                                           
+    var $sometext = null;
+    var $student;
             
     public function __construct($sometext) {                                                                                        
-        $this->sometext = $sometext;                                                                                                
+        $this->sometext = $sometext;
+        $this->student[] = "Marcelo";
+        $this->student[] = "André";
+        $this->student[] = "Mariana";
+        $this->student[] = "Pablo";
     }
-
-    /**                                                                                                                             
-     * Export this data so it can be used as the context for a mustache template.                                                   
-     *                                                                                                                              
-     * @return stdClass                                                                                                             
-     */                                                                                                                             
+                                                                                                                            
     public function export_for_template(renderer_base $output) {                                                                    
         $data = new stdClass();
-        $data->users = getUsersOfCourse();
+        $data->student = $this->student;
         $data->sometext = $this->sometext;                                                                                          
         return $data;                                                                                                               
-    }
-
-    private function getUsersOfCourse() {
-        $dataUsers[] = "Marcelo";
-        $dataUsers[] = "André";
-        $dataUsers[] = "Mariana";
-        $dataUsers[] = "Pablo";
-        return $dataUsers;
-    }      
+    } 
 }
