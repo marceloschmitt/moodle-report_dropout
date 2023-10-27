@@ -46,7 +46,7 @@ $output = $PAGE->get_renderer('report_dropout');
 echo $output->header();
 echo $output->heading(get_string('pluginname', 'report_dropout'));
 $data = (object)['text' => 'tentativa 1', 'userid' => $userid];
-$renderable = new \report_dropout\output\report_page_test($data);
+$renderable = new \report_dropout\output\report_test_page($data);
 echo $output->render($renderable);
 echo $output->footer();
 
