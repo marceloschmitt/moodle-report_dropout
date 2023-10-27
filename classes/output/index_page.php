@@ -21,8 +21,17 @@ class index_page implements renderable, templatable {
      * @return stdClass                                                                                                             
      */                                                                                                                             
     public function export_for_template(renderer_base $output) {                                                                    
-        $data = new stdClass();                                                                                                     
+        $data = new stdClass();
+        $data->users = getUsersOfCourse();
         $data->sometext = $this->sometext;                                                                                          
         return $data;                                                                                                               
     }
+
+    private function getUsersOfCourse() {
+        $dataUsers[] = "Marcelo";
+        $dataUsers[] = "André";
+        $dataUsers[] = "Mariana";
+        $dataUsers[] = "Pablo";
+        return $dataUsers;
+    }      
 }
