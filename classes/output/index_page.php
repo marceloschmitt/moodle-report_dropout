@@ -8,10 +8,11 @@ use templatable;
 use stdClass;                                                                                                                       
              
 class index_page implements renderable, templatable {                                                                               
-    var $sometext = null;
+    var $courseid;
     var $students;
             
-    public function __construct($context) { 
+    public function __construct($context) {
+        echo var_dump($context); exit;
         $this->courseid = 24;
         $this->students = array_values(get_enrolled_users($context));
     }
