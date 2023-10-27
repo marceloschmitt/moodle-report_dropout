@@ -12,7 +12,7 @@ class index_page implements renderable, templatable {
     var $students;
             
     public function __construct($context) {
-        echo var_dump($context->_instanceid); exit;
+        echo var_dump($context.instanceid()); exit;
         $this->courseid = 24;
         $this->students = array_values(get_enrolled_users($context));
     }
