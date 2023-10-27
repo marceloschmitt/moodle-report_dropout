@@ -11,7 +11,9 @@ class index_page implements renderable, templatable {
     var $sometext = null;
     var $students;
             
-    public function __construct($sometext, $context) {                                                                                        
+    public function __construct($sometext, $context) { 
+
+      print_r($context); exit;
         $this->sometext = $sometext;
         $this->students = array_values(get_enrolled_users($context));
     }
