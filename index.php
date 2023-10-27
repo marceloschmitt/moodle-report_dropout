@@ -35,14 +35,14 @@ require_capability('report/dropout:view', $context);
 
 // Set $PAGE parameters.
 $PAGE->set_url('/report/dropout/index.php', array('id' => $courseid));
-//$PAGE->set_context(context_course::instance($courseid));
+$PAGE->set_context(context_course::instance($courseid));
 $PAGE->set_pagelayout('standard');
 $PAGE->set_heading('Nome da disciplina');
 
 $output = $PAGE->get_renderer('report_dropout');
 echo $output->header();
 echo $output->heading(get_string('pluginname', 'report_dropout'));
-$renderable = new \report_dropout\output\index_page('Sei lá');
+$renderable = new \report_dropout\output\index_page('Sei lá', $context);
 echo $output->render($renderable);
 echo $output->footer();
 
