@@ -11,17 +11,15 @@ class index_page implements renderable, templatable {
     var $sometext = null;
     var $students;
             
-    public function __construct($sometext, $context) { 
-
-      print_r($context); exit;
-        $this->sometext = $sometext;
+    public function __construct($context) { 
+        $this->course = $context[_instanceid:protected];
         $this->students = array_values(get_enrolled_users($context));
     }
                                                                                                                             
     public function export_for_template(renderer_base $output) {                                                                    
         $data = new stdClass();
         $data->students = $this->students;
-        $data->sometext = $this->sometext;                                                                                          
+        $data->sometext = $this->course;                                                                                          
         return $data;                                                                                                               
     } 
 }
