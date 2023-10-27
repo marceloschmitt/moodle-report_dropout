@@ -9,19 +9,19 @@ use stdClass;
              
 class index_page implements renderable, templatable {                                                                               
     var $sometext = null;
-    var $student;
+    var $students;
             
     public function __construct($sometext) {                                                                                        
         $this->sometext = $sometext;
-        $this->student[] = "Marcelo";
-        $this->student[] = "André";
-        $this->student[] = "Mariana";
-        $this->student[] = "Pablo";
+        $this->students[]->name = "Marcelo";
+        $this->students[]->name = "André";
+        $this->students[]->name = "Mariana";
+        $this->students[]->name = "Pablo";
     }
                                                                                                                             
     public function export_for_template(renderer_base $output) {                                                                    
         $data = new stdClass();
-        $data->student = $this->student;
+        $data->students = $this->students;
         $data->sometext = $this->sometext;                                                                                          
         return $data;                                                                                                               
     } 
