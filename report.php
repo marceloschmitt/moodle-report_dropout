@@ -37,15 +37,16 @@ require_capability('report/dropout:view', $context);
 $course = get_course($courseid);
 
 // Set $PAGE parameters.
-$PAGE->set_url('/report/dropout/report1.php', array('id' => $courseid, 'userid' => $userid));
+$PAGE->set_url('/report/dropout/report.php', array('id' => $courseid, 'userid' => $userid));
 $PAGE->set_pagelayout('standard');
-$PAGE->set_title("testes report 1");
+$PAGE->set_title("report");
 $PAGE->set_heading($course->fullname);
 
 $output = $PAGE->get_renderer('report_dropout');
 echo $output->header();
 echo $output->heading(get_string('pluginname', 'report_dropout'));
-$renderable = new \report_dropout\output\report1_page('Marcelo');
+
+$renderable = new \report_dropout\output\report_page('Marcelo');
 echo $output->render($renderable);
 echo $output->footer();
 
