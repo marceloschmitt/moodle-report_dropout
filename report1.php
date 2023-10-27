@@ -29,15 +29,15 @@ require_once($CFG->libdir.'/adminlib.php');
 
 // Security.
 $courseid = required_param('id', PARAM_INT);
+$userid = required_param('userid', PARAM_INT);
 require_login($courseid);
 $context = context_course::instance($courseid);
 require_capability('report/dropout:view', $context);
 
 $course = get_course($courseid);
 
-
 // Set $PAGE parameters.
-$PAGE->set_url('/report/dropout/report1.php', array('id' => $courseid));
+$PAGE->set_url('/report/dropout/report1.php', array('id' => $courseid, 'userid' =>));
 //$PAGE->set_context(context_course::instance($courseid));
 $PAGE->set_pagelayout('standard');
 
