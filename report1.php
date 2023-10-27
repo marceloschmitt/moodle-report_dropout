@@ -38,9 +38,7 @@ $course = get_course($courseid);
 
 // Set $PAGE parameters.
 $PAGE->set_url('/report/dropout/report1.php', array('id' => $courseid, 'userid' => $userid));
-//$PAGE->set_context(context_course::instance($courseid));
 $PAGE->set_pagelayout('standard');
-
 $PAGE->set_title("testes report 1");
 $PAGE->set_heading($course->fullname);
 
