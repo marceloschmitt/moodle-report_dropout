@@ -18,6 +18,7 @@ class index_page implements renderable, templatable {
         $this->students = get_enrolled_users($context);
 
       print_r($this->student);
+      echo "<BR><BR>";
             print_r($this->students);
       exit;
 
