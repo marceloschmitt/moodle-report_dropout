@@ -42,7 +42,7 @@ $PAGE->set_heading('Nome da disciplina');
 $output = $PAGE->get_renderer('report_dropout');
 echo $output->header();
 echo $output->heading(get_string('pluginname', 'report_dropout'));
-$renderable = new \report_dropout\output\index_page('Sei lá', $context);
+$renderable = new \report_dropout\output\index_page($context);
 echo $output->render($renderable);
 echo $output->footer();
 
