@@ -13,7 +13,6 @@ class index_page implements renderable, templatable {
             
     public function __construct($context) { 
       print_r($context); exit;
-      
         $this->course = $context->_instanceid;
         $this->students = array_values(get_enrolled_users($context));
     }
