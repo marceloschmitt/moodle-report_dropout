@@ -13,14 +13,14 @@ class index_page implements renderable, templatable {
             
     public function __construct($context) { 
       print_r($context); exit;
-        $this->course = $context->_instanceid;
+        $this->courseid = 24;
         $this->students = array_values(get_enrolled_users($context));
     }
                                                                                                                             
     public function export_for_template(renderer_base $output) {                                                                    
         $data = new stdClass();
         $data->students = $this->students;
-        $data->sometext = $this->course;                                                                                          
+        $data->courseid = $this->courseid;                                                                                          
         return $data;                                                                                                               
     } 
 }
