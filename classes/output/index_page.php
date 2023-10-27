@@ -11,10 +11,12 @@ class index_page implements renderable, templatable {
     var $sometext = null;
     var $students;
             
-    public function __construct($sometext) {                                                                                        
+    public function __construct($sometext, $context) {                                                                                        
         $this->sometext = $sometext;
         $this->students[] = (object) array('name' => 'Marcelo');
         $this->students[] = (object) array('name' => 'Mariana');
+        $aluno = get_enrolled_users($context);
+        echo var_dump($aluno); exit;
 
     }
                                                                                                                             
