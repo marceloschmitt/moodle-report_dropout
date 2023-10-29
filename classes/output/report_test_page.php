@@ -7,7 +7,7 @@ use renderer_base;
 use templatable;                                                                                                                    
 use stdClass;                                                                                                                       
              
-class report_page implements renderable, templatable {                                                                               
+class report_test_page implements renderable, templatable {                                                                               
     /** @var string $sometext Some text to show how to pass data to a template. */                                                  
     var $sometext = null;                                                                                                           
             
