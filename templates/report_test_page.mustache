@@ -2,11 +2,11 @@
   <p>{{sometext.text}} - {{sometext.userid}}</p>                                                                                                               
 </div>
 
-{{! moodle usa bootstrap? qual versão? }}
+{{! moodle usa bootstrap v4.6 }}
 
-    <div class="card mb-2">
+        <div class="card mb-2 info-course" >
         <div class="card-header">
-            <h5 class="font-weight-bold">Course info</h5>
+            <h5 class="font-weight-bold">Course stats</h5>
         </div>
         
         <div class="card-body container row">
@@ -14,22 +14,25 @@
                 <div class="card-text" >
                     <p class="mb-0"> Course: <span class="student-course">Biomedicina</span></p>
                     <p class="mb-0"> Class: <span class="student-class">2020/1</span></p>
+                    <p class="mb-0"> Semesters elapsed: <span class="student-semesters-elapsed">3</span></p>
                 </div>
             </div>
-            
             <div class="col">
                 <div class="card-text" >
-                    <p class="mb-0"> Semesters elapsed: <span class="student-semesters-elapsed">3</span></p>
-
+                    <p class="mb-0"> Disciplinas Obrigatórias ofertadas por semestre: <span class="student-course">5</span></p>
+                    <p class="mb-0"> Disciplinas não obrigatórias por semestre: <span class="student-class">3</span></p>
+                    <p class="mb-0"> Disciplinas ofertadas até agora: <span class="student-semesters-elapsed">56</span></p>
+                    <p class="mb-0"> Disciplinas ofertadas até agora: <span class="student-semesters-elapsed">36</span></p>
                 </div>
             </div>
+
         </div>
 
     </div>
     
-    <div class="card mb-2">
+    <div class="card mb-2 info-student">
         <div class="card-header">
-            <h5 class="font-weight-bold" >Student info</h5>
+            <h5 class="font-weight-bold" >Student stats</h5>
         </div>
         
         <div class="card-body container row">
@@ -40,8 +43,8 @@
             <div class="col">
                 <div class="card-text" >
                     <p class="mb-0"> Name: <span class="student-name">Aluno1</span></p>
-                    <p class="mb-0"> Situation: <span class="student-situation badge badge-success">Regular</span></p>
                     <p class="mb-0"> Current enroled courses: <span class="student-current-enroled">3</span></p>
+                    <p class="mb-0"> Situation: <span class="student-situation badge badge-success">Regular</span></p>
                 </div>
             </div>
             
@@ -56,8 +59,8 @@
 
     </div>
 
-        
-    <table class="table table-bordered table-sm custom-table table-hover">
+    
+    <table class="table table-bordered table-sm custom-table">
         <thead id="table_head" class="text-center">
             <th scope="col" colspan="100%">Semestre 2020/1</th>
             <tr>
