@@ -2,24 +2,26 @@
   <p>{{sometext.text}} - {{sometext.userid}}</p>                                                                                                               
 </div>
 
-<style>
-    .custom-table tbody:nth-child(even) {
-        background-color: #f1f1f1; /* Background color for odd rows */
-    }
-</style>
-{{! moodle usa bootstrap v4.6 }}
+    <style>
+        .custom-table tbody:nth-child(even) {
+            background-color: #f1f1f1; /* Background color for odd rows */
+        }
+    </style>
+    <!-- {{! moodle usa bootstrap 4.6 }} -->
+    <h3 class="font-weight-bold">Dropout Report</h3>
 
-        <div class="card mb-2 info-course" >
+    
+    <div class="card mb-2 info-course" >
         <div class="card-header">
-            <h5 class="font-weight-bold">Course stats</h5>
+            <h5 class="font-weight-bold">Informações do curso</h5>
         </div>
         
         <div class="card-body container row">
             <div class="col">
                 <div class="card-text" >
-                    <p class="mb-0"> Course: <span class="student-course">Biomedicina</span></p>
-                    <p class="mb-0"> Class: <span class="student-class">2020/1</span></p>
-                    <p class="mb-0"> Semesters elapsed: <span class="student-semesters-elapsed">3</span></p>
+                    <p class="mb-0"> Curso: <span class="student-course">Biomedicina</span></p>
+                    <p class="mb-0"> Turma: <span class="student-class">2020/1</span></p>
+                    <p class="mb-0"> Semestres transcorridos : <span class="student-semesters-elapsed">3</span></p>
                 </div>
             </div>
             <div class="col">
@@ -37,13 +39,11 @@
     
     <div class="card mb-2 info-student">
         <div class="card-header">
-            <h5 class="font-weight-bold" >Student stats</h5>
+            <h5 class="font-weight-bold" >Informações do estudante</h5>
         </div>
         
         <div class="card-body container row">
-            <div class="media col-2">
-                <img class="rounded-circle bg-warning d-flex align-self-center mx-3 px-2 py-4" src="" alt="Generic">
-            </div>
+
             
             <div class="col">
                 <div class="card-text" >
