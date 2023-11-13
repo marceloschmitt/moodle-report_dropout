@@ -1,3 +1,244 @@
 <div class="hero-unit">                                                                                                             
   <p>{{sometext}}</p>                                                                                                               
 </div>
+
+    <style>
+        .custom-table tbody:nth-child(even) {
+            background-color: #f1f1f1; /* Background color for odd rows */
+        }
+    </style>
+    <!-- {{! moodle usa bootstrap 4.6 }} -->
+    
+    <div class="card mb-2 info-course" >
+        <div class="card-header">
+            <h5 class="font-weight-bold">Informações do curso</h5>
+        </div>
+        
+        <div class="card-body container row">
+            <div class="col">
+                <div class="card-text" >
+                    <p class="mb-0"> Curso: <span class="student-course">Biomedicina</span></p>
+                    <p class="mb-0"> Turma: <span class="student-class">2020/1</span></p>
+                    <p class="mb-0"> Semestres transcorridos : <span class="student-semesters-elapsed">3</span></p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card-text" >
+                    <p class="mb-0"> Disciplinas Obrigatórias ofertadas por semestre: <span class="student-course">5</span></p>
+                    <p class="mb-0"> Disciplinas não obrigatórias por semestre: <span class="student-class">3</span></p>
+                    <p class="mb-0"> Disciplinas ofertadas até agora: <span class="student-semesters-elapsed">56</span></p>
+                    <p class="mb-0"> Disciplinas ofertadas até agora: <span class="student-semesters-elapsed">36</span></p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    
+    <div class="card mb-2 info-student">
+        <div class="card-header">
+            <h5 class="font-weight-bold" >Informações do estudante</h5>
+        </div>
+        
+        <div class="card-body container row">
+
+            
+            <div class="col">
+                <div class="card-text" >
+                    <p class="mb-0"> Name: <span class="student-name">Aluno1</span></p>
+                    <p class="mb-0"> Current enroled courses: <span class="student-current-enroled">3</span></p>
+                    <p class="mb-0"> Situation: <span class="student-situation badge badge-success">Regular</span></p>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card-text" >
+                    <p class="mb-0"> Total semesters: <span class="student-total-semesters">3</span></p>
+                    <p class="mb-0"> Total courses: <span class="student-total-courses">3</span></p>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    
+    <table class="table table-bordered table-sm custom-table">
+        <thead id="table_head" class="text-center">
+            <th scope="col" colspan="100%">Semestre 2020/1</th>
+            <tr>
+                <th scope="col" rowspan="2" colspan="2">Indicadores</th>
+                <th scope="col" >FEV</th>
+                <th scope="col" colspan="2">MAR</th>
+                <th scope="col" colspan="2">ABR</th>
+                <th scope="col" colspan="2">MAI</th>
+                <th scope="col" colspan="2">JUN</th>
+                <th scope="col" >JUL</th>
+                <th scope="col" rowspan="2">Parciais</th>
+            </tr>
+            <tr>
+                <th scope="col"> Q2 </th>
+                <th scope="col"> Q1</th>
+                <th scope="col"> Q2 </th>
+                <th scope="col"> Q1</th>
+                <th scope="col"> Q2 </th>
+                <th scope="col"> Q1</th>
+                <th scope="col"> Q2 </th>
+                <th scope="col"> Q1</th>
+                <th scope="col"> Q2 </th>
+                <th scope="col"> Q1</th>
+            </tr>
+        </thead>
+        <tbody id="row_behavior">
+            <tr>
+                <th scope="row" rowspan="4">Comportamentais</th>
+                <td scope="row">Acompanhamento ao cronograma</td>
+                <!-- {{! 11 colunas de dados dinamicos }} -->
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+            </tr>
+            <tr>
+                <td scope="row">Número de acessos ao curso</td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+            </tr>
+            <tr>
+                <td scope="row">Conteúdos acessados</td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+            </tr>
+            <tr>
+                <td scope="row">Atividades concluídas</td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+            </tr>
+        </tbody>
+
+        <tbody id="row_social">
+            <tr>
+                <th scope="row" rowspan="3">Sociais</th>
+                <td scope="row">Interações totais no Ambiente</td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+            </tr>
+            <tr>
+                <td scope="row">Interações com colegas</td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+            </tr>
+            <tr>
+                <td scope="row">Intearações com professores e tutores</td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+            </tr>
+        </tbody>
+
+        <tbody id="row_cognitive">
+            <tr>
+                <th scope="row" rowspan="3">Cognitivos</th>
+                <td scope="row">Desempenho geral</td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+            </tr>
+            <tr>
+                <td scope="row">Desempenho em atividades não avaliativas</td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+            </tr>
+            <tr>
+                <td scope="row">Desempenho em atividades avaliativas</td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+                <td> 0,0 </td>
+            </tr>
+        </tbody>
+    </table>
