@@ -25,7 +25,42 @@
 define('NO_OUTPUT_BUFFERING', true);
 
 require('../../config.php');
+require('functions.php');
 require_once($CFG->libdir.'/adminlib.php');
+
+// script for charts
+$script = file_get_contents('gcharts.html');
+
+$student = [
+    'name'=> 'aluno',
+    'course' => 'curso',
+    'class' => 'turma',
+    
+    'semesters' => [
+        '2023' => [         // year
+            '1' => [        // period
+                'comportamentais' => [
+                    [2, 2, 7, 2, 0, 2, 2, 2, 2, 2],
+                    [1, 1, 2, 2, 2, 2, 1, 2, 6, 2],
+                    [6, 6, 0, 2, 1, 2, 3, 3, 0, 4],
+                    [0, 6, 8, 2, 1, 0, 3, 3, 0, 4]
+                ],
+                'sociais' => [
+                    [2, 2, 6, 2, 2, 2, 2, 2, 2, 2],
+                    [2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+                    [2, 6, 8, 2, 1, 0, 3, 3, 0, 4],
+                ],
+                'cognitivos' => [
+                    [2, 2, 6, 2, 2, 2, 2, 2, 2, 2],
+                    [2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+                    [2, 6, 8, 2, 1, 0, 3, 3, 0, 4],
+                ]
+            ],  
+            '2' => ['etc']
+        ],
+        '2024' => ['1' => ['etc'], '2' => ['etc']]
+    ]
+];
 
 // Security.
 $courseid = required_param('id', PARAM_INT);
@@ -42,6 +77,17 @@ $PAGE->set_url('/report/dropout/report_test.php', array('id' => $courseid, 'user
 $PAGE->set_pagelayout('standard');
 $PAGE->set_title("testes report bolsista");
 $PAGE->set_heading($course->fullname);
+
+$table = generate_table($student['semesters'], ['year'=>'2023', 'period'=> '1']);
+$lineChart = generate_linechart($student['semesters'], ['year'=>'2023', 'period'=> '1']);
+$lineChart = generate_linechart($student['semesters'], ['year'=>'2023', 'period'=> '1']);
+
+$data = [
+    'student' => $student,
+    'script' => $lineChart,
+    'table' => $table,
+];
+
 
 $output = $PAGE->get_renderer('report_dropout');
 echo $output->header();
