@@ -36,6 +36,9 @@ require_capability('report/dropout:view', $context);
 
 $course = get_course($courseid);
 
+// Get student data.
+$studentdata = new student_data($userid);
+
 // Set $PAGE parameters.
 $PAGE->set_url('/report/dropout/report.php', array('id' => $courseid, 'userid' => $userid));
 $PAGE->set_pagelayout('standard');
