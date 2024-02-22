@@ -1,6 +1,6 @@
 <?php
 // Standard GPL and phpdocs
-namespace report_dropout;
+namespace report_dropout\student_data;
 
 class student_data {
     var $userid;
