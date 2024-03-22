@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <style>
     .custom-table tbody:nth-child(even) {
         background-color: #f1f1f1; /* Background color for odd rows */
@@ -10,7 +9,6 @@
     <div class="card-header">
         <h5 class="font-weight-bold">Informações do curso</h5>
     </div>
-    
     <div class="card-body container row">
         <div class="col">
             <div class="card-text" >
@@ -27,23 +25,14 @@
                 <p class="mb-0"> Disciplinas ofertadas até agora: <span class="student-semesters-elapsed">36</span></p>
             </div>
         </div>
-
     </div>
-
-=======
-<div class="hero-unit">                                                                                                             
-                                                                                                                 
->>>>>>> 30b31328bf2acfad3bcc28d5b3fd36a01083b318
 </div>
 
 <div class="card mb-2 info-student">
     <div class="card-header">
         <h5 class="font-weight-bold" >Informações do estudante</h5>
     </div>
-    
     <div class="card-body container row">
-
-        
         <div class="col">
             <div class="card-text" >
                 <p class="mb-0"> Name: <span class="student-name">{{sometext}}</span></p>
@@ -51,15 +40,11 @@
                 <p class="mb-0"> Situation: <span class="student-situation badge badge-success">Regular</span></p>
             </div>
         </div>
-        
         <div class="col">
             <div class="card-text" >
                 <p class="mb-0"> Total semesters: <span class="student-total-semesters">3</span></p>
                 <p class="mb-0"> Total courses: <span class="student-total-courses">3</span></p>
-
-<<<<<<< HEAD
-=======
-            
+            </div>
             <div class="col">
                 <div class="card-text" >
                     <p class="mb-0"> Name: <span class="student-name"> {{sometext}} </span></p>
@@ -67,35 +52,32 @@
                     <p class="mb-0"> Situation: <span class="student-situation badge badge-success">Regular</span></p>
                 </div>
             </div>
-            
             <div class="col">
                 <div class="card-text" >
                     <p class="mb-0"> Total semesters: <span class="student-total-semesters">3</span></p>
                     <p class="mb-0"> Total courses: <span class="student-total-courses">3</span></p>
 
                 </div>
->>>>>>> 30b31328bf2acfad3bcc28d5b3fd36a01083b318
             </div>
         </div>
     </div>
-
 </div>
 
-
+<div  class="card mb-2 info-table">
 <table class="table table-bordered table-sm custom-table">
     <thead id="table_head" class="text-center">
         <th scope="col" colspan="100%">Semestre 2020/1</th>
         <tr>
             <th scope="col" rowspan="2" colspan="2">Indicadores</th>
-		{{#header}}
-            		<th scope="col" colspan="2">{{month}}</th>
-		{{/header}}
+                {{#header}}
+                        <th scope="col" colspan="2">{{month}}</th>
+                {{/header}}
             <th scope="col" rowspan="2">Parciais</th>
         </tr>
         <tr>
-	    {{#subheader}}
+            {{#subheader}}
             <th scope="col"> {{halfmonth}} </th>
-	    {{/subheader}}
+            {{/subheader}}
         </tr>
     </thead>
     <tbody id="row_behavior">
@@ -103,30 +85,30 @@
             <th scope="row" rowspan="4">Comportamentais</th>
             <td scope="row">Acompanhamento ao cronograma</td>
             <!-- {{! 11 colunas de dados dinamicos }} -->
-		{{#behaviourindicator1}}
+                {{#behaviourindicator1}}
             <td> {{value}} </td>
-		{{/behaviourindicator1}}
+                {{/behaviourindicator1}}
             <td> 0,0 </td>
         </tr>
         <tr>
             <td scope="row">Número de acessos ao curso</td>
-		{{#behaviourindicator2}}
+                {{#behaviourindicator2}}
             <td> {{value}} </td>
-		{{/behaviourindicator2}}
+                {{/behaviourindicator2}}
             <td> 0,0 </td>
         </tr>
         <tr>
             <td scope="row">Conteúdos acessados</td>
-		{{#behaviourindicator3}}
+                {{#behaviourindicator3}}
             <td> {{value}} </td>
-		{{/behaviourindicator3}}
+                {{/behaviourindicator3}}
             <td> 0,0 </td>
         </tr>
         <tr>
             <td scope="row">Atividades concluídas</td>
-		{{#behaviourindicator4}}
+                {{#behaviourindicator4}}
             <td> {{value}} </td>
-		{{/behaviourindicator4}}
+                {{/behaviourindicator4}}
             <td> 0,0 </td>
         </tr>
     </tbody>
@@ -135,23 +117,23 @@
         <tr>
             <th scope="row" rowspan="3">Sociais</th>
             <td scope="row">Interações totais no Ambiente</td>
-		{{#socialindicator1}}
+                {{#socialindicator1}}
             <td> {{value}} </td>
-		{{/socialindicator1}}
+                {{/socialindicator1}}
             <td> 0,0 </td>
         </tr>
         <tr>
             <td scope="row">Interações com colegas</td>
-		{{#socialindicator2}}
+                {{#socialindicator2}}
             <td> {{value}} </td>
-		{{/socialindicator2}}
+                {{/socialindicator2}}
             <td> 0,0 </td>
         </tr>
         <tr>
             <td scope="row">Intearações com professores e tutores</td>
-		{{#socialindicator3}}
+                {{#socialindicator3}}
             <td> {{value}} </td>
-		{{/socialindicator3}}
+                {{/socialindicator3}}
             <td> 0,0 </td>
         </tr>
     </tbody>
@@ -160,29 +142,30 @@
         <tr>
             <th scope="row" rowspan="3">Cognitivos</th>
             <td scope="row">Desempenho geral</td>
-		{{#cognitiveindicator1}}
+                {{#cognitiveindicator1}}
             <td> {{value}} </td>
-		{{/cognitiveindicator1}}
+                {{/cognitiveindicator1}}
             <td> 0,0 </td>
         </tr>
         <tr>
             <td scope="row">Desempenho em atividades não avaliativas</td>
-		{{#cognitiveindicator2}}
+                {{#cognitiveindicator2}}
             <td> {{value}} </td>
-		{{/cognitiveindicator2}}
+                {{/cognitiveindicator2}}
             <td> 0,0 </td>
         </tr>
         <tr>
             <td scope="row">Desempenho em atividades avaliativas</td>
-		{{#cognitiveindicator3}}
+                {{#cognitiveindicator3}}
             <td> {{value}} </td>
-		{{/cognitiveindicator3}}
+                {{/cognitiveindicator3}}
             <td> 0,0 </td>
         </tr>
     </tbody>
 </table>
-{{#js}}
-require(['report_dropout/linegraph'], function(Linegraph) {
-    Linegraph.init();
-});
-{{/js}}
+</div>
+<br><BR>
+        {{{script}}}
+    <div id="line_chart" style="width: 900px;"></div>
+<BR><BR>
+    <div id="line_chart_simple" style="width: 900px;"></div>
