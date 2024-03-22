@@ -1,18 +1,17 @@
 <?php
 // Standard GPL and phpdocs
-namespace report_dropout\output;                                                                                                         
-                                                                                                                                    
-use renderable;                                                                                                                     
-use renderer_base;                                                                                                                  
+namespace report_dropout\output;                                                                
+
+
+use renderable;                                                                                 
+use renderer_base;                                                                              
 use templatable;                                                                                                                    
-use stdClass;                                                                                                                       
-             
+use stdClass;                                                                                   
+
 class report_test_page implements renderable, templatable {                                                                               
-    /** @var string $sometext Some text to show how to pass data to a template. */                                                  
-    var $sometext = null;                                                                                                           
-            
-    public function __construct($sometext) {                                                                                        
-        $this->sometext = $sometext;                                                                                                
+/** @var string $sometext Some text to show how to pass data to a template. */                                                  
+    public function __construct($script) {                                                                                        
+        $this->script = $script;                                                                                                
     }
 
     /**                                                                                                                             
@@ -21,8 +20,8 @@ class report_test_page implements renderable, templatable {
      * @return stdClass                                                                                                             
      */                                                                                                                             
     public function export_for_template(renderer_base $output) {                                                                    
-        $data = new stdClass();                                                                                                     
-        $data->sometext = $this->sometext;                                                                                          
+	    $data = new stdClass();                                                                                                     
+	    $data->script = $this->script;
         return $data;                                                                                                               
     }
 }
