@@ -21,7 +21,7 @@
  * @copyright  2023 Schmitt; Ferro (IFRS)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
+// asdlkalsdkjfls
 define('NO_OUTPUT_BUFFERING', true);
 
 require('../../config.php');
