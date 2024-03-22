@@ -1,4 +1,3 @@
-
 <?php
 
 // função que gera tabela
@@ -87,24 +86,18 @@ function generate_table($studentData, $selected) {
 }
 
 
-function generate_linechart($studentData, $selected) {
-    // Your logic to generate the table HTML goes here
-    $tableData = $studentData[$selected['year']][$selected['period']];
-    
-    $tableStructure = tableStructureData($tableData);
+function generate_linechart($studentdata) {
 
-   // Transpose the data
-   $transposedData = array_map(null, ...array_values($tableStructure['Comportamentais']));
-
-   // Prepare JavaScript data for the chart
-   $jsrows = '[';
-
-   foreach ($transposedData as $index => $rowData) {
-       $jsrows .= "['$index', " . implode(',', $rowData) . "],";
-   }
-
-   $jsrows = rtrim($jsrows, ',') . ']';
-echo "PASSOU <br>";
+	$temp[0] = 'Periodo';
+	$temp[1] = 'Valor';
+	$y = 1;
+	$behaviourindicator1[] = $temp;
+	foreach($studentdata->behaviourindicator1 AS $value) {
+		$temp[0] = 'P' . $y++;
+		$temp[1] = $value->value;
+		$behaviourindicator1[] = $temp;
+	}
+	$json = json_encode($behaviourindicator1);
    // Google Charts JavaScript code
 $chartScript = "
  <script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>
@@ -143,19 +136,8 @@ $chartScript = "
      }
      
      function drawChartSimple() {
-        var data = google.visualization.arrayToDataTable([
-	  ['Período', 'Interações Totais no Ambiente'],
-          ['AGO/Q1',  4],
-          ['AGO/Q2',  10],
-          ['SET/Q1',  6],
-          ['SET/Q2',  6],
-          ['OUT/Q1',  0],
-          ['OUT/Q2',  1],
-          ['NOV/Q1',  5],
-          ['NOV/Q2',  10],
-          ['DEZ/Q1',  7],
-          ['DEZ/Q2',  4]
-        ]);
+	var passedArray = " . $json . ";
+        var data = google.visualization.arrayToDataTable(passedArray);
         var options = {
           title: 'Interações totais no ambiente',
           curveType: 'function',
