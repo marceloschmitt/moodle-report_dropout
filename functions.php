@@ -10,7 +10,6 @@ function generate_table($studentData, $selected) {
     $tableHead =    "<table class='table table-bordered table-sm custom-table'>
                     <thead id='table_head' class='text-center'>
                     <th scope='col' colspan='100%'>Semestre {$selected['year']}/{$selected['period']} </th>
-\s
                     <tr>
                     <th scope='col' rowspan='2' colspan='2'>Indicadores</th>
                     <th scope='col' >FEV</th>
@@ -112,30 +111,66 @@ $chartScript = "
     <script type='text/javascript'>
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
+      google.charts.setOnLoadCallback(drawChartSimple);
 
      function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['Year', 'Sales', 'Expenses'],
-          ['2004',  1000,      400],
-          ['2005',  1170,      460],
-          ['2006',  660,       1120],
-          ['2007',  1030,      540]
+	  ['Período', 'Acompanhamento ao cronograma', 'Número de acessos ao curso', 'Conteúdos acessados','Atividades concluídas'],
+          ['AGO/Q1',  4,      10, 2, 3],
+          ['AGO/Q2',  10,      2, 3, 4],
+          ['SET/Q1',  6,       2, 1, 2],
+          ['SET/Q2',  6,      2, 2, 3],
+          ['OUT/Q1',  0,      2, 3, 4],
+          ['OUT/Q2',  1,      5, 7,1],
+          ['NOV/Q1',  5,       7, 6, 2],
+          ['NOV/Q2',  10,      2, 5, 3],
+          ['DEZ/Q1',  7,      2, 4, 4],
+          ['DEZ/Q2',  4,      9, 0, 3]
+
+
         ]);
 
         var options = {
-          title: 'Company Performance',
+          title: 'Indicadores comportamentais',
           curveType: 'function',
-          legend: { position: 'bottom' }
+	  legend: { position: 'bottom' },
+          height: 300
         };
 
         var chart = new google.visualization.LineChart(document.getElementById('line_chart'));
 
         chart.draw(data, options);  
      }
+     
+     function drawChartSimple() {
+        var data = google.visualization.arrayToDataTable([
+	  ['Período', 'Interações Totais no Ambiente'],
+          ['AGO/Q1',  4],
+          ['AGO/Q2',  10],
+          ['SET/Q1',  6],
+          ['SET/Q2',  6],
+          ['OUT/Q1',  0],
+          ['OUT/Q2',  1],
+          ['NOV/Q1',  5],
+          ['NOV/Q2',  10],
+          ['DEZ/Q1',  7],
+          ['DEZ/Q2',  4]
+        ]);
+        var options = {
+          title: 'Interações totais no ambiente',
+          curveType: 'function',
+	  legend: { position: 'none' },
+	  height: 100,
+          vAxis: { viewWindow: {min: 0,}}
+        };
+        var chart = new google.visualization.LineChart(document.getElementById('line_chart_simple'));
+        chart.draw(data, options);  
+     }
    </script>
 ";
    return $chartScript;
 }
+
 
 function tableStructureData($tableData = []){
     // deixa os dados do aluno 'table friendly'
