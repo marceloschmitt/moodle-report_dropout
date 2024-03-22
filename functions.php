@@ -105,41 +105,35 @@ function generate_linechart($studentData, $selected) {
    }
 
    $jsrows = rtrim($jsrows, ',') . ']';
-
+echo "PASSOU <br>";
    // Google Charts JavaScript code
-   $chartScript = "
-   <script type='text/javascript'>
-     google.charts.load('current', {'packages':['corechart']});
-     google.charts.setOnLoadCallback(drawChart);
+$chartScript = "
+ <script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>
+    <script type='text/javascript'>
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
 
      function drawChart() {
-       var data = new google.visualization.DataTable();
-       
-       // Assuming the first column is a string
-       data.addColumn('string', 'Category');
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Sales', 'Expenses'],
+          ['2004',  1000,      400],
+          ['2005',  1170,      460],
+          ['2006',  660,       1120],
+          ['2007',  1030,      540]
+        ]);
 
-       // Assuming the rest of the columns are numbers (data points)
-       data.addColumn('number', 'Acompanhamento ao cronograma');
-       data.addColumn('number', 'Número de acessos ao curso');
-       data.addColumn('number', 'Conteúdos acessados');
-       data.addColumn('number', 'Atividades concluídas');
+        var options = {
+          title: 'Company Performance',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
 
-       data.addRows($jsrows);
+        var chart = new google.visualization.LineChart(document.getElementById('line_chart'));
 
-       var options = {
-         title: 'Google Line Chart - Comportamentais',
-        //  curveType: 'function',
-        // width: 400,
-        height: 200,
-         legend: { position: 'bottom' }
-       };
-
-       var chart = new google.visualization.LineChart(document.getElementById('line_chart'));
-       chart.draw(data, options);
+        chart.draw(data, options);  
      }
    </script>
-   ";
-
+";
    return $chartScript;
 }
 
