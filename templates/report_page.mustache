@@ -14,8 +14,8 @@
     <div class="card-body container row">
         <div class="col">
             <div class="card-text" >
-                <p class="mb-0"> Curso: <span class="student-course">Biomedicina</span></p>
-                <p class="mb-0"> Turma: <span class="student-class">2020/1</span></p>
+                <p class="mb-0"> Curso: <span class="student-course">Sei la</span></p>
+                <p class="mb-0"> Turma: <span class="student-class">asdasdf</span></p>
                 <p class="mb-0"> Semestres transcorridos : <span class="student-semesters-elapsed">3</span></p>
             </div>
         </div>
@@ -87,25 +87,15 @@
         <th scope="col" colspan="100%">Semestre 2020/1</th>
         <tr>
             <th scope="col" rowspan="2" colspan="2">Indicadores</th>
-            <th scope="col" >FEV</th>
-            <th scope="col" colspan="2">MAR</th>
-            <th scope="col" colspan="2">ABR</th>
-            <th scope="col" colspan="2">MAI</th>
-            <th scope="col" colspan="2">JUN</th>
-            <th scope="col" >JUL</th>
+		{{#header}}
+            		<th scope="col" colspan="2">{{month}}</th>
+		{{/header}}
             <th scope="col" rowspan="2">Parciais</th>
         </tr>
         <tr>
-            <th scope="col"> Q2 </th>
-            <th scope="col"> Q1</th>
-            <th scope="col"> Q2 </th>
-            <th scope="col"> Q1</th>
-            <th scope="col"> Q2 </th>
-            <th scope="col"> Q1</th>
-            <th scope="col"> Q2 </th>
-            <th scope="col"> Q1</th>
-            <th scope="col"> Q2 </th>
-            <th scope="col"> Q1</th>
+	    {{#subheader}}
+            <th scope="col"> {{halfmonth}} </th>
+	    {{/subheader}}
         </tr>
     </thead>
     <tbody id="row_behavior">
@@ -113,58 +103,30 @@
             <th scope="row" rowspan="4">Comportamentais</th>
             <td scope="row">Acompanhamento ao cronograma</td>
             <!-- {{! 11 colunas de dados dinamicos }} -->
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
+		{{#behaviourindicator1}}
+            <td> {{value}} </td>
+		{{/behaviourindicator1}}
             <td> 0,0 </td>
         </tr>
         <tr>
             <td scope="row">Número de acessos ao curso</td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
+		{{#behaviourindicator2}}
+            <td> {{value}} </td>
+		{{/behaviourindicator2}}
             <td> 0,0 </td>
         </tr>
         <tr>
             <td scope="row">Conteúdos acessados</td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
+		{{#behaviourindicator3}}
+            <td> {{value}} </td>
+		{{/behaviourindicator3}}
             <td> 0,0 </td>
         </tr>
         <tr>
             <td scope="row">Atividades concluídas</td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
+		{{#behaviourindicator4}}
+            <td> {{value}} </td>
+		{{/behaviourindicator4}}
             <td> 0,0 </td>
         </tr>
     </tbody>
@@ -173,44 +135,23 @@
         <tr>
             <th scope="row" rowspan="3">Sociais</th>
             <td scope="row">Interações totais no Ambiente</td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
+		{{#socialindicator1}}
+            <td> {{value}} </td>
+		{{/socialindicator1}}
             <td> 0,0 </td>
         </tr>
         <tr>
             <td scope="row">Interações com colegas</td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
+		{{#socialindicator2}}
+            <td> {{value}} </td>
+		{{/socialindicator2}}
             <td> 0,0 </td>
         </tr>
         <tr>
             <td scope="row">Intearações com professores e tutores</td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
+		{{#socialindicator3}}
+            <td> {{value}} </td>
+		{{/socialindicator3}}
             <td> 0,0 </td>
         </tr>
     </tbody>
@@ -219,45 +160,29 @@
         <tr>
             <th scope="row" rowspan="3">Cognitivos</th>
             <td scope="row">Desempenho geral</td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
+		{{#cognitiveindicator1}}
+            <td> {{value}} </td>
+		{{/cognitiveindicator1}}
             <td> 0,0 </td>
         </tr>
         <tr>
             <td scope="row">Desempenho em atividades não avaliativas</td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
+		{{#cognitiveindicator2}}
+            <td> {{value}} </td>
+		{{/cognitiveindicator2}}
             <td> 0,0 </td>
         </tr>
         <tr>
             <td scope="row">Desempenho em atividades avaliativas</td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
-            <td> 0,0 </td>
+		{{#cognitiveindicator3}}
+            <td> {{value}} </td>
+		{{/cognitiveindicator3}}
             <td> 0,0 </td>
         </tr>
     </tbody>
 </table>
+{{#js}}
+require(['report_dropout/linegraph'], function(Linegraph) {
+    Linegraph.init();
+});
+{{/js}}
