@@ -29,7 +29,7 @@ require('functions.php');
 require_once($CFG->libdir.'/adminlib.php');
 
 // script for charts
-$script = file_get_contents('gcharts.html');
+//$script = file_get_contents('gcharts.html');
 
 $student = [
     'name'=> 'aluno',
@@ -70,7 +70,7 @@ $context = context_course::instance($courseid);
 require_capability('report/dropout:view', $context);
 
 $course = get_course($courseid);
-$user = get_user;
+$user = "ESTUDANTE";
 
 // Set $PAGE parameters.
 $PAGE->set_url('/report/dropout/report_test.php', array('id' => $courseid, 'userid' => $userid));
@@ -80,8 +80,6 @@ $PAGE->set_heading($course->fullname);
 
 $table = generate_table($student['semesters'], ['year'=>'2023', 'period'=> '1']);
 $lineChart = generate_linechart($student['semesters'], ['year'=>'2023', 'period'=> '1']);
-$lineChart = generate_linechart($student['semesters'], ['year'=>'2023', 'period'=> '1']);
-
 $data = [
     'student' => $student,
     'script' => $lineChart,
@@ -93,7 +91,7 @@ $output = $PAGE->get_renderer('report_dropout');
 echo $output->header();
 echo $output->heading(get_string('pluginname', 'report_dropout'));
 $data = (object)['text' => 'tentativa 1', 'userid' => $userid];
-$renderable = new \report_dropout\output\report_test_page($data);
+$renderable = new \report_dropout\output\report_test_page($lineChart);
 echo $output->render($renderable);
 echo $output->footer();
 
