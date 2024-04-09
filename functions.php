@@ -179,7 +179,7 @@ $chartScript = "
       var chart = new google.visualization.BubbleChart(document.getElementById('bubble_chart_teste'));
       chart.draw(data, options);
     }
-	"<h3>GRÁFICO BOLHA COM COR</h3>"
+
     function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ['ID', 'X', 'Y', 'Temperature'],
