@@ -150,6 +150,9 @@ $chartScript = "
 	
 	var chart = new google.visualization.LineChart(document.getElementById('line_chart_teste'));
         chart.draw(data, options);
+
+ 	var chart = new google.visualization.BubbleChart(document.getElementById('bubble_chart_teste'));
+        chart.draw(data, options);
      }
    </script>
 ";
