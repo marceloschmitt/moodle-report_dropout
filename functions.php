@@ -145,8 +145,6 @@ $chartScript = "
 	  height: 100,
           vAxis: { viewWindow: {min: 0,}}
         };
-        var chart = new google.visualization.LineChart(document.getElementById('line_chart_simple'));
-        chart.draw(data, options);
 	
 	var chart = new google.visualization.LineChart(document.getElementById('line_chart_teste'));
         chart.draw(data, options);
