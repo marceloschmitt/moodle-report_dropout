@@ -103,11 +103,12 @@ $chartScript = "
  <script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>
     <script type='text/javascript'>
       google.charts.load('current', {'packages':['corechart']});
-      google.charts.load('current', {'packages':['annotationchart']});
-
       google.charts.setOnLoadCallback(drawChart);
       google.charts.setOnLoadCallback(drawChartSimple);
       google.charts.setOnLoadCallback(drawSeriesChart);
+
+      google.charts.load('current', {'packages':['annotationchart']});
+
 
 
      function drawChart() {
