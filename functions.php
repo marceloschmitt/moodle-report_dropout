@@ -102,7 +102,8 @@ function generate_linechart($studentdata) {
 $chartScript = "
  <script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>
     <script type='text/javascript'>
-      google.charts.load('current', {'packages':['corechart']});     
+      google.charts.load('current', {'packages':['corechart']});  
+      google.charts.load('current', {'packages':['bar']});
       google.charts.setOnLoadCallback(drawChart);
       google.charts.setOnLoadCallback(drawChartSimple);
       google.charts.setOnLoadCallback(drawSeriesChart);
@@ -180,25 +181,28 @@ $chartScript = "
       chart.draw(data, options);
     }
 
-    function drawChart() {
+    function drawChartBar() {
         var data = google.visualization.arrayToDataTable([
-          ['ID', 'X', 'Y', 'Temperature'],
-          ['',   80,  167,      120],
-          ['',   79,  136,      130],
-          ['',   78,  184,      50],
-          ['',   72,  278,      230],
-          ['',   81,  200,      210],
-          ['',   72,  170,      100],
-          ['',   68,  477,      80]
+          ['Year', 'Sales', 'Expenses', 'Profit'],
+          ['2014', 1000, 400, 200],
+          ['2015', 1170, 460, 250],
+          ['2016', 660, 1120, 300],
+          ['2017', 1030, 540, 350]
         ]);
 
         var options = {
-          colorAxis: {colors: ['yellow', 'red']}
+          chart: {
+            title: 'Company Performance',
+            subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+          },
+          bars: 'horizontal' // Required for Material Bar Charts.
         };
 
-        var chart = new google.visualization.BubbleChart(document.getElementById('chart_bubble_colors'));
-        chart.draw(data, options);
+        var chart = new google.charts.Bar(document.getElementById('barchart'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
       }
+    
    </script>
 ";
    return $chartScript;
