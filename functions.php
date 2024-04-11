@@ -211,14 +211,14 @@ $chartScript = "
 
       var view = new google.visualization.DataView(data);
       view.setColumns([0, 1,
-                       { calc: "stringify",
+                       { calc: 'stringify',
                          sourceColumn: 1,
-                         type: "string",
-                         role: "annotation" }, 
+                         type: 'string',
+                         role: 'annotation'}, 
                        2]);
 
       var options = {
-        title: "Density of Precious Metals, in g/cm^3",
+        title: 'Density of Precious Metals, in g/cm^3',
         width: 600,
         height: 400,
         bar: {groupWidth: "95%"},
