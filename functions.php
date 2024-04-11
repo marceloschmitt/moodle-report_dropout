@@ -224,7 +224,7 @@ $chartScript = "
         bar: {groupWidth: '95%'},
         legend: { position: 'none' },
       };
-      var chart = new google.visualization.BarChart(document.getElementById("barchart"));
+      var chart = new google.visualization.BarChart(document.getElementById('barchart'));
       chart.draw(view, options);
   }
    </script>
