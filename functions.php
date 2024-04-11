@@ -200,7 +200,7 @@ $chartScript = "
 
         var chart = new google.charts.Bar(document.getElementById('barchart'));
 
-        chart.draw(data, google.charts.Bar.convertOptions(options));
+        chart.draw.bar(data, google.charts.Bar.convertOptions(options));
       }
     
    </script>
