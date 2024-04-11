@@ -124,7 +124,6 @@ $chartScript = "
           ['DEZ/Q1',  7,      2, 4, 4],
           ['DEZ/Q2',  4,      9, 0, 3]
 
-
         ]);
 
         var options = {
@@ -153,28 +152,6 @@ $chartScript = "
 	var chart = new google.visualization.LineChart(document.getElementById('line_chart_teste'));
         chart.draw(data, options);
      }
-
-function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Year', 'Sales', 'Expenses', 'Profit'],
-          ['2014', 1000, 400, 200],
-          ['2015', 1170, 460, 250],
-          ['2016', 660, 1120, 300],
-          ['2017', 1030, 540, 350]
-        ]);
-
-        var options = {
-          chart: {
-            title: 'Company Performance',
-            subtitle: 'Sales, Expenses, and Profit: 2014-2017',
-          },
-          bars: 'horizontal' // Required for Material Bar Charts.
-        };
-
-        var chart = new google.charts.Bar(document.getElementById('barchart'));
-
-        chart.draw(data, google.charts.Bar.convertOptions(options));
-      }
       
      function drawSeriesChart() {
 
@@ -204,9 +181,29 @@ function drawChart() {
       chart.draw(data, options);
     }
 
-    
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Sales', 'Expenses', 'Profit'],
+          ['2014', 1000, 400, 200],
+          ['2015', 1170, 460, 250],
+          ['2016', 660, 1120, 300],
+          ['2017', 1030, 540, 350]
+    ]);
 
-  function daysToMilliseconds(days) {
+        var options = {
+          chart: {
+            title: 'Company Performance',
+            subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+          },
+          bars: 'horizontal' // Required for Material Bar Charts.
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('barchart'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+    }
+      
+    function daysToMilliseconds(days) {
       return days * 24 * 60 * 60 * 1000;
     }
 
@@ -242,6 +239,8 @@ function drawChart() {
 
       chart.draw(data, options);
     }
+
+    
    </script>
 ";
    return $chartScript;
