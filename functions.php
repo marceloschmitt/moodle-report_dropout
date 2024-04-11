@@ -109,6 +109,8 @@ $chartScript = "
       google.charts.setOnLoadCallback(drawChart);
       google.charts.setOnLoadCallback(drawChartSimple);
       google.charts.setOnLoadCallback(drawSeriesChart);
+      google.charts.setOnLoadCallback(drawChartBar);
+
 
 
      function drawChart() {
