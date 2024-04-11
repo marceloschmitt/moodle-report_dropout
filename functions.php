@@ -102,7 +102,8 @@ function generate_linechart($studentdata) {
 $chartScript = "
  <script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>
     <script type='text/javascript'>
-      google.charts.load('current', {'packages':['corechart']});
+      google.charts.load('current', {'packages':['corechart']});     
+      google.charts.load('current', {'packages':['bar']});
       google.charts.setOnLoadCallback(drawChart);
       google.charts.setOnLoadCallback(drawChartSimple);
       google.charts.setOnLoadCallback(drawSeriesChart);
@@ -201,32 +202,26 @@ $chartScript = "
       }
 
       function drawChart() {
-      var data = google.visualization.arrayToDataTable([
-	['Element', 'Density', { role: 'style'}],
-        ['Copper', 8.94, '#b87333'],
-        ['Silver', 10.49, 'silver'],
-        ['Gold', 19.30, 'gold'],
-        ['Platinum, 21.45, 'color: #e5e4e2']
-      ]);
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Sales', 'Expenses', 'Profit'],
+          ['2014', 1000, 400, 200],
+          ['2015', 1170, 460, 250],
+          ['2016', 660, 1120, 300],
+          ['2017', 1030, 540, 350]
+        ]);
 
-      var view = new google.visualization.DataView(data);
-      view.setColumns([0, 1,
-                       { calc: 'stringify',
-                         sourceColumn: 1,
-                         type: 'string',
-                         role: 'annotation'}, 
-                       2]);
+        var options = {
+          chart: {
+            title: 'Company Performance',
+            subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+          },
+          bars: 'horizontal' // Required for Material Bar Charts.
+        };
 
-      var options = {
-        title: 'Density of Precious Metals, in g/cm^3',
-        width: 600,
-        height: 400,
-        bar: {groupWidth: '95%'},
-        legend: { position: 'none' },
-      };
-      var chart = new google.visualization.BarChart(document.getElementById('barchart'));
-      chart.draw(view, options);
-  }
+        var chart = new google.charts.Bar(document.getElementById('barchart_material'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
    </script>
 ";
    return $chartScript;
