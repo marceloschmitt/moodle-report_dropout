@@ -181,7 +181,7 @@ $chartScript = "
       chart.draw(data, options);
     }
 
-    function drawChartBar() {
+    function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ['Year', 'Sales', 'Expenses', 'Profit'],
           ['2014', 1000, 400, 200],
@@ -200,7 +200,7 @@ $chartScript = "
 
         var chart = new google.charts.Bar(document.getElementById('barchart'));
 
-        chart.draw.bar(data, google.charts.Bar.convertOptions(options));
+        chart.draw(data, google.charts.Bar.convertOptions(options));
       }
     
    </script>
