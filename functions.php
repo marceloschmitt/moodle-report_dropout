@@ -202,7 +202,7 @@ $chartScript = "
 
       function drawChart() {
       var data = google.visualization.arrayToDataTable([
-        ["Element", "Density", { role: "style" } ],
+
         ["Copper", 8.94, "#b87333"],
         ["Silver", 10.49, "silver"],
         ["Gold", 19.30, "gold"],
