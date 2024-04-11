@@ -110,6 +110,7 @@ $chartScript = "
       google.charts.setOnLoadCallback(drawChartSimple);
       google.charts.setOnLoadCallback(drawSeriesChart);
       google.charts.setOnLoadCallback(drawChartBar);
+      google.charts.setOnLoadCallback(drawChartAnnotation);
 
 
 
@@ -243,7 +244,7 @@ $chartScript = "
       chart.draw(data, options);
     }
     
-    function drawChart() {
+    function drawChartAnnotation() {
         var data = new google.visualization.DataTable();
         data.addColumn('date', 'Date');
         data.addColumn('number', 'Kepler-22b mission');
