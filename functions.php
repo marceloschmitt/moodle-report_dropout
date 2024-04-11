@@ -221,8 +221,8 @@ $chartScript = "
         title: 'Density of Precious Metals, in g/cm^3',
         width: 600,
         height: 400,
-        bar: {groupWidth: "95%"},
-        legend: { position: "none" },
+        bar: {groupWidth: '95%'},
+        legend: { position: 'none' },
       };
       var chart = new google.visualization.BarChart(document.getElementById("barchart"));
       chart.draw(view, options);
