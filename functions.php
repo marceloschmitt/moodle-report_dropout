@@ -111,7 +111,7 @@ $chartScript = "
       google.charts.setOnLoadCallback(drawSeriesChart);
       google.charts.setOnLoadCallback(drawChartBar);
       google.charts.setOnLoadCallback(drawChartAnnotation);
-      google.charts.setOnLoadCallback(drawChartAnnotation);
+      google.charts.setOnLoadCallback(drawChartGantt);
 
 
 
@@ -212,7 +212,7 @@ $chartScript = "
       return days * 24 * 60 * 60 * 1000;
     }
 
-    function drawChart() {
+    function drawChartGantt() {
 
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Task ID');
