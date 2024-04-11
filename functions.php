@@ -214,7 +214,7 @@ $chartScript = "
                        { calc: "stringify",
                          sourceColumn: 1,
                          type: "string",
-                         role: "annotation" },
+                         role: "annotation" }, 
                        2]);
 
       var options = {
