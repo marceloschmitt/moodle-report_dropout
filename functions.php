@@ -111,6 +111,7 @@ $chartScript = "
       google.charts.setOnLoadCallback(drawSeriesChart);
       google.charts.setOnLoadCallback(drawChartBar);
       google.charts.setOnLoadCallback(drawChartAnnotation);
+      google.charts.setOnLoadCallback(drawChartAnnotation);
 
 
 
@@ -239,7 +240,7 @@ $chartScript = "
         height: 275
       };
 
-      var chart = new google.visualization.Gantt(document.getElementById('chart_div'));
+      var chart = new google.visualization.Gantt(document.getElementById('chartGantt'));
 
       chart.draw(data, options);
     }
