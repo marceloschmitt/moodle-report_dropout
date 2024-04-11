@@ -202,11 +202,11 @@ $chartScript = "
 
       function drawChart() {
       var data = google.visualization.arrayToDataTable([
-
-        ["Copper", 8.94, "#b87333"],
-        ["Silver", 10.49, "silver"],
-        ["Gold", 19.30, "gold"],
-        ["Platinum", 21.45, "color: #e5e4e2"]
+	['Element', 'Density', { role: "style" } ]
+        ['Copper', 8.94, "#b87333"],
+        ['Silver', 10.49, 'silver'],
+        ['Gold', 19.30, 'gold'],
+        ['Platinum, 21.45, 'color: #e5e4e2']
       ]);
 
       var view = new google.visualization.DataView(data);
