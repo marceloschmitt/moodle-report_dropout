@@ -269,7 +269,7 @@ $chartScript = "
                                   79463, 'Gallantors', 'Omniscience achieved']
         ]);
 
-        var chart = new google.visualization.AnnotationChart(document.getElementById('chart_annotation'));
+        var chart = new google.visualization.AnnotationChart(document.getElementById('chartAnnotation'));
 
         var options = {
           displayAnnotations: true
