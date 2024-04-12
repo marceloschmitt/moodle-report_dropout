@@ -107,6 +107,7 @@ $chartScript = "
       google.charts.load('current', {'packages':['bar']});
       google.charts.load('current', {'packages':['annotationchart']});
       google.charts.load('current', {'packages':['gauge']});
+      google.charts.load('current', {'packages':['geochart']});
 
       google.charts.setOnLoadCallback(drawChart);
       google.charts.setOnLoadCallback(drawChartGantt);
@@ -120,6 +121,7 @@ $chartScript = "
       google.charts.setOnLoadCallback(drawChartDif);
       google.charts.setOnLoadCallback(drawChartPizza);
       google.charts.setOnLoadCallback(drawChartMeter);
+      google.charts.setOnLoadCallback(drawChartGeo);
 
      function drawChart() {
         var data = google.visualization.arrayToDataTable([
@@ -432,6 +434,25 @@ $chartScript = "
           chart.draw(data, options);
         }, 26000);
       }
+
+      function drawChartGeo() {
+        var data = google.visualization.arrayToDataTable([
+          ['Country', 'Popularity'],
+          ['Germany', 200],
+          ['United States', 300],
+          ['Brazil', 400],
+          ['Canada', 500],
+          ['France', 600],
+          ['RU', 700]
+        ]);
+
+        var options = {};
+
+        var chart = new google.visualization.GeoChart(document.getElementById('chartGeo'));
+
+        chart.draw(data, options);
+      }
+      
    </script>
 ";
    return $chartScript;
