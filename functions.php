@@ -126,6 +126,7 @@ $chartScript = "
       google.charts.setOnLoadCallback(drawChartHist);
       google.charts.setOnLoadCallback(drawChartArea);
       google.charts.setOnLoadCallback(drawChartSank);
+      google.charts.setOnLoadCallback(drawChartDisp);
 
      function drawChart() {
         var data = google.visualization.arrayToDataTable([
@@ -538,6 +539,29 @@ $chartScript = "
 
         // Instantiates and draws our chart, passing in some options.
         var chart = new google.visualization.Sankey(document.getElementById('chartSank'));
+        chart.draw(data, options);
+      }
+
+      function drawChartDisp() {
+        var data = google.visualization.arrayToDataTable([
+          ['Age', 'Weight'],
+          [ 8,      12],
+          [ 4,      5.5],
+          [ 11,     14],
+          [ 4,      5],
+          [ 3,      3.5],
+          [ 6.5,    7]
+        ]);
+
+        var options = {
+          title: 'Age vs. Weight comparison',
+          hAxis: {title: 'Age', minValue: 0, maxValue: 15},
+          vAxis: {title: 'Weight', minValue: 0, maxValue: 15},
+          legend: 'none'
+        };
+
+        var chart = new google.visualization.ScatterChart(document.getElementById('chartDisp'));
+
         chart.draw(data, options);
       }
    </script>
