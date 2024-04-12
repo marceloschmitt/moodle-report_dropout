@@ -116,6 +116,7 @@ $chartScript = "
       google.charts.setOnLoadCallback(drawChartCandle);
       google.charts.setOnLoadCallback(drawChartColumn);
       google.charts.setOnLoadCallback(drawChartComb);
+      google.charts.setOnLoadCallback(drawChartDif);
 
      function drawChart() {
         var data = google.visualization.arrayToDataTable([
@@ -349,7 +350,32 @@ $chartScript = "
         var chart = new google.visualization.ComboChart(document.getElementById('chartComb'));
         chart.draw(data, options);
       }
-    
+
+      function drawChartDif() {
+      var oldData = google.visualization.arrayToDataTable([
+      ['Major', 'Degrees'],
+      ['Business', 256070], ['Education', 108034],
+      ['Social Sciences & History', 127101], ['Health', 81863],
+      ['Psychology', 74194]]);
+
+    var newData = google.visualization.arrayToDataTable([
+      ['Major', 'Degrees'],
+      ['Business', 358293], ['Education', 101265],
+      ['Social Sciences & History', 172780], ['Health', 129634],
+      ['Psychology', 97216]]);
+
+    var options = { pieSliceText: 'none' };
+
+    var chartBefore = new google.visualization.PieChart(document.getElementById('chartDif_before'));
+    var chartAfter = new google.visualization.PieChart(document.getElementById('chartDif_after'));
+    var chartDiff = new google.visualization.PieChart(document.getElementById('chartDif_diff'));
+
+    chartBefore.draw(oldData, options);
+    chartAfter.draw(newData, options);
+
+    var diffData = chartDiff.computeDiff(oldData, newData);
+    chartDiff.draw(diffData, options);
+  }
    </script>
 ";
    return $chartScript;
