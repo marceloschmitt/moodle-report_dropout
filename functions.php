@@ -127,6 +127,7 @@ $chartScript = "
       google.charts.setOnLoadCallback(drawChartArea);
       google.charts.setOnLoadCallback(drawChartSank);
       google.charts.setOnLoadCallback(drawChartDisp);
+      google.charts.setOnLoadCallback(drawChartDegr);
 
      function drawChart() {
         var data = google.visualization.arrayToDataTable([
@@ -561,6 +562,26 @@ $chartScript = "
         };
 
         var chart = new google.visualization.ScatterChart(document.getElementById('chartDisp'));
+
+        chart.draw(data, options);
+      }
+
+      function drawChartDegr() {
+        var data = google.visualization.arrayToDataTable([
+          ['Director (Year)',  'Rotten Tomatoes', 'IMDB'],
+          ['Alfred Hitchcock (1935)', 8.4,         7.9],
+          ['Ralph Thomas (1959)',     6.9,         6.5],
+          ['Don Sharp (1978)',        6.5,         6.4],
+          ['James Hawes (2008)',      4.4,         6.2]
+        ]);
+
+        var options = {
+          title: 'The decline of \'The 39 Steps\'',
+          vAxis: {title: 'Accumulated Rating'},
+          isStacked: true
+        };
+
+        var chart = new google.visualization.SteppedAreaChart(document.getElementById('chartDegr'));
 
         chart.draw(data, options);
       }
