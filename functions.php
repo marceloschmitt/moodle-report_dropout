@@ -238,7 +238,7 @@ $chartScript = "
           bars: 'horizontal' // Required for Material Bar Charts.
         };
 
-        var chart = new google.charts.Bar(document.getElementById('barchart'));
+        var chart = new google.charts.Bar(document.getElementById('chartBar'));
 
         chart.draw(data, google.charts.Bar.convertOptions(options));
     }
