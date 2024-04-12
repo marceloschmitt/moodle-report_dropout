@@ -108,7 +108,7 @@ $chartScript = "
       google.charts.load('current', {'packages':['annotationchart']});
       google.charts.load('current', {'packages':['gauge']});
       google.charts.load('current', {'packages':['geochart']});
-      google.charts.load('current', {packages:['orgchart']});
+      google.charts.load('current', {'packages':['sankey']});
 
       google.charts.setOnLoadCallback(drawChart);
       google.charts.setOnLoadCallback(drawChartGantt);
@@ -125,7 +125,7 @@ $chartScript = "
       google.charts.setOnLoadCallback(drawChartGeo);
       google.charts.setOnLoadCallback(drawChartHist);
       google.charts.setOnLoadCallback(drawChartArea);
-      google.charts.setOnLoadCallback(drawChartOrganiz);
+      google.charts.setOnLoadCallback(drawChartSankey);
 
      function drawChart() {
         var data = google.visualization.arrayToDataTable([
@@ -517,27 +517,28 @@ $chartScript = "
         chart.draw(data, options);
       }
 
-      function drawChartOrganiz() {
+	function drawChartSankey() {
         var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Name');
-        data.addColumn('string', 'Manager');
-        data.addColumn('string', 'ToolTip');
-
-        // For each orgchart box, provide the name, manager, and tooltip to show.
+        data.addColumn('string', 'From');
+        data.addColumn('string', 'To');
+        data.addColumn('number', 'Weight');
         data.addRows([
-          [{'v':'Mike', 'f':'Mike<div style='color:red; font-style:italic'>President</div>'},
-           '', 'The President'],
-          [{'v':'Jim', 'f':'Jim<div style='color:red; font-style:italic'>Vice President</div>'},
-           'Mike', 'VP'],
-          ['Alice', 'Mike', ''],
-          ['Bob', 'Jim', 'Bob Sponge'],
-          ['Carol', 'Bob', '']
+          [ 'A', 'X', 5 ],
+          [ 'A', 'Y', 7 ],
+          [ 'A', 'Z', 6 ],
+          [ 'B', 'X', 2 ],
+          [ 'B', 'Y', 9 ],
+          [ 'B', 'Z', 4 ]
         ]);
 
-        // Create the chart.
-        var chart = new google.visualization.OrgChart(document.getElementById('chartOrg'));
-        // Draw the chart, setting the allowHtml option to true for the tooltips.
-        chart.draw(data, {'allowHtml':true});
+        // Sets chart options.
+        var options = {
+          width: 600,
+        };
+
+        // Instantiates and draws our chart, passing in some options.
+        var chart = new google.visualization.Sankey(document.getElementById('chartSankey'));
+        chart.draw(data, options);
       }
    </script>
 ";
