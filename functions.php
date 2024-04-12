@@ -111,7 +111,6 @@ $chartScript = "
       google.charts.load('current', {'packages':['sankey']});
       google.charts.load('current', {'packages':['table']});
       google.charts.load('current', {'packages':['treemap']});
-      google.charts.load('upcoming', {'packages': ['vegachart']});
       
       google.charts.setOnLoadCallback(drawChart);
       google.charts.setOnLoadCallback(drawChartGantt);
@@ -134,7 +133,7 @@ $chartScript = "
       google.charts.setOnLoadCallback(drawChartTable);
       google.charts.setOnLoadCallback(drawChartTreemap);
       google.charts.setOnLoadCallback(drawChartLineTend);
-      google.charts.setOnLoadCallback(drawChartVeg);
+      google.charts.setOnLoadCallback(drawChartCasc);
 
      function drawChart() {
         var data = google.visualization.arrayToDataTable([
@@ -690,107 +689,27 @@ $chartScript = "
         chartExponential.draw(data, options);
       }
 
-      function drawChartVeg() {
-        const dataTable = new google.visualization.DataTable();
-        dataTable.addColumn({type: 'string', 'id': 'category'});
-        dataTable.addColumn({type: 'number', 'id': 'amount'});
-        dataTable.addRows([
-          ['A', 28],
-          ['B', 55],
-          ['C', 43],
-          ['D', 91],
-          ['E', 81],
-          ['F', 53],
-          ['G', 19],
-          ['H', 87],
-        ]);
+      function drawChartCasc() {
+        var data = google.visualization.arrayToDataTable([
+          ['Mon', 28, 28, 38, 38],
+          ['Tue', 38, 38, 55, 55],
+          ['Wed', 55, 55, 77, 77],
+          ['Thu', 77, 77, 66, 66],
+          ['Fri', 66, 66, 22, 22]
+          // Treat the first row as data.
+        ], true);
 
-        const options = {
-          'vega': {
-            '$schema': 'https://vega.github.io/schema/vega/v4.json',
-            'width': 500,
-            'height': 200,
-            'padding': 5,
-
-            'data': [{'name': 'table', 'source': 'datatable'}],
-
-            'signals': [
-              {
-                'name': 'tooltip',
-                'value': {},
-                'on': [
-                  {'events': 'rect:mouseover', 'update': 'datum'},
-                  {'events': 'rect:mouseout',  'update': '{}'}
-                ]
-              }
-            ],
-
-            'scales': [
-              {
-                'name: 'xscale',
-                'type': 'band',
-                'domain': {'data': 'table', 'fiel': 'category'},
-                'range': 'width',
-                'padding': 0.05,
-                'round': true
-              },
-              {
-                'name': 'yscale',
-                'domain': {'data': 'table', 'field': 'amount'},
-                'nice': true,
-                'range': 'height'
-              }
-            ],
-
-            'axes': [
-              { 'orient': 'bottom', 'scale': 'xscale' },
-              { 'orient': 'left', 'scale': 'yscale' }
-            ],
-
-            'marks': [
-              {
-                'type': 'rect',
-                'from': {'data':'table'},
-                'encode': {
-                  'enter': {
-                    'x': {'scale': 'xscale', 'field': 'category'},
-                    'width': {'scale': 'xscale', 'band': 1},
-                    'y': {'scale': 'yscale', 'field': 'amount'},
-                    'y2': {'scale': 'yscale', 'value': 0}
-                  },
-                  'update': {
-                    'fill': {'value': 'steelblue'}
-                  },
-                  'hover': {
-                    'fill': {'value': 'red'}
-                  }
-                }
-              },
-              {
-                'type': 'text',
-                'encode': {
-                  'enter': {
-                    'align': {'value': 'center'},
-                    'baseline': {'value': 'bottom'},
-                    'fill': {'value': '#333'}
-                  },
-                  'update': {
-                    'x': {'scale': 'xscale', 'signal': 'tooltip.category', 'band': 0.5},
-                    'y': {'scale': 'yscale', 'signal': 'tooltip.amount', 'offset': -2},
-                    'text': {'signal': 'tooltip.amount'},
-                    'fillOpacity': [
-                      {'test': 'datum === tooltip', 'value': 0},
-                      {'value': 1}
-                    ]
-                  }
-                }
-              }
-            ]
+        var options = {
+          legend: 'none',
+          bar: { groupWidth: '100%' }, // Remove space between bars.
+          candlestick: {
+            fallingColor: { strokeWidth: 0, fill: '#a52714' }, // red
+            risingColor: { strokeWidth: 0, fill: '#0f9d58' }   // green
           }
         };
 
-        const chart = new google.visualization.VegaChart(document.getElementById('chartVeg'));
-        chart.draw(dataTable, options);
+        var chart = new google.visualization.CandlestickChart(document.getElementById('chartCasc'));
+        chart.draw(data, options);
       }
    </script>
 ";
