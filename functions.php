@@ -106,12 +106,14 @@ $chartScript = "
       google.charts.load('current', {'packages':['corechart']});  
       google.charts.load('current', {'packages':['bar']});
       google.charts.load('current', {'packages':['annotationchart']});
+
       google.charts.setOnLoadCallback(drawChart);
-      google.charts.setOnLoadCallback(drawChartSimple);
-      google.charts.setOnLoadCallback(drawSeriesChart);
+      google.charts.setOnLoadCallback(drawChartGantt);
+      google.charts.setOnLoadCallback(drawChartLine);
+      google.charts.setOnLoadCallback(drawChartBubble);
       google.charts.setOnLoadCallback(drawChartBar);
       google.charts.setOnLoadCallback(drawChartAnnotation);
-      google.charts.setOnLoadCallback(drawChartGantt);
+      google.charts.setOnLoadCallback(drawChartCandle);
 
 
 
@@ -142,77 +144,8 @@ $chartScript = "
 
         chart.draw(data, options);  
      }
-     
-     function drawChartSimple() {
-	var passedArray = " . $json . ";
-        var data = google.visualization.arrayToDataTable(passedArray);
-        var options = {
-          title: 'Interações totais no ambiente',
-          curveType: 'function',
-	  legend: { position: 'none' },
-	  height: 100,
-          vAxis: { viewWindow: {min: 0,}}
-        };
-	
-	var chart = new google.visualization.LineChart(document.getElementById('line_chart_teste'));
-        chart.draw(data, options);
-     }
-      
-     function drawSeriesChart() {
 
-      var data = google.visualization.arrayToDataTable([
-        ['ID', 'Life Expectancy', 'Fertility Rate', 'Region',     'Population'],
-        ['CAN',    80.66,              1.67,      'North America',  33739900],
-        ['DEU',    79.84,              1.36,      'Europe',         81902307],
-        ['DNK',    78.6,               1.84,      'Europe',         5523095],
-        ['EGY',    72.73,              2.78,      'Middle East',    79716203],
-        ['GBR',    80.05,              2,         'Europe',         61801570],
-        ['IRN',    72.49,              1.7,       'Middle East',    73137148],
-        ['IRQ',    68.09,              4.77,      'Middle East',    31090763],
-        ['ISR',    81.55,              2.96,      'Middle East',    7485600],
-        ['RUS',    68.6,               1.54,      'Europe',         141850000],
-        ['USA',    78.09,              2.05,      'North America',  307007000]
-      ]);
-
-      var options = {
-        title: 'Fertility rate vs life expectancy in selected countries (2010).' +
-          ' X=Life Expectancy, Y=Fertility, Bubble size=Population, Bubble color=Region',
-        hAxis: {title: 'Life Expectancy'},
-        vAxis: {title: 'Fertility Rate'},
-        bubble: {textStyle: {fontSize: 11}}
-      };
-
-      var chart = new google.visualization.BubbleChart(document.getElementById('bubble_chart_teste'));
-      chart.draw(data, options);
-    }
-
-    function drawChartBar() {
-        var data = google.visualization.arrayToDataTable([
-          ['Year', 'Sales', 'Expenses', 'Profit'],
-          ['2014', 1000, 400, 200],
-          ['2015', 1170, 460, 250],
-          ['2016', 660, 1120, 300],
-          ['2017', 1030, 540, 350]
-    ]);
-
-        var options = {
-          chart: {
-            title: 'Company Performance',
-            subtitle: 'Sales, Expenses, and Profit: 2014-2017',
-          },
-          bars: 'horizontal' // Required for Material Bar Charts.
-        };
-
-        var chart = new google.charts.Bar(document.getElementById('barchart'));
-
-        chart.draw(data, google.charts.Bar.convertOptions(options));
-    }
-      
-    function daysToMilliseconds(days) {
-      return days * 24 * 60 * 60 * 1000;
-    }
-
-    function drawChartGantt() {
+     function drawChartGantt() {
 
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Task ID');
@@ -243,6 +176,75 @@ $chartScript = "
       var chart = new google.visualization.Gantt(document.getElementById('chartGantt'));
 
       chart.draw(data, options);
+    }
+     
+     function drawChartLine() {
+	var passedArray = " . $json . ";
+        var data = google.visualization.arrayToDataTable(passedArray);
+        var options = {
+          title: 'Interações totais no ambiente',
+          curveType: 'function',
+	  legend: { position: 'none' },
+	  height: 100,
+          vAxis: { viewWindow: {min: 0,}}
+        };
+	
+	var chart = new google.visualization.LineChart(document.getElementById('line_chart_teste'));
+        chart.draw(data, options);
+     }
+      
+     function drawChartBubble() {
+
+      var data = google.visualization.arrayToDataTable([
+        ['ID', 'Life Expectancy', 'Fertility Rate', 'Region',     'Population'],
+        ['CAN',    80.66,              1.67,      'North America',  33739900],
+        ['DEU',    79.84,              1.36,      'Europe',         81902307],
+        ['DNK',    78.6,               1.84,      'Europe',         5523095],
+        ['EGY',    72.73,              2.78,      'Middle East',    79716203],
+        ['GBR',    80.05,              2,         'Europe',         61801570],
+        ['IRN',    72.49,              1.7,       'Middle East',    73137148],
+        ['IRQ',    68.09,              4.77,      'Middle East',    31090763],
+        ['ISR',    81.55,              2.96,      'Middle East',    7485600],
+        ['RUS',    68.6,               1.54,      'Europe',         141850000],
+        ['USA',    78.09,              2.05,      'North America',  307007000]
+      ]);
+
+      var options = {
+        title: 'Fertility rate vs life expectancy in selected countries (2010).' +
+          ' X=Life Expectancy, Y=Fertility, Bubble size=Population, Bubble color=Region',
+        hAxis: {title: 'Life Expectancy'},
+        vAxis: {title: 'Fertility Rate'},
+        bubble: {textStyle: {fontSize: 11}}
+      };
+
+      var chart = new google.visualization.BubbleChart(document.getElementById('chartBubble'));
+      chart.draw(data, options);
+    }
+
+    function drawChartBar() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Sales', 'Expenses', 'Profit'],
+          ['2014', 1000, 400, 200],
+          ['2015', 1170, 460, 250],
+          ['2016', 660, 1120, 300],
+          ['2017', 1030, 540, 350]
+    ]);
+
+        var options = {
+          chart: {
+            title: 'Company Performance',
+            subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+          },
+          bars: 'horizontal' // Required for Material Bar Charts.
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('barchart'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+    }
+      
+    function daysToMilliseconds(days) {
+      return days * 24 * 60 * 60 * 1000;
     }
     
     function drawChartAnnotation() {
@@ -276,7 +278,27 @@ $chartScript = "
         };
 
         chart.draw(data, options);
-      }	 
+      }
+      
+      function drawChartCandle() {
+    var data = google.visualization.arrayToDataTable([
+      ['Mon', 20, 28, 38, 45],
+      ['Tue', 31, 38, 55, 66],
+      ['Wed', 50, 55, 77, 80],
+      ['Thu', 77, 77, 66, 50],
+      ['Fri', 68, 66, 22, 15]
+      // Treat first row as data as well.
+    ], true);
+
+    var options = {
+      legend:'none'
+    };
+
+    var chart = new google.visualization.CandlestickChart(document.getElementById('chartCandle'));
+
+    chart.draw(data, options);
+  }
+  }
     
    </script>
 ";
