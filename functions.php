@@ -379,7 +379,6 @@ $chartScript = "
   }
 
   function drawChartPizza() {
-
         var data = google.visualization.arrayToDataTable([
           ['Task', 'Hours per Day'],
           ['Work',     11],
@@ -390,11 +389,11 @@ $chartScript = "
         ]);
 
         var options = {
-          title: 'My Daily Activities'
+          title: 'My Daily Activities',
+          is3D: true,
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('chartPizza'));
-
         chart.draw(data, options);
       }
    </script>
