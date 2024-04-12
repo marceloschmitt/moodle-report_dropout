@@ -125,7 +125,7 @@ $chartScript = "
       google.charts.setOnLoadCallback(drawChartGeo);
       google.charts.setOnLoadCallback(drawChartHist);
       google.charts.setOnLoadCallback(drawChartArea);
-      google.charts.setOnLoadCallback(drawChartSankey);
+      google.charts.setOnLoadCallback(drawChartSank);
 
      function drawChart() {
         var data = google.visualization.arrayToDataTable([
@@ -517,7 +517,7 @@ $chartScript = "
         chart.draw(data, options);
       }
 
-	function drawChartSankey() {
+	function drawChartSank() {
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'From');
         data.addColumn('string', 'To');
@@ -537,7 +537,7 @@ $chartScript = "
         };
 
         // Instantiates and draws our chart, passing in some options.
-        var chart = new google.visualization.Sankey(document.getElementById('chartSankey'));
+        var chart = new google.visualization.Sankey(document.getElementById('chartSank'));
         chart.draw(data, options);
       }
    </script>
