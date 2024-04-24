@@ -530,7 +530,7 @@ function generate_charts($studentdata) {
           hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
           vAxis: {minValue: 0}
         };
-	var chart = new google.visualization.AeraChart(document.getElementById('area_chart_behaviour'));
+	var chart = new google.visualization.AreaChart(document.getElementById('area_chart_behaviour'));
         chart.draw(data, options);
 
 	var passedArray = " . $jsonsocial . ";
