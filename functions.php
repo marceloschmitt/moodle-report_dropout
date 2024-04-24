@@ -523,25 +523,38 @@ function generate_charts($studentdata) {
       }
 
       function drawChartArea() {
-        var data = google.visualization.arrayToDataTable([
-          ['Year', 'Sales', 'Expenses'],
-          ['2013',  1000,      400],
-          ['2014',  1170,      460],
-          ['2015',  660,       1120],
-          ['2016',  1030,      540]
-        ]);
-
+	var passedArray = " . $jsonbehaviour . ";
+        var data = google.visualization.arrayToDataTable(passedArray);
         var options = {
-          title: 'Company Performance',
+          title: 'BehaviourConditions',
           hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
           vAxis: {minValue: 0}
         };
-
-        var chart = new google.visualization.AreaChart(document.getElementById('chartArea'));
+	var chart = new google.visualization.LineChart(document.getElementById('area_chart_behaviour'));
         chart.draw(data, options);
-      }
 
-	function drawChartSank() {
+	var passedArray = " . $jsonsocial . ";
+        var data = google.visualization.arrayToDataTable(passedArray);
+        var options = {
+          title: 'SocialConditions',
+          hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
+          vAxis: {minValue: 0}
+        };
+	var chart = new google.visualization.LineChart(document.getElementById('area_chart_social'));
+        chart.draw(data, options);
+
+ 	var passedArray = " . $jsoncognitive . ";
+        var data = google.visualization.arrayToDataTable(passedArray);
+        var options = {
+          title: 'CognitiveConditions',
+          hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
+          vAxis: {minValue: 0}
+        };
+	var chart = new google.visualization.LineChart(document.getElementById('area_chart_cognitive'));
+        chart.draw(data, options);
+     }
+
+     function drawChartSank() {
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'From');
         data.addColumn('string', 'To');
