@@ -622,20 +622,35 @@ function generate_charts($studentdata) {
       }
 
       function drawChartTable() {
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Name');
-        data.addColumn('number', 'Salary');
-        data.addColumn('boolean', 'Full Time Employee');
-        data.addRows([
-          ['Mike',  {v: 10000, f: '$10,000'}, true],
-          ['Jim',   {v:8000,   f: '$8,000'},  false],
-          ['Alice', {v: 12500, f: '$12,500'}, true],
-          ['Bob',   {v: 7000,  f: '$7,000'},  true]
-        ]);
+	var passedArray = " . $jsonbehaviour . ";
+        var data = google.visualization.arrayToDataTable(passedArray);
+        var options = {
+          title: 'BehaviourConditions',
+          hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
+          vAxis: {minValue: 0}
+        };
+	var chart = new google.visualization.Table(document.getElementById('table_chart_behaviour'));
+        chart.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
 
-        var table = new google.visualization.Table(document.getElementById('chartTable'));
+	var passedArray = " . $jsonsocial . ";
+        var data = google.visualization.arrayToDataTable(passedArray);
+        var options = {
+          title: 'SocialConditions',
+          hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
+          vAxis: {minValue: 0}
+        };
+	var chart = new google.visualization.Table(document.getElementById('table_chart_social'));
+        chart.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
 
-        table.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
+ 	var passedArray = " . $jsoncognitive . ";
+        var data = google.visualization.arrayToDataTable(passedArray);
+        var options = {
+          title: 'CognitiveConditions',
+          hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
+          vAxis: {minValue: 0}
+        };
+	var chart = new google.visualization.Table(document.getElementById('table_chart_cognitive'));
+        chart.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
       }
 
       function drawChartTreemap() {
