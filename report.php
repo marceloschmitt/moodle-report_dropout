@@ -39,7 +39,7 @@ $course = get_course($courseid);
 
 // Get student data.
 $studentdata = new \report_dropout\student_data($userid);
-$lineChart = generate_chart($studentdata);
+$lineChart = generate_charts($studentdata);
 
 // Set $PAGE parameters.
 $PAGE->set_url('/report/dropout/report.php', array('id' => $courseid, 'userid' => $userid));
