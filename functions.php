@@ -88,16 +88,8 @@ function generate_table($studentData, $selected) {
 
 function generate_linechart($studentdata) {
 
-	$temp[0] = 'Periodo';
-	$temp[1] = 'Valor';
-	$y = 1;
-	$behaviourindicator1[] = $temp;
-	foreach($studentdata->behaviourindicator1 AS $value) {
-		$temp[0] = 'P' . $y++;
-		$temp[1] = $value->value;
-		$behaviourindicator1[] = $temp;
-	}
-	$json = json_encode($behaviourindicator1);
+	$json = json_encode($studentdata->behaviourconditions);
+	
    // Google Charts JavaScript code
 $chartScript = "
  <script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>
@@ -200,9 +192,9 @@ $chartScript = "
 	var passedArray = " . $json . ";
         var data = google.visualization.arrayToDataTable(passedArray);
         var options = {
-          title: 'Interações totais no ambiente',
+          title: 'BehaviourConditions',
           curveType: 'function',
-	  legend: { position: 'none' },
+	  legend: { position: 'right' },
 	  height: 100,
           vAxis: { viewWindow: {min: 0,}}
         };
