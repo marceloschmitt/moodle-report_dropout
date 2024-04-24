@@ -47,7 +47,7 @@ $PAGE->set_pagelayout('standard');
 $PAGE->set_title("testes report bolsista");
 $PAGE->set_heading($course->fullname);
 
-$lineChart = generate_linechart($studentdata);
+$lineChart = generate_charts($studentdata);
 
 $output = $PAGE->get_renderer('report_dropout');
 echo $output->header();
