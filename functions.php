@@ -86,12 +86,13 @@ function generate_table($studentData, $selected) {
 }
 
 
-function generate_linechart($studentdata) {
-
-	$json = json_encode($studentdata->behaviourconditions);
+function generate_charts($studentdata) {
+	$jsonbehaviour = json_encode($studentdata->behaviourconditions);
+	$jsonsocial = json_encode($studentdata->socialconditions);
+	$jsoncognitive = json_encode($studentdata->cognitiveconditions);
 	
    // Google Charts JavaScript code
-$chartScript = "
+	$chartScript = "
  <script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>
     <script type='text/javascript'>
       google.charts.load('current', {'packages':['gantt']});
@@ -189,7 +190,7 @@ $chartScript = "
     }
      
      function drawChartLine() {
-	var passedArray = " . $json . ";
+	var passedArray = " . $jsonbehaviour . ";
         var data = google.visualization.arrayToDataTable(passedArray);
         var options = {
           title: 'BehaviourConditions',
@@ -198,8 +199,31 @@ $chartScript = "
 	  height: 100,
           vAxis: { viewWindow: {min: 0,}}
         };
-	
-	var chart = new google.visualization.LineChart(document.getElementById('line_chart_teste'));
+	var chart = new google.visualization.LineChart(document.getElementById('line_chart_behaviour'));
+        chart.draw(data, options);
+
+	var passedArray = " . $jsonsocial . ";
+        var data = google.visualization.arrayToDataTable(passedArray);
+        var options = {
+          title: 'SocialConditions',
+          curveType: 'function',
+	  legend: { position: 'right' },
+	  height: 100,
+          vAxis: { viewWindow: {min: 0,}}
+        };
+	var chart = new google.visualization.LineChart(document.getElementById('line_chart_social'));
+        chart.draw(data, options);
+
+ 	var passedArray = " . $jsoncognitive . ";
+        var data = google.visualization.arrayToDataTable(passedArray);
+        var options = {
+          title: 'CognitiveConditions',
+          curveType: 'function',
+	  legend: { position: 'right' },
+	  height: 100,
+          vAxis: { viewWindow: {min: 0,}}
+        };
+	var chart = new google.visualization.LineChart(document.getElementById('line_chart_cognitive'));
         chart.draw(data, options);
      }
       
