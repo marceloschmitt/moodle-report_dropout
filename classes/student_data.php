@@ -18,6 +18,10 @@ class student_data {
     var $cognitivecondition2 = array();
     var $cognitivecondition3 = array();
 
+    var $behaviourconditions = array();
+    var $socialconditions = array();
+    var $congnitiveconditions = array();
+	
     public function __construct($userid) {
 	    $contador_temp = 5;
 	    $this->header[] = (object) array('month' => 'ago');
@@ -72,6 +76,14 @@ class student_data {
 	    for ($i = 0; $i < ($contador_temp*2); $i++) {
 	    	$value = rand(0, 10);
 		$this->cognitiveindicator3[] = (object) array('value' => $value);
+	    }
+	    $this->behaviourconditions[] = array('Term', 'Behaviour1',  'Behaviour2', 'Behaviour3', 'Behaviour4');
+            $this->socialconditions[] = array('Term', 'Social1',  'Social2', 'Social3', 'Social4');
+            $this->cognitiveconditions[] = array('Term', 'Cognitive1',  'Cognitive2', 'Cognitive3');
+            for ($i = 0 ; $i < ($contador_temp*2) ; $i++) {
+                $this->behaviourconditions[] = array("P$i", $this->behaviourindicator1[$i]->value,  $this->behaviourindicator2[$i]->value,  $this->behaviourindicator3[$i]->value,  $this->behaviourindicator4[$i]->value);
+                $this->socialconditions[] = array("P$i", $this->socialindicator1[$i]->value,  $this->socialindicator2[$i]->value,  $this->socialindicator3[$i]->value,  $this->socialindicator4[$i]->value);
+                $this->cognitiveconditions[] = array("P$i", $this->cognitiveindicator1[$i]->value, $this->cognitiveindicator2[$i]->value,  $this->cognitiveindicator3[$i]->value);
 	    }
     }
 }
