@@ -86,12 +86,19 @@ class student_data {
                 $this->socialconditions[] = array("P$i", $this->socialindicator1[$i]->value,  $this->socialindicator2[$i]->value,  $this->socialindicator3[$i]->value,  $this->socialindicator4[$i]->value);
                 $this->cognitiveconditions[] = array("P$i", $this->cognitiveindicator1[$i]->value, $this->cognitiveindicator2[$i]->value,  $this->cognitiveindicator3[$i]->value);
 	    }
-	    $this->allconditions[] = array_column($this->behaviourconditions, 'Term');
-	    $this->allconditions[] = array_column($this->behaviourconditions, 'Behaviour1');
-	    $this->allconditions[] = array_column($this->behaviourconditions, 'Behaviour2');
-	    $this->allconditions[] = array_column($this->behaviourconditions, 'Behaviour3');
-	    $this->allconditions[] = array_column($this->behaviourconditions, 'Behaviour4');
-
-	    
+	    $this->allconditions[] = array_column($this->behaviourconditions, 0);
+            $this->allconditions[0][0] = "Conditions";
+            $this->allconditions[] = array_column($this->behaviourconditions, 1);
+            $this->allconditions[] = array_column($this->behaviourconditions, 2);
+            $this->allconditions[] = array_column($this->behaviourconditions, 3);
+            $this->allconditions[] = array_column($this->behaviourconditions, 4);
+	    $this->allconditions[] = array_column($this->socialconditions, 1);
+            $this->allconditions[] = array_column($this->socialconditions, 2);
+            $this->allconditions[] = array_column($this->socialconditions, 3);
+            $this->allconditions[] = array_column($this->socialconditions, 4);
+	    $this->allconditions[] = array_column($this->cognitiveconditions, 1);
+            $this->allconditions[] = array_column($this->cognitiveconditions, 2);
+            $this->allconditions[] = array_column($this->cognitiveconditions, 3);
+          
     }
 }
