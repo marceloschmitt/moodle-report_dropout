@@ -630,27 +630,7 @@ function generate_charts($studentdata) {
           hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
           vAxis: {minValue: 0}
         };
-	var chart = new google.visualization.Table(document.getElementById('table_chart_behaviour'));
-        chart.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
-
-	var passedArray = " . $jsonsocial . ";
-        var data = google.visualization.arrayToDataTable(passedArray);
-        var options = {
-          title: 'SocialConditions',
-          hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
-          vAxis: {minValue: 0}
-        };
-	var chart = new google.visualization.Table(document.getElementById('table_chart_social'));
-        chart.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
-
- 	var passedArray = " . $jsoncognitive . ";
-        var data = google.visualization.arrayToDataTable(passedArray);
-        var options = {
-          title: 'CognitiveConditions',
-          hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
-          vAxis: {minValue: 0}
-        };
-	var chart = new google.visualization.Table(document.getElementById('table_chart_cognitive'));
+	var chart = new google.visualization.Table(document.getElementById('table_chart'));
         chart.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
       }
 
