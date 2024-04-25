@@ -21,6 +21,7 @@ class student_data {
     var $behaviourconditions = array();
     var $socialconditions = array();
     var $congnitiveconditions = array();
+    var $allconditions = array();
 	
     public function __construct($userid) {
 	    $contador_temp = 5;
@@ -85,5 +86,12 @@ class student_data {
                 $this->socialconditions[] = array("P$i", $this->socialindicator1[$i]->value,  $this->socialindicator2[$i]->value,  $this->socialindicator3[$i]->value,  $this->socialindicator4[$i]->value);
                 $this->cognitiveconditions[] = array("P$i", $this->cognitiveindicator1[$i]->value, $this->cognitiveindicator2[$i]->value,  $this->cognitiveindicator3[$i]->value);
 	    }
+	    $this->allconditions[] = array_column($this->behaviourconditions, 'Term');
+	    $this->allconditions[] = array_column($this->behaviourconditions, 'Behaviour1');
+	    $this->allconditions[] = array_column($this->behaviourconditions, 'Behaviour2');
+	    $this->allconditions[] = array_column($this->behaviourconditions, 'Behaviour3');
+	    $this->allconditions[] = array_column($this->behaviourconditions, 'Behaviour4');
+
+	    
     }
 }
