@@ -90,6 +90,7 @@ function generate_charts($studentdata) {
 	$jsonbehaviour = json_encode($studentdata->behaviourconditions);
 	$jsonsocial = json_encode($studentdata->socialconditions);
 	$jsoncognitive = json_encode($studentdata->cognitiveconditions);
+	$jsonallconditions = json_encode($studentdata->allconditions);
 	
    // Google Charts JavaScript code
 	$chartScript = "
@@ -622,7 +623,7 @@ function generate_charts($studentdata) {
       }
 
       function drawChartTable() {
-	var passedArray = " . $jsonbehaviour . ";
+	var passedArray = " . $jsonallconditions . ";
         var data = google.visualization.arrayToDataTable(passedArray);
         var options = {
           title: 'BehaviourConditions',
