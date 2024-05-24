@@ -79,11 +79,16 @@ class student_data {
 		$this->cognitiveindicator3[] = (object) array('value' => $value);
 	    }
 	    $this->behaviourconditions[] = array('Term', get_string('Behaviour1', 'report_dropout'),
-						         get_string('Behaviour1', 'report_dropout'),
-						         get_string('Behaviour1', 'report_dropout'),
-						         get_string('Behaviour1', 'report_dropout'));
-            $this->socialconditions[] = array('Term', 'Social1',  'Social2', 'Social3', 'Social4');
-            $this->cognitiveconditions[] = array('Term', 'Cognitive1',  'Cognitive2', 'Cognitive3');
+						         get_string('Behaviour2', 'report_dropout'),
+						         get_string('Behaviour3', 'report_dropout'),
+						         get_string('Behaviour4', 'report_dropout'));
+            $this->socialconditions[] = array('Term', get_string('Social1', 'report_dropout'),
+						      get_string('Social2', 'report_dropout'),
+					              get_string('Social3', 'report_dropout'),
+					              get_string('Social4', 'report_dropout'));
+	    $this->cognitiveconditions[] = array('Term', get_string('Cognitive1', 'report_dropout'),
+						         get_string('Cognitive2', 'report_dropout'),
+					                 get_string('Cognitive3', 'report_dropout'));
             for ($i = 0 ; $i < ($contador_temp*2) ; $i++) {
                 $this->behaviourconditions[] = array("P$i", $this->behaviourindicator1[$i]->value,  $this->behaviourindicator2[$i]->value,  $this->behaviourindicator3[$i]->value,  $this->behaviourindicator4[$i]->value);
                 $this->socialconditions[] = array("P$i", $this->socialindicator1[$i]->value,  $this->socialindicator2[$i]->value,  $this->socialindicator3[$i]->value,  $this->socialindicator4[$i]->value);
