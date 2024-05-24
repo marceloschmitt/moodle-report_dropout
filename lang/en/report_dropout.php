@@ -24,6 +24,10 @@
 
 $string['pluginname'] = 'Dropout report';
 
+$string['behaviourindicators'] = 'Indicadores Comportamentais';
+$string['socialindicators'] = 'Indicadores Sociais';
+$string['cognitiveindicators'] = 'Indicadores Cognitivos';
+
 $string['Behaviour1'] = 'Acompanhamento ao cronograma';
 $string['Behaviour2'] = 'Número de acessos ao curso';
 $string['Behaviour3'] = 'Conteúdos acessados';
@@ -34,3 +38,4 @@ $string['Social3'] = 'Interações com professores e tutores';
 $string['Cognitive1'] = 'Desempenho geral';
 $string['Cognitive2'] = 'Desempenho em atividades não avaliativas';
 $string['Cognitive3'] = 'Desempenho em atividades avaliativas';
+
