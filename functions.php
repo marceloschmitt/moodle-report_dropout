@@ -91,6 +91,10 @@ function generate_charts($studentdata) {
 	$jsonsocial = json_encode($studentdata->socialconditions);
 	$jsoncognitive = json_encode($studentdata->cognitiveconditions);
 	$jsonallconditions = json_encode($studentdata->allconditions);
+
+	$titlebehaviour = get_string('behaviourindicators', 'report_dropout');
+	$titlesocial = get_string('socialindicators', 'report_dropout');
+	$titlecognitive = get_string('cognitiveindicators', 'report_dropout');
 	
    // Google Charts JavaScript code
 	$chartScript = "
@@ -108,7 +112,7 @@ function generate_charts($studentdata) {
         var passedArray = " . $jsonbehaviour . ";
         var data = google.visualization.arrayToDataTable(passedArray);
         var options = {
-          title: 'BehaviourConditions',
+          title: '" . $titlebehaviour . "',
           legend: { position: 'bottom' },
           height: 300,
           pointSize: 7,
