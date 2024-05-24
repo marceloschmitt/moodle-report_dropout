@@ -166,19 +166,20 @@
 </div>
 <br><BR>
         {{{script}}}
-<H3> Tabela </h3>
-    <div id="table_chart" style="width: 900px;"></div><BR>
+
+<button onclick="button_table_charts()"><H3>Tabela</h3></button>
+<div id="table_chart" width="max-content" style="display: block"></div><BR>
+<BR>
+<button onclick="button_line_charts()"><H3>Gráficos de linha</h3></button>
+<div id="line_charts" width="max-content" style="display: block">
+    <div id="line_chart_behaviour" width="max-content"></div><BR>
+    <div id="line_chart_social" width="max-content"></div><BR>
+    <div id="line_chart_cognitive" width="max-content"></div><BR>
+</div>
 <BR><BR>
-<H3> Gráficos de linha </h3>
-    <div id="line_chart_behaviour" style="width: 900px;"></div><BR>
-    <div id="line_chart_social" style="width: 900px;"></div><BR>
-    <div id="line_chart_cognitive" style="width: 900px;"></div><BR>
-<BR><BR>
-<H3> Gráficos de área </h3>
-    <div id="area_chart_behaviour" style="width: 900px;"></div><BR>
-    <div id="area_chart_social" style="width: 900px;"></div><BR>
-    <div id="area_chart_cognitive" style="width: 900px;"></div><BR>
-<BR><BR>
-<H3> Gráficos de anotação </h3>
-    <div id='chartAnnotation' style='width: 900px; height: 600px;'></div>
-<BR><BR>
+<button onclick="button_area_charts()"><H3> Gráficos de área </h3></button>
+<div id="area_charts" width="max-content" style="display: block">
+    <div id="area_chart_behaviour" width="max-content"></div><BR>
+    <div id="area_chart_social" width="max-content"></div><BR>
+    <div id="area_chart_cognitive" width="max-content"></div><BR>
+</div>
