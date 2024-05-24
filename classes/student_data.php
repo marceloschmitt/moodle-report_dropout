@@ -78,7 +78,10 @@ class student_data {
 	    	$value = rand(0, 10);
 		$this->cognitiveindicator3[] = (object) array('value' => $value);
 	    }
-	    $this->behaviourconditions[] = array('Term', 'Behaviour1',  'Behaviour2', 'Behaviour3', 'Behaviour4');
+	    $this->behaviourconditions[] = array('Term', get_string('Behaviour1', 'report_dropout'),
+						         get_string('Behaviour1', 'report_dropout'),
+						         get_string('Behaviour1', 'report_dropout'),
+						         get_string('Behaviour1', 'report_dropout'));
             $this->socialconditions[] = array('Term', 'Social1',  'Social2', 'Social3', 'Social4');
             $this->cognitiveconditions[] = array('Term', 'Cognitive1',  'Cognitive2', 'Cognitive3');
             for ($i = 0 ; $i < ($contador_temp*2) ; $i++) {
