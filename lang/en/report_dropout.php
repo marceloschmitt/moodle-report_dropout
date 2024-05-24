@@ -22,5 +22,10 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$string['pluginname'] = 'Dropout report';
+$string['pluginname'] = 'Dropout report';a
+
+$string['Behaviour1'] = 'Acompanhamento ao cronograma';
+$string['Behaviour2'] = 'Número de acessos ao curso';
+$string['Behaviour3'] = 'Conteúdos acessados';
+$string['Behaviour4'] = 'Atividades concluídas';
 
