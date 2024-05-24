@@ -129,13 +129,13 @@ function generate_charts($studentdata) {
         chart.draw(data, options);
        
         var passedArray = " . $jsonsocial . ";
-        options.title = 'SocialConditions';
+        options.title = '" . $titlesocial . "';
         var data = google.visualization.arrayToDataTable(passedArray);
         var chart = new google.visualization.LineChart(document.getElementById('line_chart_social'));
         chart.draw(data, options);
 
         var passedArray = " . $jsoncognitive . ";
-        options.title = 'CognitiveConditions';
+        options.title = '" . $titlecognitive . "';
         var data = google.visualization.arrayToDataTable(passedArray);
         var chart = new google.visualization.LineChart(document.getElementById('line_chart_cognitive'));
         chart.draw(data, options);
@@ -146,7 +146,7 @@ function generate_charts($studentdata) {
         var passedArray = " . $jsonbehaviour . ";
         var data = google.visualization.arrayToDataTable(passedArray);
         var options = {
-          title: 'BehaviourConditions',
+          title: '" . $titlebehaviour . "',
           legend: { position: 'bottom' },
           height: 300,
           series: {
@@ -163,13 +163,13 @@ function generate_charts($studentdata) {
 
         var passedArray = " . $jsonsocial . ";
         var data = google.visualization.arrayToDataTable(passedArray);
-        options.title = 'SocialBehaviour';
+        options.title = '" . $titlesocial . "';
         var chart = new google.visualization.AreaChart(document.getElementById('area_chart_social'));
         chart.draw(data, options);
 	
         var passedArray = " . $jsoncognitive . ";
         var data = google.visualization.arrayToDataTable(passedArray);
-        options.title = 'CognitiveBehaviour';
+        options.title = '" . $titlecognitive . "';
         var chart = new google.visualization.AreaChart(document.getElementById('area_chart_cognitive'));
         chart.draw(data, options);
     }
