@@ -28,4 +28,9 @@ $string['Behaviour1'] = 'Acompanhamento ao cronograma';
 $string['Behaviour2'] = 'Número de acessos ao curso';
 $string['Behaviour3'] = 'Conteúdos acessados';
 $string['Behaviour4'] = 'Atividades concluídas';
-
+$string['Social1'] = 'Interações totais no ambiente';
+$string['Social2'] = 'Interações com colegas';
+$string['Social3'] = 'Interações com professores e tutores';
+$string['Cognitive1'] = 'Desempenho geral';
+$string['Cognitive2'] = 'Desempenho em atividades não avaliativas';
+$string['Cognitive3'] = 'Desempenho em atividades avaliativas';
