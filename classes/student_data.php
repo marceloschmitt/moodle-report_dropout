@@ -13,7 +13,6 @@ class student_data {
     var $socialcondition1 = array();
     var $socialcondition2 = array();
     var $socialcondition3 = array();
-    var $socialcondition4 = array();
     var $cognitivecondition1 = array();
     var $cognitivecondition2 = array();
     var $cognitivecondition3 = array();
@@ -64,10 +63,6 @@ class student_data {
 	    }
 	    for ($i = 0; $i < ($contador_temp*2); $i++) {
 	    	$value = rand(0, 10);
-		$this->socialindicator4[] = (object) array('value' => $value);
-	    }
-	    for ($i = 0; $i < ($contador_temp*2); $i++) {
-	    	$value = rand(0, 10);
 		$this->cognitiveindicator1[] = (object) array('value' => $value);
 	    }
 	    for ($i = 0; $i < ($contador_temp*2); $i++) {
@@ -84,14 +79,13 @@ class student_data {
 						         get_string('Behaviour4', 'report_dropout'));
             $this->socialconditions[] = array('Term', get_string('Social1', 'report_dropout'),
 						      get_string('Social2', 'report_dropout'),
-					              get_string('Social3', 'report_dropout'),
-					              get_string('Social4', 'report_dropout'));
+					              get_string('Social3', 'report_dropout'));
 	    $this->cognitiveconditions[] = array('Term', get_string('Cognitive1', 'report_dropout'),
 						         get_string('Cognitive2', 'report_dropout'),
 					                 get_string('Cognitive3', 'report_dropout'));
             for ($i = 0 ; $i < ($contador_temp*2) ; $i++) {
                 $this->behaviourconditions[] = array("P$i", $this->behaviourindicator1[$i]->value,  $this->behaviourindicator2[$i]->value,  $this->behaviourindicator3[$i]->value,  $this->behaviourindicator4[$i]->value);
-                $this->socialconditions[] = array("P$i", $this->socialindicator1[$i]->value,  $this->socialindicator2[$i]->value,  $this->socialindicator3[$i]->value,  $this->socialindicator4[$i]->value);
+                $this->socialconditions[] = array("P$i", $this->socialindicator1[$i]->value,  $this->socialindicator2[$i]->value,  $this->socialindicator3[$i]->value);
                 $this->cognitiveconditions[] = array("P$i", $this->cognitiveindicator1[$i]->value, $this->cognitiveindicator2[$i]->value,  $this->cognitiveindicator3[$i]->value);
 	    }
 	    $this->allconditions[] = array_column($this->behaviourconditions, 0);
@@ -103,7 +97,6 @@ class student_data {
 	    $this->allconditions[] = array_column($this->socialconditions, 1);
             $this->allconditions[] = array_column($this->socialconditions, 2);
             $this->allconditions[] = array_column($this->socialconditions, 3);
-            $this->allconditions[] = array_column($this->socialconditions, 4);
 	    $this->allconditions[] = array_column($this->cognitiveconditions, 1);
             $this->allconditions[] = array_column($this->cognitiveconditions, 2);
             $this->allconditions[] = array_column($this->cognitiveconditions, 3);
