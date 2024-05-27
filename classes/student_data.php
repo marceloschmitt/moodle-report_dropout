@@ -83,11 +83,18 @@ class student_data {
 	    $this->cognitiveconditions[] = array('Term', get_string('Cognitive1', 'report_dropout'),
 						         get_string('Cognitive2', 'report_dropout'),
 					                 get_string('Cognitive3', 'report_dropout'));
-            for ($i = 0 ; $i < ($contador_temp*2) ; $i++) {
-                $this->behaviourconditions[] = array("P$i", $this->behaviourindicator1[$i]->value,  $this->behaviourindicator2[$i]->value,  $this->behaviourindicator3[$i]->value,  $this->behaviourindicator4[$i]->value);
-                $this->socialconditions[] = array("P$i", $this->socialindicator1[$i]->value,  $this->socialindicator2[$i]->value,  $this->socialindicator3[$i]->value);
-                $this->cognitiveconditions[] = array("P$i", $this->cognitiveindicator1[$i]->value, $this->cognitiveindicator2[$i]->value,  $this->cognitiveindicator3[$i]->value);
-	    }
+            $date = date_create("2013-03-15");
+            $enddate = date_create("2013-03-15");
+            date_add($enddate,date_interval_create_from_date_string("13 days"));
+            for ($i = 0, $j=1 ; $i < ($contador_temp*2) ; $i++, $j++) {
+                $dateinterval = date_format($date,"d/m") . "\n" . date_format($enddate, "d/m");
+                $this->behaviourconditions[] = array($dateinterval, $this->behaviourindicator1[$i]->value,  $this->behaviourindicator2[$i]->value,  $this->behaviourindicator3[$i]->value,  $this->behaviourindicator4[$i]->value);
+                $this->socialconditions[] = array($dateinterval, $this->socialindicator1[$i]->value,  $this->socialindicator2[$i]->value,  $this->socialindicator3[$i]->value);
+                $this->cognitiveconditions[] = array($dateinterval, $this->cognitiveindicator1[$i]->value, $this->cognitiveindicator2[$i]->value,  $this->cognitiveindicator3[$i]->value);
+                date_add($date,date_interval_create_from_date_string("14 days"));
+                date_add($enddate,date_interval_create_from_date_string("14 days"));
+            }
+	    
 	    $this->allconditions[] = array_column($this->behaviourconditions, 0);
             $this->allconditions[0][0] = "Conditions";
             $this->allconditions[] = array_column($this->behaviourconditions, 1);
