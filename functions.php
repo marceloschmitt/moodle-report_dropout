@@ -152,7 +152,7 @@ function generate_charts($studentdata) {
           height: 300,
 	  chartArea: {left: 20, width: '100%'},
           bar: {groupWidth: 50},
-	  allowHtml: true;
+	  allowHtml: true,
           vAxis: { viewWindow: {min: 0,},
                    gridlines: { count: 5 } },
         };
