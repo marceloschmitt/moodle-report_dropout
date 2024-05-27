@@ -101,10 +101,9 @@ function generate_charts($studentdata) {
 <script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>
     <script type='text/javascript'>
     google.charts.load('current', {'packages':['corechart']});  
-    google.charts.load('current', {'packages':['annotationchart']});
     google.charts.load('current', {'packages':['table']});
     google.charts.setOnLoadCallback(drawChartLine);
-    google.charts.setOnLoadCallback(drawChartArea);
+    google.charts.setOnLoadCallback(drawChartBar);
     google.charts.setOnLoadCallback(drawChartTable);
 
 
@@ -142,35 +141,29 @@ function generate_charts($studentdata) {
     }
 
 
-    function drawChartArea() {
+    function drawChartBar() {
         var passedArray = " . $jsonbehaviour . ";
         var data = google.visualization.arrayToDataTable(passedArray);
         var options = {
           title: '" . $titlebehaviour . "',
           legend: { position: 'bottom' },
           height: 300,
-          series: {
-                0: { pointShape: 'circle',  lineWidth: 1  },
-                1: { pointShape: 'triangle', lineWidth: 1 },
-                2: { pointShape: 'square', lineWidth: 1 },
-                3: { pointShape: 'diamond', lineWidth: 1 },
-            },
           vAxis: { viewWindow: {min: 0,},
                    gridlines: { count: 5 } },
         };
-        var chart = new google.visualization.AreaChart(document.getElementById('area_chart_behaviour'));
+        var chart = new google.visualization.BarChart(document.getElementById('bar_chart_behaviour'));
         chart.draw(data, options);
 
         var passedArray = " . $jsonsocial . ";
         var data = google.visualization.arrayToDataTable(passedArray);
         options.title = '" . $titlesocial . "';
-        var chart = new google.visualization.AreaChart(document.getElementById('area_chart_social'));
+        var chart = new google.visualization.BarChart(document.getElementById('bar_chart_social'));
         chart.draw(data, options);
 	
         var passedArray = " . $jsoncognitive . ";
         var data = google.visualization.arrayToDataTable(passedArray);
         options.title = '" . $titlecognitive . "';
-        var chart = new google.visualization.AreaChart(document.getElementById('area_chart_cognitive'));
+        var chart = new google.visualization.BarChart(document.getElementById('bar_chart_cognitive'));
         chart.draw(data, options);
     }
 
@@ -208,8 +201,8 @@ function generate_charts($studentdata) {
     }
 
 
-    function button_area_charts() {
-       var x = document.getElementById('area_charts');
+    function button_bar_charts() {
+       var x = document.getElementById('bar_charts');
        if (x.style.display === 'none') {
            x.style.display = 'block';
        } else {
