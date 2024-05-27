@@ -150,7 +150,7 @@ function generate_charts($studentdata) {
           legend: { position: 'bottom' },
           height: 300,
 	  chartArea: {left: 0, width: '100%'},
-          bar: {groupWidth: 30},
+          bar: {groupWidth: 50},
           vAxis: { viewWindow: {min: 0,},
                    gridlines: { count: 5 } },
         };
@@ -160,7 +160,7 @@ function generate_charts($studentdata) {
         var passedArray = " . $jsonsocial . ";
         var data = google.visualization.arrayToDataTable(passedArray);
         options.title = '" . $titlesocial . "';
-	options.bar.groupWidth = 50;
+	options.bar.groupWidth = 40;
         var chart = new google.visualization.ColumnChart(document.getElementById('column_chart_social'));
         chart.draw(data, options);
 	
