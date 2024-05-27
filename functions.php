@@ -160,7 +160,7 @@ function generate_charts($studentdata) {
         var passedArray = " . $jsonsocial . ";
         var data = google.visualization.arrayToDataTable(passedArray);
         options.title = '" . $titlesocial . "';
-	options.bar.groupWidth = 40,
+	options.bar->groupWidth = 40,
         var chart = new google.visualization.ColumnChart(document.getElementById('column_chart_social'));
         chart.draw(data, options);
 	
