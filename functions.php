@@ -116,7 +116,6 @@ function generate_charts($studentdata) {
           height: 300,
 	  chartArea: {left: 20, width: '100%'},
           pointSize: 7,
-	  allowHtml: true,
           series: {
                 0: { pointShape: 'circle',  lineWidth: 1  },
                 1: { pointShape: 'triangle', lineWidth: 1 },
@@ -152,7 +151,6 @@ function generate_charts($studentdata) {
           height: 300,
 	  chartArea: {left: 20, width: '100%'},
           bar: {groupWidth: 50},
-	  allowHtml: true,
           vAxis: { viewWindow: {min: 0,},
                    gridlines: { count: 5 } },
         };
@@ -177,14 +175,8 @@ function generate_charts($studentdata) {
     function drawChartTable() {
         var passedArray = " . $jsonallconditions . ";
         var data = google.visualization.arrayToDataTable(passedArray);
-        var options = {
-          title: 'BehaviourConditions',
-	  allowHtml: true,
-          hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
-          vAxis: {minValue: 0}
-        };
         var chart = new google.visualization.Table(document.getElementById('table_chart'));
-        chart.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
+        chart.draw(data, {allowHtml: true, showRowNumber: true, width: '100%', height: '100%'});
     }
 
 
