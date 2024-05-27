@@ -150,6 +150,7 @@ function generate_charts($studentdata) {
           legend: { position: 'bottom' },
           height: 300,
 	  chartArea: {left: 0, width: '100%'},
+          bar: {groupWidth: 40},
 	  bar: {groupWidth: 20},
           vAxis: { viewWindow: {min: 0,},
                    gridlines: { count: 5 } },
