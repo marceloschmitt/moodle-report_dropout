@@ -87,7 +87,7 @@ class student_data {
             $enddate = date_create("2013-03-15");
             date_add($enddate,date_interval_create_from_date_string("13 days"));
             for ($i = 0, $j=1 ; $i < ($contador_temp*2) ; $i++, $j++) {
-                $dateinterval = date_format($date,"d/m") . "\n\r" . date_format($enddate, "d/m");
+                $dateinterval = date_format($date,"d/m") . "\n" . date_format($enddate, "d/m");
                 $this->behaviourconditions[] = array($dateinterval, $this->behaviourindicator1[$i]->value,  $this->behaviourindicator2[$i]->value,  $this->behaviourindicator3[$i]->value,  $this->behaviourindicator4[$i]->value);
                 $this->socialconditions[] = array($dateinterval, $this->socialindicator1[$i]->value,  $this->socialindicator2[$i]->value,  $this->socialindicator3[$i]->value);
                 $this->cognitiveconditions[] = array($dateinterval, $this->cognitiveindicator1[$i]->value, $this->cognitiveindicator2[$i]->value,  $this->cognitiveindicator3[$i]->value);
