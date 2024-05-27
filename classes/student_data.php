@@ -96,6 +96,9 @@ class student_data {
             }
 	    
 	    $this->allconditions[] = array_column($this->behaviourconditions, 0);
+	    foreach($this->allconditions[0] AS $x => $y) {
+                    $this->allconditions[0][$x] = str_replace("\n", "<BR>", $y);
+            }
             $this->allconditions[0][0] = "Conditions";
             $this->allconditions[] = array_column($this->behaviourconditions, 1);
             $this->allconditions[] = array_column($this->behaviourconditions, 2);
