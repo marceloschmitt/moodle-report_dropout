@@ -148,6 +148,7 @@ function generate_charts($studentdata) {
           title: '" . $titlebehaviour . "',
           legend: { position: 'bottom' },
           height: 300,
+	  bar: {groupWidth: 20},
           vAxis: { viewWindow: {min: 0,},
                    gridlines: { count: 5 } },
         };
