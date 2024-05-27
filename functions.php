@@ -103,7 +103,7 @@ function generate_charts($studentdata) {
     google.charts.load('current', {'packages':['corechart']});  
     google.charts.load('current', {'packages':['table']});
     google.charts.setOnLoadCallback(drawChartLine);
-    google.charts.setOnLoadCallback(drawChartBar);
+    google.charts.setOnLoadCallback(drawChartColumn);
     google.charts.setOnLoadCallback(drawChartTable);
 
 
@@ -141,7 +141,7 @@ function generate_charts($studentdata) {
     }
 
 
-    function drawChartBar() {
+    function drawChartColumn() {
         var passedArray = " . $jsonbehaviour . ";
         var data = google.visualization.arrayToDataTable(passedArray);
         var options = {
@@ -151,19 +151,19 @@ function generate_charts($studentdata) {
           vAxis: { viewWindow: {min: 0,},
                    gridlines: { count: 5 } },
         };
-        var chart = new google.visualization.BarChart(document.getElementById('bar_chart_behaviour'));
+        var chart = new google.visualization.ColumnChart(document.getElementById('column_chart_behaviour'));
         chart.draw(data, options);
 
         var passedArray = " . $jsonsocial . ";
         var data = google.visualization.arrayToDataTable(passedArray);
         options.title = '" . $titlesocial . "';
-        var chart = new google.visualization.BarChart(document.getElementById('bar_chart_social'));
+        var chart = new google.visualization.ColumnChart(document.getElementById('column_chart_social'));
         chart.draw(data, options);
 	
         var passedArray = " . $jsoncognitive . ";
         var data = google.visualization.arrayToDataTable(passedArray);
         options.title = '" . $titlecognitive . "';
-        var chart = new google.visualization.BarChart(document.getElementById('bar_chart_cognitive'));
+        var chart = new google.visualization.ColumnChart(document.getElementById('column_chart_cognitive'));
         chart.draw(data, options);
     }
 
@@ -201,8 +201,8 @@ function generate_charts($studentdata) {
     }
 
 
-    function button_bar_charts() {
-       var x = document.getElementById('bar_charts');
+    function button_column_charts() {
+       var x = document.getElementById('column_charts');
        if (x.style.display === 'none') {
            x.style.display = 'block';
        } else {
