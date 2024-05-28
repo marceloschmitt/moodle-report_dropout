@@ -11,8 +11,9 @@ class report_page implements renderable, templatable {
     /** @var string $sometext Some text to show how to pass data to a template. */
     var $sometext = null;
 
-    public function __construct($script, $sometext, $studentdata) {
+    public function __construct($course, $script, $sometext, $studentdata) {
             $this->script = $script;
+            $this->course = $course;
             $this->sometext = $sometext;
             $this->header = $studentdata->header;
             $this->subheader = $studentdata->subheader;
@@ -36,6 +37,7 @@ class report_page implements renderable, templatable {
      */
     public function export_for_template(renderer_base $output) {
         $data = new stdClass();
+        $data->course = $this->course;
         $data->sometext = $this->sometext;
         $data->header = $this->header;
         $data->subheader = $this->subheader;
