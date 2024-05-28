@@ -35,7 +35,9 @@ require_login($courseid);
 $context = context_course::instance($courseid);
 require_capability('report/dropout:view', $context);
 $course = get_course($courseid);
-$studentname = $USER->firstname . " " . $USER->lastname;
+
+$student =  get_record('user', 'id', $userid);
+$studentname = fullname($user);
 
 // Get student data.
 $studentdata = new \report_dropout\student_data($userid);
