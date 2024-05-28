@@ -100,7 +100,7 @@ class student_data {
                     $this->allconditions[0][$x] = str_replace("\n", "<BR>", $y);
             }
 	    $this->allconditions[0][$i+1] = "Parcial";
-            $this->allconditions[0][0] = get_string('Indicators', 'report_dropout');
+            $this->allconditions[0][0] = get_string('indicators', 'report_dropout');
 	    $index = 1;
 	    for($j = 1; $j < 5; $j++) {
                 $this->allconditions[] = array_column($this->behaviourconditions, $j);
