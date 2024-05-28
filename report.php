@@ -34,9 +34,8 @@ $userid = required_param('userid', PARAM_INT);
 require_login($courseid);
 $context = context_course::instance($courseid);
 require_capability('report/dropout:view', $context);
-
 $course = get_course($courseid);
-$user = get_user($userid);
+$studentname = $USER->firstname . " " . $USER->lastname;
 
 // Get student data.
 $studentdata = new \report_dropout\student_data($userid);
@@ -52,7 +51,7 @@ $output = $PAGE->get_renderer('report_dropout');
 echo $output->header();
 echo $output->heading(get_string('pluginname', 'report_dropout'));
 
-$renderable = new \report_dropout\output\report_page($course, $lineChart, 'Marcelo', $studentdata);
+$renderable = new \report_dropout\output\report_page($course, $lineChart, $studentname, $studentdata);
 echo $output->render($renderable);
 echo $output->footer();
 
