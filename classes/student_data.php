@@ -99,18 +99,17 @@ class student_data {
 	    foreach($this->allconditions[0] AS $x => $y) {
                     $this->allconditions[0][$x] = str_replace("\n", "<BR>", $y);
             }
-	    $this->allconditions[0][$i-1] = "Parcial";
+	    $this->allconditions[0][$i] = "Parcial";
             $this->allconditions[0][0] = "Conditions";
-            $this->allconditions[] = array_column($this->behaviourconditions, 1);
-            $this->allconditions[] = array_column($this->behaviourconditions, 2);
-            $this->allconditions[] = array_column($this->behaviourconditions, 3);
-            $this->allconditions[] = array_column($this->behaviourconditions, 4);
-	    $this->allconditions[] = array_column($this->socialconditions, 1);
-            $this->allconditions[] = array_column($this->socialconditions, 2);
-            $this->allconditions[] = array_column($this->socialconditions, 3);
-	    $this->allconditions[] = array_column($this->cognitiveconditions, 1);
-            $this->allconditions[] = array_column($this->cognitiveconditions, 2);
-            $this->allconditions[] = array_column($this->cognitiveconditions, 3);
-          
+	    $index = 1;
+	    foreach($j = 1; $j < 5; $j++) {
+                $this->allconditions[] = array_column($this->behaviourconditions, $j);
+            }
+        foreach($j = 1; $j < 4; $j++) {	    
+            $this->allconditions[] = array_column($this->socialconditions, $j);
+        }
+        foreach($j = 1; $j < 4; $j++) {
+            $this->allconditions[] = array_column($this->cognitiveconditions, $j);
+        } 
     }
 }
