@@ -104,11 +104,11 @@ class student_data {
 	    $index = 1;
 	    for($j = 1; $j < 5; $j++) {
                 $this->allconditions[] = array_column($this->behaviourconditions, $j);
-                $this->allconditions[$index++][$i+1] = 'x';
+                $this->allconditions[$index++][$i+1] = 0;
             }
         for($j = 1; $j < 4; $j++) {	    
             $this->allconditions[] = array_column($this->socialconditions, $j);
-            $this->allconditions[$index++][$i+1] = 'x';
+            $this->allconditions[$index++][$i+1] = 0;
         }
         for($j = 1; $j < 4; $j++) {
             $this->allconditions[] = array_column($this->cognitiveconditions, $j);
