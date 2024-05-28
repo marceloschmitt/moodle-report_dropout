@@ -39,7 +39,7 @@ require_capability('report/dropout:view', $context);
 $course = get_course($courseid);
 
 $student =  $DB->get_record('user', ['id' => $userid]);
-$studentname = fullname($user);
+$studentname = "$student->firstname $student->lastname";
 
 // Get student data.
 $studentdata = new \report_dropout\student_data($userid);
