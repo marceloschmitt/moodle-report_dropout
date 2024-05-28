@@ -28,6 +28,8 @@ require('../../config.php');
 require('functions.php');
 require_once($CFG->libdir.'/adminlib.php');
 
+global $DB;
+
 // Security.
 $courseid = required_param('id', PARAM_INT);
 $userid = required_param('userid', PARAM_INT);
@@ -36,7 +38,7 @@ $context = context_course::instance($courseid);
 require_capability('report/dropout:view', $context);
 $course = get_course($courseid);
 
-$student =  get_record('user', 'id', $userid);
+$student =  $DB->get_record('user', 'id', $userid);
 $studentname = fullname($user);
 
 // Get student data.
