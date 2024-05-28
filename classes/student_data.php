@@ -102,13 +102,13 @@ class student_data {
 	    $this->allconditions[0][$i] = "Parcial";
             $this->allconditions[0][0] = "Conditions";
 	    $index = 1;
-	    foreach($j = 1; $j < 5; $j++) {
+	    for($j = 1; $j < 5; $j++) {
                 $this->allconditions[] = array_column($this->behaviourconditions, $j);
             }
-        foreach($j = 1; $j < 4; $j++) {	    
+        for($j = 1; $j < 4; $j++) {	    
             $this->allconditions[] = array_column($this->socialconditions, $j);
         }
-        foreach($j = 1; $j < 4; $j++) {
+        for($j = 1; $j < 4; $j++) {
             $this->allconditions[] = array_column($this->cognitiveconditions, $j);
         } 
     }
