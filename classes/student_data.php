@@ -112,7 +112,7 @@ class student_data {
         }
         for($j = 1; $j < 4; $j++) {
             $this->allconditions[] = array_column($this->cognitiveconditions, $j);
-            $partial = array_sum(array_slice($this->allconditions[$index], 1));
+            $partial = array_sum(array_slice($this->allconditions[$index], 1)) / $i;
             $this->allconditions[$index++][$i+1] = $partial;
         } 
     }
