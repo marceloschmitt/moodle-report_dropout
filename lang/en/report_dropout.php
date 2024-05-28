@@ -34,7 +34,7 @@ $string['numberoftermcourses'] = 'Número de disciplinas com matrícula: ';
 $string['numberofterms'] = 'Número de semestres: '; 
 
 
-
+$string['indicators'] = 'Indicadores';
 $string['behaviourindicators'] = 'Indicadores Comportamentais';
 $string['socialindicators'] = 'Indicadores Sociais';
 $string['cognitiveindicators'] = 'Indicadores Cognitivos';
