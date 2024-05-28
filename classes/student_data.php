@@ -86,7 +86,7 @@ class student_data {
             $date = date_create("2013-03-15");
             $enddate = date_create("2013-03-15");
             date_add($enddate,date_interval_create_from_date_string("13 days"));
-            for ($i = 0, $j=1 ; $i < ($contador_temp*2) ; $i++, $j++) {
+            for ($i = 0; $i < ($contador_temp*2) ; $i++) {
                 $dateinterval = date_format($date,"d/m") . "\n" . date_format($enddate, "d/m");
                 $this->behaviourconditions[] = array($dateinterval, $this->behaviourindicator1[$i]->value,  $this->behaviourindicator2[$i]->value,  $this->behaviourindicator3[$i]->value,  $this->behaviourindicator4[$i]->value);
                 $this->socialconditions[] = array($dateinterval, $this->socialindicator1[$i]->value,  $this->socialindicator2[$i]->value,  $this->socialindicator3[$i]->value);
@@ -99,7 +99,7 @@ class student_data {
 	    foreach($this->allconditions[0] AS $x => $y) {
                     $this->allconditions[0][$x] = str_replace("\n", "<BR>", $y);
             }
-	    $this->allconditions[0][$i] = "Parcial";
+	    $this->allconditions[0][$i+1] = "Parcial";
             $this->allconditions[0][0] = "Conditions";
             $this->allconditions[] = array_column($this->behaviourconditions, 1);
             $this->allconditions[] = array_column($this->behaviourconditions, 2);
