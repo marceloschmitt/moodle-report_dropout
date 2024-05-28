@@ -112,7 +112,7 @@ class student_data {
         }
         for($j = 1; $j < 4; $j++) {
             $this->allconditions[] = array_column($this->cognitiveconditions, $j);
-            $this->allconditions[$index][$i+1] = array_sum(this->allconditions[$index++]);
+            $this->allconditions[$index][$i+1] = array_sum($this->allconditions[$index++]);
         } 
     }
 }
