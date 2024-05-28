@@ -37,7 +37,7 @@ class report_page implements renderable, templatable {
      */
     public function export_for_template(renderer_base $output) {
         $data = new stdClass();
-        $data->coursename = $this->course->name;
+        $data->coursename = $this->course->shortname;
         $data->coursestartdate = $this->course->startdate;
         $data->courseenddate = $this->course->enddate;
         $data->sometext = $this->sometext;
