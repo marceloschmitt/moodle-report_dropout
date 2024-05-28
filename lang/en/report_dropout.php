@@ -24,6 +24,17 @@
 
 $string['pluginname'] = 'Dropout report';
 
+$string['programinformation'] = 'Informações do curso';
+$string['program'] = 'Curso: ';
+$string['class'] = 'Turma: ';
+$string['passedterms'] = 'Semestres transcorridos: ';
+$string['studentinformation'] = 'Informações do estudante';
+$string['nome'] = 'Nome: ';
+$string['numberoftermcourses'] = 'Número de disciplinas com matrícula: ';
+$string['numberofterms'] = 'Número de semestres: '; 
+
+
+
 $string['behaviourindicators'] = 'Indicadores Comportamentais';
 $string['socialindicators'] = 'Indicadores Sociais';
 $string['cognitiveindicators'] = 'Indicadores Cognitivos';
