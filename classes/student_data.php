@@ -99,17 +99,20 @@ class student_data {
 	    foreach($this->allconditions[0] AS $x => $y) {
                     $this->allconditions[0][$x] = str_replace("\n", "<BR>", $y);
             }
-	    $this->allconditions[0][$i] = "Parcial";
+	    $this->allconditions[0][$i+1] = "Parcial";
             $this->allconditions[0][0] = "Conditions";
 	    $index = 1;
 	    for($j = 1; $j < 5; $j++) {
                 $this->allconditions[] = array_column($this->behaviourconditions, $j);
+                $this->allconditions[$index++][$i+1] = 'x';
             }
         for($j = 1; $j < 4; $j++) {	    
             $this->allconditions[] = array_column($this->socialconditions, $j);
+            $this->allconditions[$index++][$i+1] = 'x';
         }
         for($j = 1; $j < 4; $j++) {
             $this->allconditions[] = array_column($this->cognitiveconditions, $j);
+            $this->allconditions[$index++][$i+1] = 'x';
         } 
     }
 }
