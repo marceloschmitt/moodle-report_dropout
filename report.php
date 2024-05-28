@@ -51,7 +51,7 @@ $output = $PAGE->get_renderer('report_dropout');
 echo $output->header();
 echo $output->heading(get_string('pluginname', 'report_dropout'));
 
-$renderable = new \report_dropout\output\report_page($lineChart, 'Marcelo', $studentdata);
+$renderable = new \report_dropout\output\report_page($course, $lineChart, 'Marcelo', $studentdata);
 echo $output->render($renderable);
 echo $output->footer();
 
