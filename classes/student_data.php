@@ -21,6 +21,9 @@ class student_data {
     var $socialconditions = array();
     var $congnitiveconditions = array();
     var $allconditions = array();
+
+    var $behaviourtable = array();
+    var $socialtable = var();
 	
     public function __construct($userid) {
 	    $contador_temp = 5;
@@ -109,6 +112,17 @@ class student_data {
 	    $this->allconditions[0][$i+1] = "Risco parcial";
             $this->allconditions[0][0] = get_string('indicators', 'report_dropout');
 	    $index = 1;
+
+        $this->behaviourtable = $thisallconditions;
+        for($j = 1; $j < 4; $j++) {
+            $this->behaviourtable[] = array_column($this->behaviourconditions, $j);
+            $this->behaviourtable[$index][$i+1] = 
+	            $this->get_behaviour_risk($j+1, array_sum(array_slice($this->allconditions[$index], 1)), $i);
+		    $index++;
+        }
+
+
+        
 	    for($j = 1; $j < 4; $j++) {
             $this->allconditions[] = array_column($this->behaviourconditions, $j);
             $this->allconditions[$index][$i+1] = 
