@@ -123,7 +123,6 @@ class student_data {
 
     private function get_behaviour_risk($behaviourid, $sum, $numberoffortnights) {
         switch($behaviourid) {
-		return 0; 
             case 1: return $this->get_behaviour1_risk($sum, $numberoffortnights);
             case 2: return $this->get_behaviour2_risk($sum, $numberoffortnights);
             case 3: return $this->get_behaviour3_risk($sum, $numberoffortnights);
