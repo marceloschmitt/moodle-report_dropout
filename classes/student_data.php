@@ -117,7 +117,7 @@ class student_data {
         for($j = 1; $j < 4; $j++) {
             $this->behaviourtable[] = array_column($this->behaviourconditions, $j);
             $this->behaviourtable[$index][$i+1] = 
-	            $this->get_behaviour_risk($j+1, array_sum(array_slice($this->allconditions[$index], 1)), $i);
+	            $this->get_behaviour_risk($j+1, array_sum(array_slice($this->behaviourtable[$index], 1)), $i);
 		    $index++;
         }
 
