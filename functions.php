@@ -23,7 +23,7 @@ function generate_charts($studentdata) {
     google.charts.setOnLoadCallback(drawChartTable);
     google.charts.setOnLoadCallback(drawBehaviourTable);
     google.charts.setOnLoadCallback(drawSocialTable);
-//    google.charts.setOnLoadCallback(drawCognitiveTable);
+    google.charts.setOnLoadCallback(drawCognitiveTable);
 
 
     function drawChartLine() {
@@ -91,13 +91,6 @@ function generate_charts($studentdata) {
     }
 
     
-    function drawChartTable() {
-        var passedArray = " . $jsonallconditions . ";
-        var data = google.visualization.arrayToDataTable(passedArray);
-        var chart = new google.visualization.Table(document.getElementById('table_chart'));
-        chart.draw(data, {allowHtml: true, showRowNumber: true, width: '100%', height: '100%'});
-    }
-
     function drawBehaviourTable() {
         var passedArray = " . $jsonbehaviourtable . ";
         var data = google.visualization.arrayToDataTable(passedArray);
@@ -112,6 +105,12 @@ function generate_charts($studentdata) {
         chart.draw(data, {allowHtml: true, showRowNumber: true, width: '100%', height: '100%'});
     }
 
+    function drawCognitiveTable() {
+        var passedArray = " . $jsonsocialtable . ";
+        var data = google.visualization.arrayToDataTable(passedArray);
+        var chart = new google.visualization.Table(document.getElementById('cognitive_table'));
+        chart.draw(data, {allowHtml: true, showRowNumber: true, width: '100%', height: '100%'});
+    }
  
     function button_table_charts() {
        var x = document.getElementById('table_chart');
