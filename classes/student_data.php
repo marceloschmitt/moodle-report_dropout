@@ -136,8 +136,6 @@ class student_data {
             $this->cognitivetable[$row][$numberofgrades+1] = 
                     $this->get_cognitive_risk($row, array_sum(array_slice($this->cognitivetable[$row], 1)), $numberofgrades);
         } 
-
-        echo var_dump($this->cognitivetable); exit;
     }
 
 
