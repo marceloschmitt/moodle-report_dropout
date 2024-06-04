@@ -1,109 +1,20 @@
 <?php
 
-// função que gera tabela
-function generate_table($studentData, $selected) {
-    // Your logic to generate the table HTML goes here
-    $tableData = $studentData[$selected['year']][$selected['period']];
-    $tableStructure = tableStructureData($tableData);
-    
-    $tableHead =    "<table class='table table-bordered table-sm custom-table'>
-                    <thead id='table_head' class='text-center'>
-                    <th scope='col' colspan='100%'>Semestre {$selected['year']}/{$selected['period']} </th>
-                    <tr>
-                    <th scope='col' rowspan='2' colspan='2'>Indicadores</th>
-                    <th scope='col' >FEV</th>
-                    <th scope='col' colspan='2'>MAR</th>
-                    <th scope='col' colspan='2'>ABR</th>
-                    <th scope='col' colspan='2'>MAI</th>
-                    <th scope='col' colspan='2'>JUN</th>
-                    <th scope='col' >JUL</th>
-                    <th scope='col' rowspan='2'>Parciais</th>
-                    </tr>
-                    <tr>
-                    <th scope='col'> Q2 </th>
-                    <th scope='col'> Q1</th>
-                    <th scope='col'> Q2 </th>
-                    <th scope='col'> Q1</th>
-                    <th scope='col'> Q2 </th>
-                    <th scope='col'> Q1</th>
-                    <th scope='col'> Q2 </th>
-                    <th scope='col'> Q1</th>
-                    <th scope='col'> Q2 </th>
-                    <th scope='col'> Q1</th>
-                    </tr>
-                    </thead> ";
-    
-
-    foreach($tableStructure as $group => $row){}
-
-
-    // generate table
-    $tableHTML = $tableHead;
-    foreach ($tableStructure as $group => $rowNames) {
-        // echo($key);
-        // var_dump($values);
-        $rowspan = count($rowNames);
-        $tableHTML .="<tbody>
-        <tr>
-        <th scope='row' rowspan='{$rowspan}'>{$group}</th>";
-
-        foreach ($rowNames as $rowName => $value) {
-
-            // row name 
-            $tableHTML .=  "<td>{$rowName}</td>";
-            
-
-            // student data (value cells)
-            // do jeito que ta, precisa que 
-            $partialSum = 0;
-            for ($i = 0; $i < 10; $i++){
-                if (!is_numeric($value[$i])){
-                $tableHTML .=  "<td> - </td>";
-
-                } else {
-                    $partialSum += $value[$i]; 
-                    $tableHTML .=  "<td>{$value[$i]}</td>";
-                }
-                
-            }
-            $partialSum = $partialSum/10;
-            $tableHTML .=  "<td>{$partialSum}</td>";
-            $tableHTML .=  "</tr>";
-        } 
-        $tableHTML .=  "</tbody>";
-    }
-    $tableHTML .=  "</table>";
-
-
-
-    
-    foreach ($tableData['comportamentais'][1] as $colcell) {
-        // $tableHTML .=  "<td>{$colcell}</td>";
-    }
-    // $tableHTML .= $tableHead.
-
-    return $tableHTML;
-}
-
-
 function generate_charts($studentdata) {
 	$jsonbehaviour = json_encode($studentdata->behaviourconditions);
 	$jsonsocial = json_encode($studentdata->socialconditions);
-//	$jsoncognitive = json_encode($studentdata->cognitiveconditions);
+	$jsoncognitive = json_encode($studentdata->cognitiveconditions);
 	$jsonallconditions = json_encode($studentdata->allconditions);
     $jsonbehaviourtable = json_encode($studentdata->behaviourtable);
     $jsonsocialtable = json_encode($studentdata->socialtable);
-//    $jsoncognitivetable = json_encode($studentdata->cognitivetable);
-
-
+    $jsoncognitivetable = json_encode($studentdata->cognitivetable);
 
 	$titlebehaviour = get_string('behaviourindicators', 'report_dropout');
 	$titlesocial = get_string('socialindicators', 'report_dropout');
-//	$titlecognitive = get_string('cognitiveindicators', 'report_dropout');
+	$titlecognitive = get_string('cognitiveindicators', 'report_dropout');
 	
    // Google Charts JavaScript code
-	$chartScript = "
-<script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>
+	$chartScript = "<script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>
     <script type='text/javascript'>
     google.charts.load('current', {'packages':['corechart']});  
     google.charts.load('current', {'packages':['table']});
@@ -113,9 +24,6 @@ function generate_charts($studentdata) {
     google.charts.setOnLoadCallback(drawBehaviourTable);
     google.charts.setOnLoadCallback(drawSocialTable);
 //    google.charts.setOnLoadCallback(drawCognitiveTable);
-
-
-
 
 
     function drawChartLine() {
@@ -145,8 +53,8 @@ function generate_charts($studentdata) {
         var chart = new google.visualization.LineChart(document.getElementById('line_chart_social'));
         chart.draw(data, options);
 
-//        var passedArray = " . $jsoncognitive . ";
-   //     options.title = '" . $titlecognitive . "';
+        var passedArray = " . $jsoncognitive . ";
+        options.title = '" . $titlecognitive . "';
         var data = google.visualization.arrayToDataTable(passedArray);
         var chart = new google.visualization.LineChart(document.getElementById('line_chart_cognitive'));
         chart.draw(data, options);
@@ -160,7 +68,7 @@ function generate_charts($studentdata) {
           title: '" . $titlebehaviour . "',
           legend: { position: 'bottom' },
           height: 300,
-	  chartArea: {left: 20, width: '100%'},
+        chartArea: {left: 20, width: '100%'},
           bar: {groupWidth: 50},
           vAxis: { viewWindow: {min: 0,},
                    gridlines: { count: 5 } },
@@ -175,9 +83,9 @@ function generate_charts($studentdata) {
         var chart = new google.visualization.ColumnChart(document.getElementById('column_chart_social'));
         chart.draw(data, options);
 	
- //       var passedArray = " . $jsoncognitive . ";
+        var passedArray = " . $jsoncognitive . ";
         var data = google.visualization.arrayToDataTable(passedArray);
-//        options.title = '" . $titlecognitive . "';
+        options.title = '" . $titlecognitive . "';
         var chart = new google.visualization.ColumnChart(document.getElementById('column_chart_cognitive'));
         chart.draw(data, options);
     }
@@ -205,7 +113,6 @@ function generate_charts($studentdata) {
     }
 
  
-
     function button_table_charts() {
        var x = document.getElementById('table_chart');
        if (x.style.display === 'none') {
