@@ -24,7 +24,7 @@ class student_data {
 
     var $behaviourtable = array();
     var $socialtable = array();
-    var $socialtable = array();
+    var $cognitivetable = array();
 
 	
     public function __construct($userid) {
