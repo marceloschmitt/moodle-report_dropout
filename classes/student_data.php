@@ -105,9 +105,9 @@ class student_data {
         // Table data for each line.
 	    $this->allconditions[] = array_column($this->behaviourconditions, 0);
 	    foreach($this->allconditions[0] AS $x => $y) {
-                    $this->allconditions[0][$x] = str_replace("\n", "<BR>", $y);
-            }
-	    $this->allconditions[0][$i+1] = "Parcial";
+            $this->allconditions[0][$x] = str_replace("\n", "<BR>", $y);
+        }
+	    $this->allconditions[0][$i+1] = "Risco parcial";
             $this->allconditions[0][0] = get_string('indicators', 'report_dropout');
 	    $index = 1;
 	    for($j = 1; $j < 4; $j++) {
@@ -115,8 +115,7 @@ class student_data {
             $this->allconditions[$index][$i+1] = 
 	        $this->get_behaviour_risk($j+1, array_sum(array_slice($this->allconditions[$index], 1)), $i);
 		    $index++;
-		
-            }
+        }
         for($j = 1; $j < 4; $j++) {	    
             $this->allconditions[] = array_column($this->socialconditions, $j);
             $this->allconditions[$index++][$i+1] = 0;
