@@ -105,7 +105,7 @@ class student_data {
 	    for($j = 1; $j < 5; $j++) {
                 $this->allconditions[] = array_column($this->behaviourconditions, $j);
                 $this->allconditions[$index++][$i+1] = 
-	                get_behaviour_risk($j, array_sum(array_slice($this->allconditions[$index])), $i);
+		this->get_behaviour_risk($j, array_sum(array_slice($this->allconditions[$index])), $i);
             }
         for($j = 1; $j < 4; $j++) {	    
             $this->allconditions[] = array_column($this->socialconditions, $j);
@@ -121,10 +121,10 @@ class student_data {
 
     private function get_behaviour_risk($behaviourid, $sum, $numberoffortnights) {
         switch($behaviourid) {
-            case 1: return get_behaviour1_risk($sum, $numberoffortnights);
-            case 2: return get_behaviour2_risk($sum, $numberoffortnights);
-            case 3: return get_behaviour3_risk($sum, $numberoffortnights);
-            case 4: return get_behaviour4_risk($sum, $numberoffortnights);
+            case 1: return this->get_behaviour1_risk($sum, $numberoffortnights);
+            case 2: return this->get_behaviour2_risk($sum, $numberoffortnights);
+            case 3: return this->get_behaviour3_risk($sum, $numberoffortnights);
+            case 4: return this->get_behaviour4_risk($sum, $numberoffortnights);
         }
     }
 
