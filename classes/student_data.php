@@ -52,11 +52,11 @@ class student_data {
 
         // Social data.
 	    for ($i = 0; $i < ($contador_temp*2); $i++) {
-	    	$value = rand(0, 10);
+	    	$value = rand(0, 4);
 		$this->socialindicator2[] = (object) array('value' => $value);
 	    }
 	    for ($i = 0; $i < ($contador_temp*2); $i++) {
-	    	$value = rand(0, 10);
+	    	$value = rand(0, 4);
 		$this->socialindicator3[] = (object) array('value' => $value);
 	    }
 	    foreach ($this->socialindicator2 AS $index => $value) {
