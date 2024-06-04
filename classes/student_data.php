@@ -69,12 +69,12 @@ class student_data {
         }
 
         // Cognitive data.
-   /*     $numberofgrades = 6;
+        $numberofgrades = 6;
 	    for ($i = 0; $i < $numberofgrades; $i++) {
 	    	$value = rand(0, 10);
 		    $this->cognitiveindicator1[] = (object) array('value' => $value);
 	    }
-	 */  
+	   
         // Graph lines/bars.
 	    $this->behaviourconditions[] = array('Term', get_string('Behaviour2', 'report_dropout'),
 						        get_string('Behaviour3', 'report_dropout'),
@@ -82,8 +82,8 @@ class student_data {
         $this->socialconditions[] = array('Term', get_string('Social1', 'report_dropout'),
 		                        get_string('Social2', 'report_dropout'),
 					            get_string('Social3', 'report_dropout'));
-/*	    $this->cognitiveconditions[] = array('Term', get_string('Cognitive1', 'report_dropout'));
-  */          
+	    $this->cognitiveconditions[] = array('Term', get_string('Cognitive1', 'report_dropout'));
+            
         // Table header.
         $date = date_create("2013-03-15");
         $enddate = date_create("2013-03-15");
@@ -95,10 +95,10 @@ class student_data {
             date_add($date,date_interval_create_from_date_string("14 days"));
             date_add($enddate,date_interval_create_from_date_string("14 days"));
         }
-/*        for($i = 0; $i < $numberofgrades; $i++) {
+        for($i = 0; $i < $numberofgrades; $i++) {
             $this->cognitiveconditions[] = array($i, $this->cognitiveindicator1[$i]->value);
         }
-*/
+
         
         // Table data for each line.
 	    $this->allconditions[] = array_column($this->behaviourconditions, 0);
@@ -128,7 +128,7 @@ class student_data {
         }  
 
         
- /*       $this->cognitivetable[0][0] = get_string('cognitiveindicators', 'report_dropout');
+        $this->cognitivetable[0][0] = get_string('cognitiveindicators', 'report_dropout');
         for($column = 1; $column <= $numberofgrades; $column++) {
             $this->cognitivetable[0][$column] = $column;
         }
@@ -137,7 +137,7 @@ class student_data {
             $this->cognitivetable[$row][$numberofgrades+1] = 
                     $this->get_cognitive_risk($row, array_sum(array_slice($this->cognitivetable[$row], 1)), $numberofgrades);
         }  
-*/
+
         
 	    for($j = 1; $j < 4; $j++) {
             $this->allconditions[] = array_column($this->behaviourconditions, $j);
@@ -242,7 +242,7 @@ class student_data {
         }
     }
 
-/*    
+    
     private function get_cognitive_risk($cognitiveid, $sum, $numberofgrades) {
         $avarage = $sum / $numberofgrades;
         if($avarage >= 7) {
@@ -256,5 +256,5 @@ class student_data {
         }
     }
     
-*/
+
 }
