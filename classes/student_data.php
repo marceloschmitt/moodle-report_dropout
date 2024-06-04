@@ -250,10 +250,15 @@ class student_data {
 
     
     private function get_cognitive_risk($cognitiveid, $sum, $numberofgrades) {
-        switch($cognitiveid) {
-            case 1: return '-';
-            case 2: return '-';
-            case 3: return '-';
+        $avarage = $sum / $numberofgrades;
+        if($avarage >= 7) {
+            return '<span class="badge badge-primary">' . get_string('lowrisk', 'report_dropout') . '</span>';
+        } else if($avarage >= 5) {
+            return '<span class="badge badge-secondary">' . get_string('mediumrisk', 'report_dropout') . '</span>';
+        } else if($avarage >= 2) {
+            return '<span class="badge badge-warning">' . get_string('highrisk', 'report_dropout') . '</span>'; 
+        } else {
+            return '<span class="badge badge-danger">' . get_string('veryhighrisk', 'report_dropout') . '</span>';
         }
     }
     
