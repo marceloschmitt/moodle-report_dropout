@@ -97,6 +97,7 @@ class student_data {
         }
         for($i = 0; $i < $numberofgrades; $i++) {
             $this->cognitiveconditions[] = array($i, $this->cognitiveindicator1[$i]->value);
+        }
 
         
         // Table data for each line.
