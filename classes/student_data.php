@@ -38,11 +38,11 @@ class student_data {
 		$this->behaviourindicator1[] = (object) array('value' => $value);
 	    }
 	    for ($i = 0; $i < ($contador_temp*2); $i++) {
-	    	$value = rand(0, 10);
+	    	$value = rand(0, 20);
 		$this->behaviourindicator2[] = (object) array('value' => $value);
 	    }
 	    for ($i = 0; $i < ($contador_temp*2); $i++) {
-	    	$value = rand(0, 10);
+	    	$value = rand(0, 20);
 		$this->behaviourindicator3[] = (object) array('value' => $value);
 	    }
 	    for ($i = 0; $i < ($contador_temp*2); $i++) {
