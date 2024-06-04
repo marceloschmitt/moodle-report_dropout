@@ -136,8 +136,8 @@ class student_data {
         }
         for($row = 1; $row < 2; $row++) { 
             $this->cognitivetable[] = array_column($this->cognitiveconditions, $row);
-            $this->cognitivetable[$row][$i+1] = 
-                    $this->get_cognitive_risk($row, array_sum(array_slice($this->cognitivetable[$row], 1)), $i);
+            $this->cognitivetable[$row][$numberofgrades+1] = 
+                    $this->get_cognitive_risk($row, array_sum(array_slice($this->cognitivetable[$row], 1)), $numberofgrades);
         }  
 
         
@@ -153,11 +153,6 @@ class student_data {
 	            $this->get_social_risk($j, array_sum(array_slice($this->allconditions[$index], 1)), $i);
 		    $index++;
         }
-        for($j = 1; $j < 4; $j++) {
-            $this->allconditions[] = array_column($this->cognitiveconditions, $j);
-            $partial = array_sum(array_slice($this->allconditions[$index], 1)) / $i / 2;
-            $this->allconditions[$index++][$i+1] = (int)$partial;
-        } 
     }
 
 
