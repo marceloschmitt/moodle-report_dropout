@@ -105,10 +105,7 @@ class student_data {
 	    foreach($this->allconditions[0] AS $x => $y) {
             $this->allconditions[0][$x] = str_replace("\n", "<BR>", $y);
         }
-	    $this->allconditions[0][$i+1] = "Risco parcial";
-
-        echo var_dump($this->allconditions[0]); exit;
-        
+	    $this->allconditions[0][$i+1] = "Risco parcial";        
             $this->allconditions[0][0] = get_string('indicators', 'report_dropout');
 	    $index = 1;    
        
