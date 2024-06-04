@@ -50,3 +50,10 @@ $string['Cognitive1'] = 'Desempenho geral';
 $string['Cognitive2'] = 'Desempenho em atividades não avaliativas';
 $string['Cognitive3'] = 'Desempenho em atividades avaliativas';
 
+$string['lowrisk'] = 'Risco baixo';
+$string['mediumrisk'] = 'Risco médio';
+$string['highrisk'] = 'Risco alto';
+$string['veryhighrisk'] = 'Risco altíssimo';
+
+
+
