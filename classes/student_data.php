@@ -128,7 +128,7 @@ class student_data {
         
         $this->cognitivetable[0][0] = get_string('cognitiveindicators', 'report_dropout');
         for($column = 1; $column <= $numberofgrades; $column++) {
-            $this->cognitivetable[0][$column] = $column;
+            $this->cognitivetable[0][$column] = '-';
         }
         $this->cognitivetable[0][$numberofgrades+1] = 'Risco parcial';
         for($row = 1; $row < 2; $row++) { 
