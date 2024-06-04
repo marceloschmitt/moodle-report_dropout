@@ -23,7 +23,7 @@ class student_data {
     var $allconditions = array();
 
     var $behaviourtable = array();
-    var $socialtable = var();
+    var $socialtable = array();
 	
     public function __construct($userid) {
 	    $contador_temp = 5;
