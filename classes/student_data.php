@@ -95,8 +95,8 @@ class student_data {
             date_add($date,date_interval_create_from_date_string("14 days"));
             date_add($enddate,date_interval_create_from_date_string("14 days"));
         }
-        for($i = 0; $i < $numberofgrades; $i++) {
-            $this->cognitiveconditions[] = array($i, $this->cognitiveindicator1[$i]->value);
+        for($column = 0; $i < $numberofgrades; $column++) {
+            $this->cognitiveconditions[] = array($column, $this->cognitiveindicator1[$column]->value);
         }
 
         
