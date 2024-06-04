@@ -75,7 +75,7 @@ class student_data {
 		    $this->cognitiveindicator1[] = (object) array('value' => $value);
 	    }
 	   
-        // Dates.
+        // Graph lines/bars.
 	    $this->behaviourconditions[] = array('Term', get_string('Behaviour2', 'report_dropout'),
 						        get_string('Behaviour3', 'report_dropout'),
 						        get_string('Behaviour4', 'report_dropout') . ' (%)');
@@ -98,6 +98,8 @@ class student_data {
         for($i = 0; $i < $numberofgrades; $i++) {
             $this->cognitiveconditions[] = array($i, $this->cognitiveindicator1[$i]->value);
         }
+
+        echo var_dump($this->cognitiveconditions); exit;
 
         
         // Table data for each line.
