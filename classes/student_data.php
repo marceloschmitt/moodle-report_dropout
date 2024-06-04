@@ -104,8 +104,8 @@ class student_data {
 	    $index = 1;
 	    for($j = 1; $j < 5; $j++) {
                 $this->allconditions[] = array_column($this->behaviourconditions, $j);
-                $this->allconditions[$index++][$i+1] = 
-		$this->get_behaviour_risk($j, array_sum(array_slice($this->allconditions[$index], 1)), $i);
+                $this->allconditions[$index][$i+1] = 
+		$this->get_behaviour_risk($j, array_sum(array_slice($this->allconditions[$index++], 1)), $i);
             }
         for($j = 1; $j < 4; $j++) {	    
             $this->allconditions[] = array_column($this->socialconditions, $j);
