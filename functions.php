@@ -91,7 +91,7 @@ function generate_charts($studentdata) {
 	$jsonsocial = json_encode($studentdata->socialconditions);
 	$jsoncognitive = json_encode($studentdata->cognitiveconditions);
 	$jsonallconditions = json_encode($studentdata->allconditions);
-    $jsonbahaviourtable = json_encode($studentdata->behaviourtable);
+    $jsonbehaviourtable = json_encode($studentdata->behaviourtable);
 
 	$titlebehaviour = get_string('behaviourindicators', 'report_dropout');
 	$titlesocial = get_string('socialindicators', 'report_dropout');
