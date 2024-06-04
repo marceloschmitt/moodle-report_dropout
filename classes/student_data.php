@@ -138,7 +138,7 @@ class student_data {
                     $this->get_cognitive_risk($row, array_sum(array_slice($this->cognitivetable[$row], 1)), $numberofgrades);
         }  
 
-        
+   echo var_dump($cognitivetable); exit;
 	    for($j = 1; $j < 4; $j++) {
             $this->allconditions[] = array_column($this->behaviourconditions, $j);
             $this->allconditions[$index][$i+1] = 
