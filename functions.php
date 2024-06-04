@@ -4,7 +4,6 @@ function generate_charts($studentdata) {
 	$jsonbehaviour = json_encode($studentdata->behaviourconditions);
 	$jsonsocial = json_encode($studentdata->socialconditions);
 	$jsoncognitive = json_encode($studentdata->cognitiveconditions);
-	$jsonallconditions = json_encode($studentdata->allconditions);
     $jsonbehaviourtable = json_encode($studentdata->behaviourtable);
     $jsonsocialtable = json_encode($studentdata->socialtable);
     $jsoncognitivetable = json_encode($studentdata->cognitivetable);
