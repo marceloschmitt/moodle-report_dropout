@@ -131,6 +131,13 @@ class student_data {
                     $this->get_social_risk($row, array_sum(array_slice($this->socialtable[$row], 1)), $i);
         }  
 
+        $this->cognitivetable[0] = $this->allconditions[0];
+        $this->cognitivetable[0][0] = get_string('cognitivendicators', 'report_dropout');
+        for($row = 1; $row < 4; $row++) { 
+            $this->cognitivetable[] = array_column($this->cognitiveconditions, $row);
+            $this->cognitivetable[$row][$i+1] = 
+                    $this->get_cognitive_risk($row, array_sum(array_slice($this->cognitivetable[$row], 1)), $i);
+        }  
 
         
 	    for($j = 1; $j < 4; $j++) {
@@ -241,7 +248,14 @@ class student_data {
         }
     }
 
-
+    
+    private function get_cognitive_risk($cognitiveid, $sum, $numberofgrades) {
+        switch($cognitiveid) {
+            case 1: return '-';
+            case 2: return '-';
+            case 3: return '-';
+        }
+    }
     
 
 }
