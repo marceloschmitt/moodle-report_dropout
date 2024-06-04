@@ -117,16 +117,16 @@ class student_data {
        
         $this->behaviourtable[0] = $this->allconditions[0];
         $this->behaviourtable[0][0] = get_string('behaviourindicators', 'report_dropout');
-        for($row = 1; $j < 4; $row++) { 
-            $this->behaviourtable[] = array_column($this->behaviourconditions, $j);
+        for($row = 1; $row < 4; $row++) { 
+            $this->behaviourtable[] = array_column($this->behaviourconditions, $row+1);
             $this->behaviourtable[$row][$i+1] = 
                     $this->get_behaviour_risk($row+1, array_sum(array_slice($this->behaviourtable[$row], 1)), $i);
         }  
 
         $this->socialtable[0] = $this->allconditions[0];
-        $this->social[0][0] = get_string('socialindicators', 'report_dropout');
-        for($row = 1; $j < 4; $row++) { 
-            $this->socialtable[] = array_column($this->socialconditions, $j);
+        $this->socialtable[0][0] = get_string('socialindicators', 'report_dropout');
+        for($row = 1; $row < 4; $row++) { 
+            $this->socialtable[] = array_column($this->socialconditions, $row);
             $this->socialtable[$row][$i+1] = 
                     $this->get_social_risk($row, array_sum(array_slice($this->socialtable[$row], 1)), $i);
         }  
