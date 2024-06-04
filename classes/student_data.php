@@ -67,19 +67,12 @@ class student_data {
         }
 
         // Cognitive data.
-	    for ($i = 0; $i < ($contador_temp*2); $i++) {
+        $numberofgrades = 6;
+	    for ($i = 0; $i < $numberofgrades; $i++) {
 	    	$value = rand(0, 10);
-		$this->cognitiveindicator1[] = (object) array('value' => $value);
+		    $this->cognitiveindicator1[] = (object) array('value' => $value);
 	    }
-	    for ($i = 0; $i < ($contador_temp*2); $i++) {
-	    	$value = rand(0, 10);
-		$this->cognitiveindicator2[] = (object) array('value' => $value);
-	    }
-	    for ($i = 0; $i < ($contador_temp*2); $i++) {
-	    	$value = rand(0, 10);
-		$this->cognitiveindicator3[] = (object) array('value' => $value);
-	    }
-
+	   
         // Dates.
 	    $this->behaviourconditions[] = array('Term', get_string('Behaviour2', 'report_dropout'),
 						        get_string('Behaviour3', 'report_dropout'),
@@ -87,9 +80,7 @@ class student_data {
         $this->socialconditions[] = array('Term', get_string('Social1', 'report_dropout'),
 		                        get_string('Social2', 'report_dropout'),
 					            get_string('Social3', 'report_dropout'));
-	    $this->cognitiveconditions[] = array('Term', get_string('Cognitive1', 'report_dropout'),
-						        get_string('Cognitive2', 'report_dropout'),
-					            get_string('Cognitive3', 'report_dropout'));
+	    $this->cognitiveconditions[] = array('Term', get_string('Cognitive1', 'report_dropout'));
             
         // Table header.
         $date = date_create("2013-03-15");
@@ -131,9 +122,12 @@ class student_data {
                     $this->get_social_risk($row, array_sum(array_slice($this->socialtable[$row], 1)), $i);
         }  
 
-        $this->cognitivetable[0] = $this->allconditions[0];
+        
         $this->cognitivetable[0][0] = get_string('cognitiveindicators', 'report_dropout');
-        for($row = 1; $row < 4; $row++) { 
+        for($column = 1; $column <= $numberofgrades; $numberofgrades++) {
+            $this->cognitivetable[0][$column] = $column;
+        }
+        for($row = 1; $row < 2; $row++) { 
             $this->cognitivetable[] = array_column($this->cognitiveconditions, $row);
             $this->cognitivetable[$row][$i+1] = 
                     $this->get_cognitive_risk($row, array_sum(array_slice($this->cognitivetable[$row], 1)), $i);
