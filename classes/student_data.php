@@ -106,10 +106,11 @@ class student_data {
             $this->allconditions[0][$x] = str_replace("\n", "<BR>", $y);
         }
 	    $this->allconditions[0][$i+1] = "Risco parcial";
-            $this->allconditions[0][0] = get_string('indicators', 'report_dropout');
-	    $index = 1;
 
-       
+        echo var_dump($this->allconditions[0]); exit;
+        
+            $this->allconditions[0][0] = get_string('indicators', 'report_dropout');
+	    $index = 1;    
        
         $this->behaviourtable[0] = $this->allconditions[0];
         $this->behaviourtable[0][0] = get_string('behaviourindicators', 'report_dropout');
