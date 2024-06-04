@@ -134,9 +134,9 @@ class student_data {
     private function get_behaviour1_risk($sum, $numberoffortnights) {
         $avarage = $sum / $numberoffortnights;
         if($avarage >= 7) {
-            return '<span class="badge badge-success">' . get_string('low risk', 'report_dropout') . '</span>';
+            return '<span class="badge badge-primary">' . get_string('low risk', 'report_dropout') . '</span>';
         } else if($avarage >= 5) {
-            return '<span class="badge badge-info">' . get_string('medium risk', 'report_dropout') . '</span>';
+            return '<span class="badge badge-secondary">' . get_string('medium risk', 'report_dropout') . '</span>';
         } else if($avarage >= 3) {
             return '<span class="badge badge-warning">' . get_string('high risk', 'report_dropout') . '</span>'; 
         } else {
@@ -148,9 +148,9 @@ class student_data {
     private function get_behaviour2_risk($sum, $numberoffortnights) {
         $avarage = $sum / $numberoffortnights;
         if($avarage >= 7) {
-            return '<span class="badge badge-success">' . get_string('low risk', 'report_dropout') . '</span>';
+            return '<span class="badge badge-primary">' . get_string('low risk', 'report_dropout') . '</span>';
         } else if($avarage >= 5) {
-            return '<span class="badge badge-info">' . get_string('medium risk', 'report_dropout') . '</span>';
+            return '<span class="badge badge-secondary">' . get_string('medium risk', 'report_dropout') . '</span>';
         } else if($avarage >= 3) {
             return '<span class="badge badge-warning">' . get_string('high risk', 'report_dropout') . '</span>'; 
         } else {
@@ -162,9 +162,9 @@ class student_data {
     private function get_behaviour3_risk($sum, $numberoffortnights) {
         $avarage = $sum / $numberoffortnights;
         if($avarage >= 7) {
-            return '<span class="badge badge-success">' . get_string('low risk', 'report_dropout') . '</span>';
+            return '<span class="badge badge-primary">' . get_string('low risk', 'report_dropout') . '</span>';
         } else if($avarage >= 5) {
-            return '<span class="badge badge-info">' . get_string('medium risk', 'report_dropout') . '</span>';
+            return '<span class="badge badge-secondary">' . get_string('medium risk', 'report_dropout') . '</span>';
         } else if($avarage >= 3) {
             return '<span class="badge badge-warning">' . get_string('high risk', 'report_dropout') . '</span>'; 
         } else {
@@ -176,9 +176,9 @@ class student_data {
     private function get_behaviour4_risk($sum, $numberoffortnights) {
         $avarage = $sum / $numberoffortnights;
         if($avarage >= 7) {
-            return '<span class="badge badge-success">' . get_string('low risk', 'report_dropout') . '</span>';
+            return '<span class="badge badge-primary">' . get_string('low risk', 'report_dropout') . '</span>';
         } else if($avarage >= 5) {
-            return '<span class="badge badge-info">' . get_string('medium risk', 'report_dropout') . '</span>';
+            return '<span class="badge badge-secondary">' . get_string('medium risk', 'report_dropout') . '</span>';
         } else if($avarage >= 3) {
             return '<span class="badge badge-warning">' . get_string('high risk', 'report_dropout') . '</span>'; 
         } else {
