@@ -89,17 +89,17 @@ function generate_table($studentData, $selected) {
 function generate_charts($studentdata) {
 	$jsonbehaviour = json_encode($studentdata->behaviourconditions);
 	$jsonsocial = json_encode($studentdata->socialconditions);
-	$jsoncognitive = json_encode($studentdata->cognitiveconditions);
+//	$jsoncognitive = json_encode($studentdata->cognitiveconditions);
 	$jsonallconditions = json_encode($studentdata->allconditions);
     $jsonbehaviourtable = json_encode($studentdata->behaviourtable);
     $jsonsocialtable = json_encode($studentdata->socialtable);
-    $jsoncognitivetable = json_encode($studentdata->cognitivetable);
+//    $jsoncognitivetable = json_encode($studentdata->cognitivetable);
 
 
 
 	$titlebehaviour = get_string('behaviourindicators', 'report_dropout');
 	$titlesocial = get_string('socialindicators', 'report_dropout');
-	$titlecognitive = get_string('cognitiveindicators', 'report_dropout');
+//	$titlecognitive = get_string('cognitiveindicators', 'report_dropout');
 	
    // Google Charts JavaScript code
 	$chartScript = "
@@ -112,7 +112,7 @@ function generate_charts($studentdata) {
     google.charts.setOnLoadCallback(drawChartTable);
     google.charts.setOnLoadCallback(drawBehaviourTable);
     google.charts.setOnLoadCallback(drawSocialTable);
-    google.charts.setOnLoadCallback(drawCognitiveTable);
+//    google.charts.setOnLoadCallback(drawCognitiveTable);
 
 
 
@@ -145,8 +145,8 @@ function generate_charts($studentdata) {
         var chart = new google.visualization.LineChart(document.getElementById('line_chart_social'));
         chart.draw(data, options);
 
-        var passedArray = " . $jsoncognitive . ";
-        options.title = '" . $titlecognitive . "';
+//        var passedArray = " . $jsoncognitive . ";
+   //     options.title = '" . $titlecognitive . "';
         var data = google.visualization.arrayToDataTable(passedArray);
         var chart = new google.visualization.LineChart(document.getElementById('line_chart_cognitive'));
         chart.draw(data, options);
@@ -175,9 +175,9 @@ function generate_charts($studentdata) {
         var chart = new google.visualization.ColumnChart(document.getElementById('column_chart_social'));
         chart.draw(data, options);
 	
-        var passedArray = " . $jsoncognitive . ";
+ //       var passedArray = " . $jsoncognitive . ";
         var data = google.visualization.arrayToDataTable(passedArray);
-        options.title = '" . $titlecognitive . "';
+//        options.title = '" . $titlecognitive . "';
         var chart = new google.visualization.ColumnChart(document.getElementById('column_chart_cognitive'));
         chart.draw(data, options);
     }
@@ -204,12 +204,7 @@ function generate_charts($studentdata) {
         chart.draw(data, {allowHtml: true, showRowNumber: true, width: '100%', height: '100%'});
     }
 
-    function drawCognitiveTable() {
-        var passedArray = " . $jsoncognitivetable . ";
-        var data = google.visualization.arrayToDataTable(passedArray);
-        var chart = new google.visualization.Table(document.getElementById('cognitive_table'));
-        chart.draw(data, {allowHtml: true, showRowNumber: true, width: '100%', height: '100%'});
-    }
+ 
 
     function button_table_charts() {
        var x = document.getElementById('table_chart');
