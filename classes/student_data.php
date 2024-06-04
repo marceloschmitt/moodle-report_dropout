@@ -29,10 +29,14 @@ class student_data {
 	    $this->header[] = (object) array('month' => 'out');
 	    $this->header[] = (object) array('month' => 'nov');
 	    $this->header[] = (object) array('month' => 'dez');
+
+        // Graph header.
 	    for ($i = 0; $i < $contador_temp; $i++) {
 	    	$this->subheader[] = (object) array('halfmonth' => 'Q1');
 	    	$this->subheader[] = (object) array('halfmonth' => 'Q2');
 	    }
+
+        // Behaviour data.
 	    for ($i = 0; $i < ($contador_temp*2); $i++) {
 	    	$value = rand(0, 20);
 		$this->behaviourindicator2[] = (object) array('value' => $value);
@@ -45,6 +49,8 @@ class student_data {
 	    	$value = rand(0, 10);
 		$this->behaviourindicator4[] = (object) array('value' => $value);
 	    }
+
+        // Social data.
 	    for ($i = 0; $i < ($contador_temp*2); $i++) {
 	    	$value = rand(0, 10);
 		$this->socialindicator1[] = (object) array('value' => $value);
@@ -57,6 +63,8 @@ class student_data {
 	    	$value = rand(0, 10);
 		$this->socialindicator3[] = (object) array('value' => $value);
 	    }
+
+        // Cognitive data.
 	    for ($i = 0; $i < ($contador_temp*2); $i++) {
 	    	$value = rand(0, 10);
 		$this->cognitiveindicator1[] = (object) array('value' => $value);
@@ -69,6 +77,8 @@ class student_data {
 	    	$value = rand(0, 10);
 		$this->cognitiveindicator3[] = (object) array('value' => $value);
 	    }
+
+        // Dates.
 	    $this->behaviourconditions[] = array('Term', get_string('Behaviour2', 'report_dropout'),
 						        get_string('Behaviour3', 'report_dropout'),
 						        get_string('Behaviour4', 'report_dropout'));
@@ -78,18 +88,21 @@ class student_data {
 	    $this->cognitiveconditions[] = array('Term', get_string('Cognitive1', 'report_dropout'),
 						        get_string('Cognitive2', 'report_dropout'),
 					            get_string('Cognitive3', 'report_dropout'));
-            $date = date_create("2013-03-15");
-            $enddate = date_create("2013-03-15");
-            date_add($enddate,date_interval_create_from_date_string("13 days"));
-            for ($i = 0; $i < ($contador_temp*2) ; $i++) {
-                $dateinterval = date_format($date,"d/m") . "\n" . date_format($enddate, "d/m");
-                $this->behaviourconditions[] = array($dateinterval, $this->behaviourindicator1[$i]->value,  $this->behaviourindicator2[$i]->value,  $this->behaviourindicator3[$i]->value,  $this->behaviourindicator4[$i]->value);
-                $this->socialconditions[] = array($dateinterval, $this->socialindicator1[$i]->value,  $this->socialindicator2[$i]->value,  $this->socialindicator3[$i]->value);
-                $this->cognitiveconditions[] = array($dateinterval, $this->cognitiveindicator1[$i]->value, $this->cognitiveindicator2[$i]->value,  $this->cognitiveindicator3[$i]->value);
-                date_add($date,date_interval_create_from_date_string("14 days"));
-                date_add($enddate,date_interval_create_from_date_string("14 days"));
-            }
-	    
+            
+        // Table header.
+        $date = date_create("2013-03-15");
+        $enddate = date_create("2013-03-15");
+        date_add($enddate,date_interval_create_from_date_string("13 days"));
+        for ($i = 0; $i < ($contador_temp*2) ; $i++) {
+            $dateinterval = date_format($date,"d/m") . "\n" . date_format($enddate, "d/m");
+            $this->behaviourconditions[] = array($dateinterval, $this->behaviourindicator2[$i]->value,  $this->behaviourindicator3[$i]->value,  $this->behaviourindicator4[$i]->value);
+            $this->socialconditions[] = array($dateinterval, $this->socialindicator1[$i]->value,  $this->socialindicator2[$i]->value,  $this->socialindicator3[$i]->value);
+            $this->cognitiveconditions[] = array($dateinterval, $this->cognitiveindicator1[$i]->value, $this->cognitiveindicator2[$i]->value,  $this->cognitiveindicator3[$i]->value);
+            date_add($date,date_interval_create_from_date_string("14 days"));
+            date_add($enddate,date_interval_create_from_date_string("14 days"));
+        }
+
+        // Table data for each line.
 	    $this->allconditions[] = array_column($this->behaviourconditions, 0);
 	    foreach($this->allconditions[0] AS $x => $y) {
                     $this->allconditions[0][$x] = str_replace("\n", "<BR>", $y);
