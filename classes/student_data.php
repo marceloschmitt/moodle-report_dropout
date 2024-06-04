@@ -63,6 +63,9 @@ class student_data {
 	    	$value = rand(0, 10);
 		$this->socialindicator3[] = (object) array('value' => $value);
 	    }
+	    foreach ($this->socialindicator2 AS $index => $value) {
+            $this->socialindicator1[] = $value + $this->socialindicator3[$index];
+        }
 
         // Cognitive data.
 	    for ($i = 0; $i < ($contador_temp*2); $i++) {
