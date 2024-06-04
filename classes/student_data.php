@@ -34,10 +34,6 @@ class student_data {
 	    	$this->subheader[] = (object) array('halfmonth' => 'Q2');
 	    }
 	    for ($i = 0; $i < ($contador_temp*2); $i++) {
-	    	$value = rand(0, 10);
-		$this->behaviourindicator1[] = (object) array('value' => $value);
-	    }
-	    for ($i = 0; $i < ($contador_temp*2); $i++) {
 	    	$value = rand(0, 20);
 		$this->behaviourindicator2[] = (object) array('value' => $value);
 	    }
@@ -73,16 +69,15 @@ class student_data {
 	    	$value = rand(0, 10);
 		$this->cognitiveindicator3[] = (object) array('value' => $value);
 	    }
-	    $this->behaviourconditions[] = array('Term', get_string('Behaviour1', 'report_dropout'),
-						         get_string('Behaviour2', 'report_dropout'),
-						         get_string('Behaviour3', 'report_dropout'),
-						         get_string('Behaviour4', 'report_dropout'));
-            $this->socialconditions[] = array('Term', get_string('Social1', 'report_dropout'),
-						      get_string('Social2', 'report_dropout'),
-					              get_string('Social3', 'report_dropout'));
+	    $this->behaviourconditions[] = array('Term', get_string('Behaviour2', 'report_dropout'),
+						        get_string('Behaviour3', 'report_dropout'),
+						        get_string('Behaviour4', 'report_dropout'));
+        $this->socialconditions[] = array('Term', get_string('Social1', 'report_dropout'),
+		                        get_string('Social2', 'report_dropout'),
+					            get_string('Social3', 'report_dropout'));
 	    $this->cognitiveconditions[] = array('Term', get_string('Cognitive1', 'report_dropout'),
-						         get_string('Cognitive2', 'report_dropout'),
-					                 get_string('Cognitive3', 'report_dropout'));
+						        get_string('Cognitive2', 'report_dropout'),
+					            get_string('Cognitive3', 'report_dropout'));
             $date = date_create("2013-03-15");
             $enddate = date_create("2013-03-15");
             date_add($enddate,date_interval_create_from_date_string("13 days"));
@@ -102,11 +97,11 @@ class student_data {
 	    $this->allconditions[0][$i+1] = "Parcial";
             $this->allconditions[0][0] = get_string('indicators', 'report_dropout');
 	    $index = 1;
-	    for($j = 1; $j < 5; $j++) {
-                $this->allconditions[] = array_column($this->behaviourconditions, $j);
-                $this->allconditions[$index][$i+1] = 
-	                $this->get_behaviour_risk($j, array_sum(array_slice($this->allconditions[$index], 1)), $i);
-		        $index++;
+	    for($j = 1; $j < 4; $j++) {
+            $this->allconditions[] = array_column($this->behaviourconditions, $j);
+            $this->allconditions[$index][$i+1] = 
+	        $this->get_behaviour_risk($j+1, array_sum(array_slice($this->allconditions[$index], 1)), $i);
+		    $index++;
 		
             }
         for($j = 1; $j < 4; $j++) {	    
