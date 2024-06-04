@@ -20,9 +20,9 @@ function generate_charts($studentdata) {
     google.charts.load('current', {'packages':['table']});
     google.charts.setOnLoadCallback(drawChartLine);
     google.charts.setOnLoadCallback(drawChartColumn);
-    google.charts.setOnLoadCallback(drawChartTable);
     google.charts.setOnLoadCallback(drawBehaviourTable);
     google.charts.setOnLoadCallback(drawSocialTable);
+    google.charts.setOnLoadCallback(drawCognitiveTable);
 
 
     function drawChartLine() {
