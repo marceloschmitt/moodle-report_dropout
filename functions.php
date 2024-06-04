@@ -92,6 +92,8 @@ function generate_charts($studentdata) {
 	$jsoncognitive = json_encode($studentdata->cognitiveconditions);
 	$jsonallconditions = json_encode($studentdata->allconditions);
     $jsonbehaviourtable = json_encode($studentdata->behaviourtable);
+    $jsonsocialtable = json_encode($studentdata->socialtable);
+
 
 	$titlebehaviour = get_string('behaviourindicators', 'report_dropout');
 	$titlesocial = get_string('socialindicators', 'report_dropout');
@@ -107,6 +109,8 @@ function generate_charts($studentdata) {
     google.charts.setOnLoadCallback(drawChartColumn);
     google.charts.setOnLoadCallback(drawChartTable);
     google.charts.setOnLoadCallback(drawBehaviourTable);
+    google.charts.setOnLoadCallback(drawSocialTable);
+
 
 
 
@@ -188,6 +192,14 @@ function generate_charts($studentdata) {
         var chart = new google.visualization.Table(document.getElementById('behaviour_table'));
         chart.draw(data, {allowHtml: true, showRowNumber: true, width: '100%', height: '100%'});
     }
+
+    function drawSocialTable() {
+        var passedArray = " . $jsonsocialtable . ";
+        var data = google.visualization.arrayToDataTable(passedArray);
+        var chart = new google.visualization.Table(document.getElementById('social_table'));
+        chart.draw(data, {allowHtml: true, showRowNumber: true, width: '100%', height: '100%'});
+    }
+
 
 
     function button_table_charts() {
