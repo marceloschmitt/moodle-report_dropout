@@ -24,6 +24,8 @@ class student_data {
 
     var $behaviourtable = array();
     var $socialtable = array();
+    var $socialtable = array();
+
 	
     public function __construct($userid) {
 	    $contador_temp = 5;
@@ -90,11 +92,13 @@ class student_data {
             $dateinterval = date_format($date,"d/m") . "\n" . date_format($enddate, "d/m");
             $this->behaviourconditions[] = array($dateinterval, $this->behaviourindicator2[$i]->value,  $this->behaviourindicator3[$i]->value,  $this->behaviourindicator4[$i]->value);
             $this->socialconditions[] = array($dateinterval, $this->socialindicator1[$i]->value,  $this->socialindicator2[$i]->value,  $this->socialindicator3[$i]->value);
-            $this->cognitiveconditions[] = array($dateinterval, $this->cognitiveindicator1[$i]->value, $this->cognitiveindicator2[$i]->value,  $this->cognitiveindicator3[$i]->value);
             date_add($date,date_interval_create_from_date_string("14 days"));
             date_add($enddate,date_interval_create_from_date_string("14 days"));
         }
+        for($i = 0; $i < $numberofgrades; $i++) {
+            $this->cognitiveconditions[] = array($i, $this->cognitiveindicator1[$i]->value);
 
+        
         // Table data for each line.
 	    $this->allconditions[] = array_column($this->behaviourconditions, 0);
 	    foreach($this->allconditions[0] AS $x => $y) {
@@ -124,7 +128,7 @@ class student_data {
 
         
         $this->cognitivetable[0][0] = get_string('cognitiveindicators', 'report_dropout');
-        for($column = 1; $column <= $numberofgrades; $numberofgrades++) {
+        for($column = 1; $column <= $numberofgrades; $column++) {
             $this->cognitivetable[0][$column] = $column;
         }
         for($row = 1; $row < 2; $row++) { 
