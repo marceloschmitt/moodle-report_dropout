@@ -112,12 +112,14 @@ class student_data {
 	    for($j = 1; $j < 4; $j++) {
             $this->allconditions[] = array_column($this->behaviourconditions, $j);
             $this->allconditions[$index][$i+1] = 
-	        $this->get_behaviour_risk($j+1, array_sum(array_slice($this->allconditions[$index], 1)), $i);
+	            $this->get_behaviour_risk($j+1, array_sum(array_slice($this->allconditions[$index], 1)), $i);
 		    $index++;
         }
         for($j = 1; $j < 4; $j++) {	    
             $this->allconditions[] = array_column($this->socialconditions, $j);
-            $this->allconditions[$index++][$i+1] = 0;
+            $this->allconditions[$index][$i+1] = 
+	            $this->social_risk($j+1, array_sum(array_slice($this->allconditions[$index], 1)), $i);
+		    $index++;
         }
         for($j = 1; $j < 4; $j++) {
             $this->allconditions[] = array_column($this->cognitiveconditions, $j);
