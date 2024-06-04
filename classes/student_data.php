@@ -114,7 +114,7 @@ class student_data {
 	    $index = 1;
 
        
-        
+        $this->behaviourtable[0] = $this->allconditions[0]; 
         for($j = 1; $j < 4; $j++) {
             $this->behaviourtable[] = array_column($this->behaviourconditions, $j);
                     echo var_dump($this->allconditions). "<BR><BR>";
