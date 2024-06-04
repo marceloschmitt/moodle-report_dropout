@@ -106,7 +106,7 @@ function generate_charts($studentdata) {
     }
 
     function drawCognitiveTable() {
-        var passedArray = " . $jsonsocialtable . ";
+        var passedArray = " . $jsoncognitivetable . ";
         var data = google.visualization.arrayToDataTable(passedArray);
         var chart = new google.visualization.Table(document.getElementById('cognitive_table'));
         chart.draw(data, {allowHtml: true, showRowNumber: true, width: '100%', height: '100%'});
