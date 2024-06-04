@@ -23,7 +23,6 @@ function generate_charts($studentdata) {
     google.charts.setOnLoadCallback(drawChartTable);
     google.charts.setOnLoadCallback(drawBehaviourTable);
     google.charts.setOnLoadCallback(drawSocialTable);
-    google.charts.setOnLoadCallback(drawCognitiveTable);
 
 
     function drawChartLine() {
