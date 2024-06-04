@@ -25,7 +25,7 @@
 define('NO_OUTPUT_BUFFERING', true);
 
 require('../../config.php');
-require_once($CFG->libdir.'/adminlib.php');
+require_once($CFG->libdir . '/adminlib.php');
 
 // Security.
 $courseid = required_param('id', PARAM_INT);

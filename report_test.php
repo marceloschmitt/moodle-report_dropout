@@ -26,7 +26,7 @@ define('NO_OUTPUT_BUFFERING', true);
 
 require('../../config.php');
 require('functions.php');
-require_once($CFG->libdir.'/adminlib.php');
+require_once($CFG->libdir . '/adminlib.php');
 
 // Security.
 $courseid = required_param('id', PARAM_INT);
@@ -52,7 +52,7 @@ $lineChart = generate_charts($studentdata);
 $output = $PAGE->get_renderer('report_dropout');
 echo $output->header();
 echo $output->heading(get_string('pluginname', 'report_dropout'));
-$renderable = new \report_dropout\output\report_test_page($lineChart,'MArcelo',$studentdata);
+$renderable = new \report_dropout\output\report_test_page($lineChart, 'MArcelo', $studentdata);
 echo $output->render($renderable);
 echo $output->footer();
 

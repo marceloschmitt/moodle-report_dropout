@@ -7,27 +7,29 @@ use renderer_base;
 use templatable;
 use stdClass;
 
-class report_page implements renderable, templatable {
+class report_page implements renderable, templatable
+{
     /** @var string $sometext Some text to show how to pass data to a template. */
     var $sometext = null;
 
-    public function __construct($course, $script, $sometext, $studentdata) {
-            $this->script = $script;
-            $this->course = $course;
-            $this->sometext = $sometext;
-            $this->header = $studentdata->header;
-            $this->subheader = $studentdata->subheader;
-            $this->behaviourindicator1 = $studentdata->behaviourindicator1;
-            $this->behaviourindicator2 = $studentdata->behaviourindicator2;
-            $this->behaviourindicator3 = $studentdata->behaviourindicator3;
-            $this->behaviourindicator4 = $studentdata->behaviourindicator4;
-            $this->socialindicator1 = $studentdata->socialindicator1;
-            $this->socialindicator2 = $studentdata->socialindicator2;
-            $this->socialindicator3 = $studentdata->socialindicator3;
-            $this->socialindicator4 = $studentdata->socialindicator4;
-            $this->cognitiveindicator1 = $studentdata->cognitiveindicator1;
-            $this->cognitiveindicator2 = $studentdata->cognitiveindicator2;
-            $this->cognitiveindicator3 = $studentdata->cognitiveindicator3;
+    public function __construct($course, $script, $sometext, $studentdata)
+    {
+        $this->script = $script;
+        $this->course = $course;
+        $this->sometext = $sometext;
+        $this->header = $studentdata->header;
+        $this->subheader = $studentdata->subheader;
+        $this->behaviourindicator1 = $studentdata->behaviourindicator1;
+        $this->behaviourindicator2 = $studentdata->behaviourindicator2;
+        $this->behaviourindicator3 = $studentdata->behaviourindicator3;
+        $this->behaviourindicator4 = $studentdata->behaviourindicator4;
+        $this->socialindicator1 = $studentdata->socialindicator1;
+        $this->socialindicator2 = $studentdata->socialindicator2;
+        $this->socialindicator3 = $studentdata->socialindicator3;
+        $this->socialindicator4 = $studentdata->socialindicator4;
+        $this->cognitiveindicator1 = $studentdata->cognitiveindicator1;
+        $this->cognitiveindicator2 = $studentdata->cognitiveindicator2;
+        $this->cognitiveindicator3 = $studentdata->cognitiveindicator3;
     }
 
     /**
@@ -35,7 +37,8 @@ class report_page implements renderable, templatable {
      *
      * @return stdClass
      */
-    public function export_for_template(renderer_base $output) {
+    public function export_for_template(renderer_base $output)
+    {
         $data = new stdClass();
         $data->coursename = $this->course->shortname;
         $data->coursestartdate = $this->course->startdate;

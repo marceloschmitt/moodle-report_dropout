@@ -1,19 +1,22 @@
 <?php
 
-function generate_charts($studentdata) {
-	$jsonbehaviour = json_encode($studentdata->behaviourconditions);
-	$jsonsocial = json_encode($studentdata->socialconditions);
-	$jsoncognitive = json_encode($studentdata->cognitiveconditions);
+function generate_charts($studentdata)
+{
+    // Arrays defined PHP and will be used in JavaScript.
+    $jsonbehaviour = json_encode($studentdata->behaviourconditions);
+    $jsonsocial = json_encode($studentdata->socialconditions);
+    $jsoncognitive = json_encode($studentdata->cognitiveconditions);
     $jsonbehaviourtable = json_encode($studentdata->behaviourtable);
     $jsonsocialtable = json_encode($studentdata->socialtable);
     $jsoncognitivetable = json_encode($studentdata->cognitivetable);
 
-	$titlebehaviour = get_string('behaviourindicators', 'report_dropout');
-	$titlesocial = get_string('socialindicators', 'report_dropout');
-	$titlecognitive = get_string('cognitiveindicators', 'report_dropout');
-	
-   // Google Charts JavaScript code
-	$chartScript = "<script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>
+    // Titles defined in PHP that will be used in JavaScript.
+    $titlebehaviour = get_string('behaviourindicators', 'report_dropout');
+    $titlesocial = get_string('socialindicators', 'report_dropout');
+    $titlecognitive = get_string('cognitiveindicators', 'report_dropout');
+
+    // Google Charts JavaScript code
+    $chartScript = "<script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>
     <script type='text/javascript'>
     google.charts.load('current', {'packages':['corechart']});  
     google.charts.load('current', {'packages':['table']});
@@ -140,11 +143,12 @@ function generate_charts($studentdata) {
     }
    </script>
 ";
-   return $chartScript;
+    return $chartScript;
 }
 
 
-function tableStructureData($tableData = []){
+function tableStructureData($tableData = [])
+{
     // deixa os dados do aluno 'table friendly'
 
     $tableStructure = [];
@@ -177,11 +181,12 @@ function tableStructureData($tableData = []){
                 break;
         }
     }
-    
+
     return $tableStructure;
 }
 
 //TODO
-function generateChart($chartType) {
+function generateChart($chartType)
+{
     // Return the chart data in a format that can be used by JavaScript
 }

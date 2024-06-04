@@ -26,7 +26,7 @@ define('NO_OUTPUT_BUFFERING', true);
 
 require('../../config.php');
 require('functions.php');
-require_once($CFG->libdir.'/adminlib.php');
+require_once($CFG->libdir . '/adminlib.php');
 
 global $DB;
 
@@ -38,7 +38,7 @@ $context = context_course::instance($courseid);
 require_capability('report/dropout:view', $context);
 $course = get_course($courseid);
 
-$student =  $DB->get_record('user', ['id' => $userid]);
+$student = $DB->get_record('user', ['id' => $userid]);
 $studentname = "$student->firstname $student->lastname";
 
 // Get student data.

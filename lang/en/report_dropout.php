@@ -31,7 +31,7 @@ $string['passedterms'] = 'Semestres transcorridos: ';
 $string['studentinformation'] = 'Informações do estudante';
 $string['nome'] = 'Nome: ';
 $string['numberoftermcourses'] = 'Número de disciplinas com matrícula: ';
-$string['numberofterms'] = 'Número de semestres: '; 
+$string['numberofterms'] = 'Número de semestres: ';
 
 
 $string['indicators'] = 'Indicadores';

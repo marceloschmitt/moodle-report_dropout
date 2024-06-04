@@ -22,9 +22,10 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-function report_dropout_extend_navigation_course($navigation, $course, $context) {
+function report_dropout_extend_navigation_course($navigation, $course, $context)
+{
     if (has_capability('report/dropout:view', $context)) {
-        $url = new moodle_url('/report/dropout/index.php', array('id'=>$course->id));
+        $url = new moodle_url('/report/dropout/index.php', array('id' => $course->id));
         $navigation->add(get_string('pluginname', 'report_dropout'), $url, navigation_node::TYPE_SETTING, null, null, new pix_icon('i/report', ''));
     }
 }
