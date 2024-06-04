@@ -49,7 +49,7 @@ class student_data {
 		$this->behaviourindicator3[] = (object) array('value' => $value);
 	    }
 	    for ($i = 0; $i < ($contador_temp*2); $i++) {
-	    	$value = rand(0, 10);
+	    	$value = rand(0, 100);
 		$this->behaviourindicator4[] = (object) array('value' => $value);
 	    }
 
@@ -97,7 +97,7 @@ class student_data {
         date_add($enddate,date_interval_create_from_date_string("13 days"));
         for ($i = 0; $i < ($contador_temp*2) ; $i++) {
             $dateinterval = date_format($date,"d/m") . "\n" . date_format($enddate, "d/m");
-            $this->behaviourconditions[] = array($dateinterval, $this->behaviourindicator2[$i]->value,  $this->behaviourindicator3[$i]->value,  $this->behaviourindicator4[$i]->value);
+            $this->behaviourconditions[] = array($dateinterval, $this->behaviourindicator2[$i]->value,  $this->behaviourindicator3[$i]->value,  $this->behaviourindicator4[$i]->value . '%');
             $this->socialconditions[] = array($dateinterval, $this->socialindicator1[$i]->value,  $this->socialindicator2[$i]->value,  $this->socialindicator3[$i]->value);
             $this->cognitiveconditions[] = array($dateinterval, $this->cognitiveindicator1[$i]->value, $this->cognitiveindicator2[$i]->value,  $this->cognitiveindicator3[$i]->value);
             date_add($date,date_interval_create_from_date_string("14 days"));
@@ -132,7 +132,7 @@ class student_data {
         }  
 
         $this->cognitivetable[0] = $this->allconditions[0];
-        $this->cognitivetable[0][0] = get_string('cognitivendicators', 'report_dropout');
+        $this->cognitivetable[0][0] = get_string('cognitiveindicators', 'report_dropout');
         for($row = 1; $row < 4; $row++) { 
             $this->cognitivetable[] = array_column($this->cognitiveconditions, $row);
             $this->cognitivetable[$row][$i+1] = 
