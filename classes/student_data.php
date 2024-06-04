@@ -60,7 +60,7 @@ class student_data {
 		$this->socialindicator3[] = (object) array('value' => $value);
 	    }
 	    foreach ($this->socialindicator2 AS $index => $value) {
-            $this->socialindicator1[] = (object) array('value'=> $value + $this->socialindicator3[$index]);
+            $this->socialindicator1[] = (object) 1;
         }
 
         // Cognitive data.
