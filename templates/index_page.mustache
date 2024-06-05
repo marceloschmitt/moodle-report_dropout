@@ -1,12 +1,12 @@
 <div class="hero-unit">
     <table class="table table-striped">
-        {{#students}}
         <tbody>
+        {{#students}}
             <tr>
                 <td scope="row">{{risk}}</td>
                 <td><a href="report.php?id={{courseid}}&userid={{id}}"> {{firstname}} {{lastname}} ({{username}}) - {{email}}</a></td>
             </tr>
-        </tbody>
         {{/students}}
+        </tbody>
     </table>
 </div>
