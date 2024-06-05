@@ -10,13 +10,12 @@ use stdClass;
 class report_page implements renderable, templatable
 {
 
-    public function __construct($course, $script, $sometext, $studentdata)
+    public function __construct($course, $script, $studentfullname, $studentdata)
     {
         $this->script = $script;
         $this->course = $course;
-        $this->sometext = $sometext;
-        $this->header = $studentdata->header;
-        $this->subheader = $studentdata->subheader;
+        $this->studentfullname = $studentfullname;
+
     }
 
     /**
@@ -30,9 +29,7 @@ class report_page implements renderable, templatable
         $data->coursename = $this->course->shortname;
         $data->coursestartdate = $this->course->startdate;
         $data->courseenddate = $this->course->enddate;
-        $data->sometext = $this->sometext;
-        $data->header = $this->header;
-        $data->subheader = $this->subheader;
+        $data->studentfullname = $this->studentfullname;
         $data->script = $this->script;
         // Titles of report_dropout template
         $data->programinformation = get_string('programinformation', 'report_dropout');
