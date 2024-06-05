@@ -24,11 +24,9 @@
 
 $string['pluginname'] = 'Dropout report';
 
-$string['programinformation'] = 'Informações do curso';
 $string['program'] = 'Curso: ';
 $string['class'] = 'Turma: ';
 $string['passedterms'] = 'Semestres transcorridos: ';
-$string['studentinformation'] = 'Informações do estudante';
 $string['nome'] = 'Nome: ';
 $string['numberoftermcourses'] = 'Número de disciplinas com matrícula: ';
 $string['numberofterms'] = 'Número de semestres: ';
@@ -56,6 +54,8 @@ $string['highrisk'] = 'Risco alto';
 $string['veryhighrisk'] = 'Risco altíssimo';
 
 // Titles of report_dropout template
+$string['programinformation'] = 'Informações gerais';
+$string['studentinformation'] = 'Informações do aluno';
 $string['studentname'] = 'Nome do aluno';
 $string['program'] = 'Nome do curso';
 $string['class'] = 'Turma';

@@ -7,7 +7,7 @@
 
 <div class="card mb-2 info-course" >
     <div class="card-header">
-        <h5 class="font-weight-bold">Informações Gerais</h5>
+        <h5 class="font-weight-bold">{{programinformation}}</h5>
     </div>
     <div class="card-body container row">
         <div class="card-text" >
@@ -21,7 +21,7 @@
 
 <div class="card mb-2 info-student">
     <div class="card-header">
-        <h5 class="font-weight-bold">Informações do aluno</h5>
+        <h5 class="font-weight-bold">{{studentinformation}}</h5>
     </div>
     <div class="card-body container row">
         <div class="card-text" >
@@ -43,7 +43,7 @@
 <br><br>
 {{{script}}}
 <button onclick="button_table_charts()"><H3>Tabelas com evolução de indicadores de risco</h3></button>
-<BR><BR>
+<br>
 <div id="table_charts" width="max-content" style="display: block">
     <BR><BR>
     <div id="behaviour_table" width="max-content" style="display: block"></div><BR>
