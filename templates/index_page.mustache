@@ -1,9 +1,12 @@
-<div class="hero-unit">                                                                                                             
-  <ul>
-    {{#students}}
-    <li>
-        <a href="report.php?id={{courseid}}&userid={{id}}">{{risk}} {{firstname}} {{lastname}} ({{username}}) - {{email}}</a>
-    </li>
-    {{/students}}
-</ul>
+<div class="hero-unit">
+    <table class="table table-striped">
+        {{#students}}
+        <tbody>
+            <tr>
+                <td>{{risk}}</td>
+                <td><a href="report.php?id={{courseid}}&userid={{id}}"> {{firstname}} {{lastname}} ({{username}}) - {{email}}</a></td>
+            </tr>
+        </tbody>
+        {{/students}}
+    </table>
 </div>
