@@ -55,5 +55,18 @@ $string['mediumrisk'] = 'Risco médio';
 $string['highrisk'] = 'Risco alto';
 $string['veryhighrisk'] = 'Risco altíssimo';
 
+// Titles of report_dropout template
+$string['studentname'] = 'Nome do aluno';
+$string['program'] = 'Nome do curso';
+$string['class'] = 'Turma';
+$string['numberofterms'] = 'Número de semestres do curso';
+$string['situation'] = 'Situação';
+$string['passedterms'] = 'Semestres transcorridos';
+$string['triedcourses'] = 'Total de disciplinas cursadas';
+$string['mandatorycourses'] = 'Disciplinas obrigatórias no semestre';
+$string['nonmandatorycourses'] = 'Disciplinas não obrigatórias no semestre';
+$string['schedule'] = 'Acompanhamento ao cronograma';
+
+
 
 

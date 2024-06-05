@@ -9,8 +9,6 @@ use stdClass;
 
 class report_page implements renderable, templatable
 {
-    /** @var string $sometext Some text to show how to pass data to a template. */
-    var $sometext = null;
 
     public function __construct($course, $script, $sometext, $studentdata)
     {
@@ -19,17 +17,6 @@ class report_page implements renderable, templatable
         $this->sometext = $sometext;
         $this->header = $studentdata->header;
         $this->subheader = $studentdata->subheader;
-        $this->behaviourindicator1 = $studentdata->behaviourindicator1;
-        $this->behaviourindicator2 = $studentdata->behaviourindicator2;
-        $this->behaviourindicator3 = $studentdata->behaviourindicator3;
-        $this->behaviourindicator4 = $studentdata->behaviourindicator4;
-        $this->socialindicator1 = $studentdata->socialindicator1;
-        $this->socialindicator2 = $studentdata->socialindicator2;
-        $this->socialindicator3 = $studentdata->socialindicator3;
-        $this->socialindicator4 = $studentdata->socialindicator4;
-        $this->cognitiveindicator1 = $studentdata->cognitiveindicator1;
-        $this->cognitiveindicator2 = $studentdata->cognitiveindicator2;
-        $this->cognitiveindicator3 = $studentdata->cognitiveindicator3;
     }
 
     /**
@@ -46,18 +33,18 @@ class report_page implements renderable, templatable
         $data->sometext = $this->sometext;
         $data->header = $this->header;
         $data->subheader = $this->subheader;
-        $data->behaviourindicator1 = $this->behaviourindicator1;
-        $data->behaviourindicator2 = $this->behaviourindicator2;
-        $data->behaviourindicator3 = $this->behaviourindicator3;
-        $data->behaviourindicator4 = $this->behaviourindicator4;
-        $data->socialindicator1 = $this->socialindicator1;
-        $data->socialindicator2 = $this->socialindicator2;
-        $data->socialindicator3 = $this->socialindicator3;
-        $data->socialindicator4 = $this->socialindicator4;
-        $data->cognitiveindicator1 = $this->cognitiveindicator1;
-        $data->cognitiveindicator2 = $this->cognitiveindicator2;
-        $data->cognitiveindicator3 = $this->cognitiveindicator3;
         $data->script = $this->script;
+        // Titles of report_dropout template
+        $data->studentname = get_string('studentname', 'report_dropout');
+        $data->program = get_string('program', 'report_dropout');
+        $data->class = get_string('class', 'report_dropout');
+        $data->numberofterms = get_string('numberofterms', 'report_dropout');
+        $data->situation = get_string('situation', 'report_dropout');
+        $data->passedterms = get_string('passedterms', 'report_dropout');
+        $data->triedcourses = get_string('triedcourses', 'report_dropout');
+        $data->mandatorycourses = get_string('mandatorycourses', 'report_dropout');
+        $data->nonmandatorycourses = get_string('nonmandatorycourses', 'report_dropout');
+        $data->schedule = get_string('schedule', 'report_dropout');
         return $data;
     }
 }
