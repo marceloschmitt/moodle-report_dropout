@@ -164,6 +164,8 @@ function generate_charts($studentdata)
            x.style.display = 'none';
        }
     }
+    
+    
     </script>";
     return $chartScript;
 }

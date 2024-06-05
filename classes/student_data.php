@@ -7,7 +7,7 @@ class student_data
     public $userid;
     public $behaviourconditions = array();
     public $socialconditions = array();
-    public $congnitiveconditions = array();
+    public $cognitiveconditions = array();
     public $allconditions = array();
     public $behaviourtable = array();
     public $socialtable = array();
@@ -16,7 +16,7 @@ class student_data
 
     public function __construct($userid)
     {
-        $this->userid = userid;
+        $this->userid = $userid;
 
         $contador_temp = 5;
         // Behaviour data.
