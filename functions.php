@@ -1,4 +1,27 @@
 <?php
+// This file is part of Moodle - http://moodle.org/
+//
+// Moodle is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
+/**
+ * A report to display the risk of dropout or retention
+ *
+ * @package    report
+ * @subpackage dropout
+ * @copyright  2024 onwards Marcelo Augusto Rauh Schmitt
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 
 function generate_charts($studentdata)
 {
@@ -114,7 +137,7 @@ function generate_charts($studentdata)
     }
  
     function button_table_charts() {
-       var x = document.getElementById('table_chart');
+       var x = document.getElementById('table_charts');
        if (x.style.display === 'none') {
            x.style.display = 'block';
        } else {
@@ -141,52 +164,7 @@ function generate_charts($studentdata)
            x.style.display = 'none';
        }
     }
-   </script>
-";
+    </script>";
     return $chartScript;
 }
 
-
-function tableStructureData($tableData = [])
-{
-    // deixa os dados do aluno 'table friendly'
-
-    $tableStructure = [];
-
-    foreach ($tableData as $key => $value) {
-        switch ($key) {
-            case 'comportamentais':
-                $tableStructure['Comportamentais'] = [
-                    'Acompanhamento ao cronograma' => $tableData['comportamentais'][0],
-                    ' Número de acessos ao curso' => $tableData['comportamentais'][1],
-                    'Conteúdos acessados' => $tableData['comportamentais'][2],
-                    'Atividades concluídas' => $tableData['comportamentais'][3]
-                ];
-                break;
-
-            case 'sociais':
-                $tableStructure['Sociais'] = [
-                    'Interações totais no Ambiente' => $tableData['sociais'][0],
-                    'Interações com colegas' => $tableData['sociais'][1],
-                    'Intearações com professores e tutores' => $tableData['sociais'][2],
-                ];
-                break;
-
-            case 'cognitivos':
-                $tableStructure['Cognitivos'] = [
-                    'Desempenho geral' => $tableData['cognitivos'][0],
-                    'Desempenho em atividades não avaliativas' => $tableData['cognitivos'][1],
-                    'Desempenho em atividades avaliativas' => $tableData['cognitivos'][2]
-                ];
-                break;
-        }
-    }
-
-    return $tableStructure;
-}
-
-//TODO
-function generateChart($chartType)
-{
-    // Return the chart data in a format that can be used by JavaScript
-}
