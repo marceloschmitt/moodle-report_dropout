@@ -4,33 +4,32 @@ namespace report_dropout;
 
 class student_data
 {
-    public $userid;
-    public $header = array();
-    public $subheader = array();
-    public $behaviourcondition1 = array();
-    public $behaviourcondition2 = array();
-    public $behaviourcondition3 = array();
-    public $behaviourcondition4 = array();
-    public $socialcondition1 = array();
-    public $socialcondition2 = array();
-    public $socialcondition3 = array();
-    public $cognitivecondition1 = array();
-    public $cognitivecondition2 = array();
-    public $cognitivecondition3 = array();
+    var $userid;
+    var $header = array();
+    var $subheader = array();
+    var $behaviourcondition1 = array();
+    var $behaviourcondition2 = array();
+    var $behaviourcondition3 = array();
+    var $behaviourcondition4 = array();
+    var $socialcondition1 = array();
+    var $socialcondition2 = array();
+    var $socialcondition3 = array();
+    var $cognitivecondition1 = array();
+    var $cognitivecondition2 = array();
+    var $cognitivecondition3 = array();
 
-    public $behaviourconditions = array();
-    public $socialconditions = array();
-    public $cognitiveconditions = array();
+    var $behaviourconditions = array();
+    var $socialconditions = array();
+    var $congnitiveconditions = array();
+    var $allconditions = array();
 
-
-    public $behaviourtable = array();
-    public $socialtable = array();
-    public $cognitivetable = array();
+    var $behaviourtable = array();
+    var $socialtable = array();
+    var $cognitivetable = array();
 
 
     public function __construct($userid)
     {
-        $allconditions = array();
         $contador_temp = 5;
         $this->header[] = (object)array('month' => 'ago');
         $this->header[] = (object)array('month' => 'set');
@@ -104,15 +103,15 @@ class student_data
 
 
         // Table data for each line.
-        allconditions[] = array_column($this->behaviourconditions, 0);
-        foreach (allconditions[0] as $x => $y) {
-            allconditions[0][$x] = str_replace("\n", "<BR>", $y);
+        $this->allconditions[] = array_column($this->behaviourconditions, 0);
+        foreach ($this->allconditions[0] as $x => $y) {
+            $this->allconditions[0][$x] = str_replace("\n", "<BR>", $y);
         }
-        allconditions[0][$i + 1] = "Risco parcial";
-        allconditions[0][0] = get_string('indicators', 'report_dropout');
+        $this->allconditions[0][$i + 1] = "Risco parcial";
+        $this->allconditions[0][0] = get_string('indicators', 'report_dropout');
         $index = 1;
 
-        $this->behaviourtable[0] = allconditions[0];
+        $this->behaviourtable[0] = $this->allconditions[0];
         $this->behaviourtable[0][0] = get_string('behaviourindicators', 'report_dropout');
         for ($row = 1; $row < 4; $row++) {
             $this->behaviourtable[] = array_column($this->behaviourconditions, $row);
@@ -120,7 +119,7 @@ class student_data
                 $this->get_behaviour_risk($row + 1, array_sum(array_slice($this->behaviourtable[$row], 1)), $i);
         }
 
-        $this->socialtable[0] = allconditions[0];
+        $this->socialtable[0] = $this->allconditions[0];
         $this->socialtable[0][0] = get_string('socialindicators', 'report_dropout');
         for ($row = 1; $row < 4; $row++) {
             $this->socialtable[] = array_column($this->socialconditions, $row);
