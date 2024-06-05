@@ -4,28 +4,28 @@ namespace report_dropout;
 
 class student_data
 {
-    var $userid;
-    var $header = array();
-    var $subheader = array();
-    var $behaviourcondition1 = array();
-    var $behaviourcondition2 = array();
-    var $behaviourcondition3 = array();
-    var $behaviourcondition4 = array();
-    var $socialcondition1 = array();
-    var $socialcondition2 = array();
-    var $socialcondition3 = array();
-    var $cognitivecondition1 = array();
-    var $cognitivecondition2 = array();
-    var $cognitivecondition3 = array();
+    public $userid;
+    public $header = array();
+    public $subheader = array();
+    public $behaviourcondition1 = array();
+    public $behaviourcondition2 = array();
+    public $behaviourcondition3 = array();
+    public $behaviourcondition4 = array();
+    public $socialcondition1 = array();
+    public $socialcondition2 = array();
+    public $socialcondition3 = array();
+    public $cognitivecondition1 = array();
+    public $cognitivecondition2 = array();
+    public $cognitivecondition3 = array();
 
-    var $behaviourconditions = array();
-    var $socialconditions = array();
-    var $congnitiveconditions = array();
-    var $allconditions = array();
+    public $behaviourconditions = array();
+    public $socialconditions = array();
+    public $congnitiveconditions = array();
+    public $allconditions = array();
 
-    var $behaviourtable = array();
-    var $socialtable = array();
-    var $cognitivetable = array();
+    public $behaviourtable = array();
+    public $socialtable = array();
+    public $cognitivetable = array();
 
 
     public function __construct($userid)
