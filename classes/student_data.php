@@ -5,15 +5,10 @@ namespace report_dropout;
 class student_data
 {
     public $userid;
-    public $header = array();
-    public $subheader = array();
-
-
     public $behaviourconditions = array();
     public $socialconditions = array();
     public $congnitiveconditions = array();
     public $allconditions = array();
-
     public $behaviourtable = array();
     public $socialtable = array();
     public $cognitivetable = array();
@@ -21,19 +16,9 @@ class student_data
 
     public function __construct($userid)
     {
+        $this->userid = userid;
+
         $contador_temp = 5;
-        $this->header[] = (object)array('month' => 'ago');
-        $this->header[] = (object)array('month' => 'set');
-        $this->header[] = (object)array('month' => 'out');
-        $this->header[] = (object)array('month' => 'nov');
-        $this->header[] = (object)array('month' => 'dez');
-
-        // Graph header.
-        for ($i = 0; $i < $contador_temp; $i++) {
-            $this->subheader[] = (object)array('halfmonth' => 'Q1');
-            $this->subheader[] = (object)array('halfmonth' => 'Q2');
-        }
-
         // Behaviour data.
         for ($i = 0; $i < ($contador_temp * 2); $i++) {
             $value = rand(0, 20);
