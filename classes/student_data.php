@@ -8,7 +8,6 @@ class student_data
     public $behaviourconditions = array();
     public $socialconditions = array();
     public $cognitiveconditions = array();
-    public $allconditions = array();
     public $behaviourtable = array();
     public $socialtable = array();
     public $cognitivetable = array();
@@ -79,15 +78,17 @@ class student_data
 
 
         // Table data for each line.
-        $this->allconditions[] = array_column($this->behaviourconditions, 0);
-        foreach ($this->allconditions[0] as $x => $y) {
-            $this->allconditions[0][$x] = str_replace("\n", "<BR>", $y);
+        $allconditions = array();
+
+        $allconditions[] = array_column($this->behaviourconditions, 0);
+        foreach ($allconditions[0] as $x => $y) {
+            $allconditions[0][$x] = str_replace("\n", "<BR>", $y);
         }
-        $this->allconditions[0][$i + 1] = "Risco parcial";
-        $this->allconditions[0][0] = get_string('indicators', 'report_dropout');
+        $allconditions[0][$i + 1] = "Risco parcial";
+        $allconditions[0][0] = get_string('indicators', 'report_dropout');
         $index = 1;
 
-        $this->behaviourtable[0] = $this->allconditions[0];
+        $this->behaviourtable[0] = $allconditions[0];
         $this->behaviourtable[0][0] = get_string('behaviourindicators', 'report_dropout');
         for ($row = 1; $row < 4; $row++) {
             $this->behaviourtable[] = array_column($this->behaviourconditions, $row);
@@ -95,7 +96,7 @@ class student_data
                 $this->get_behaviour_risk($row + 1, array_sum(array_slice($this->behaviourtable[$row], 1)), $i);
         }
 
-        $this->socialtable[0] = $this->allconditions[0];
+        $this->socialtable[0] = $allconditions[0];
         $this->socialtable[0][0] = get_string('socialindicators', 'report_dropout');
         for ($row = 1; $row < 4; $row++) {
             $this->socialtable[] = array_column($this->socialconditions, $row);
