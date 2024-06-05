@@ -11,10 +11,10 @@
     </div>
     <div class="card-body container row">
         <div class="card-text" >
-            <p class="mb-0"> Nome do aluno: <span class="student-name">{{sometext}}</span></p>
-            <p class="mb-0"> Curso: <span class="student-course">N/A</span></p>
-            <p class="mb-0"> Turma: <span class="student-class">N/A</span></p>
-            <p class="mb-0"> Número de semestres do curso: <span class="student-class">N/A</span></p>
+            <p class="mb-0"> {{studentname}}: <span class="student-name">{{sometext}}</span></p>
+            <p class="mb-0"> {{program}}: <span class="student-course">N/A</span></p>
+            <p class="mb-0"> {class}}: <span class="student-class">N/A</span></p>
+            <p class="mb-0"> {{numberofterms}}: <span class="student-class">N/A</span></p>
         </div>
     </div>
 </div>
@@ -25,17 +25,17 @@
     </div>
     <div class="card-body container row">
         <div class="card-text" >
-            <p class="mb-0"> Situação:
+            <p class="mb-0"> {{situation}}:
                 <span class="student-situation badge badge-success">N/A</span></p>
-            <p class="mb-0"> Semestres transcorridos :
+            <p class="mb-0"> {{passedterms}}:
                 <span class="student-semesters-elapsed badge badge-success">N/A</span></p>
-            <p class="mb-0"> Total de disciplinas cursadas (com/sem aproveitamento):
+            <p class="mb-0"> {{triedcourses}}:
                 <span class="student-semesters-elapsed badge badge-success">N/A</span></p>
-            <p class="mb-0"> Disciplinas obrigatórias no semestre (oferta/matricula):
+            <p class="mb-0"> {{mandatorycourses}} (oferta/matricula):
                 <span class="student-course badge badge-success">N/A</span></p>
-            <p class="mb-0"> Disciplinas não obrigatórias semestre (oferta/matricula):
+            <p class="mb-0"> {{nonmandatorycourses}} (oferta/matricula):
                 <span class="student-class badge badge-success">N/A</span></p>
-            <p class="mb-0"> Acompanhamento ao cronograma:
+            <p class="mb-0"> {{schedule}}:
                 <span class="student-situation badge badge-success">N/A</span></p>
         </div>
     </div>
