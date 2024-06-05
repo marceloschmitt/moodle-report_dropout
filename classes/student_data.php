@@ -7,16 +7,7 @@ class student_data
     public $userid;
     public $header = array();
     public $subheader = array();
-    public $behaviourcondition1 = array();
-    public $behaviourcondition2 = array();
-    public $behaviourcondition3 = array();
-    public $behaviourcondition4 = array();
-    public $socialcondition1 = array();
-    public $socialcondition2 = array();
-    public $socialcondition3 = array();
-    public $cognitivecondition1 = array();
-    public $cognitivecondition2 = array();
-    public $cognitivecondition3 = array();
+
 
     public $behaviourconditions = array();
     public $socialconditions = array();
