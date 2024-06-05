@@ -84,7 +84,7 @@ class student_data
         $this->socialconditions[] = array('Term', get_string('Social1', 'report_dropout'),
             get_string('Social2', 'report_dropout'),
             get_string('Social3', 'report_dropout'));
-        $this->cognitiveconditions[] = array('Term', get_string('Cognitive1', 'report_dropout'));
+        $this->cognitiveconditions[] = array('Term', get_string('Cognitive2', 'report_dropout'));
 
         // Table header.
         $date = date_create("2013-03-15");
