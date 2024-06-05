@@ -9,13 +9,16 @@ use stdClass;
 
 class index_page implements renderable, templatable
 {
-    var $courseid;
-    var $students;
+    private $courseid;
+    private $students;
 
     public function __construct($courseid, $context)
     {
         $this->courseid = $courseid;
         $this->students = array_values(get_enrolled_users($context));
+        foreach($this->students as $index => $value) {
+            $this->students[$index]->risk = 1;
+        }
     }
 
     public function export_for_template(renderer_base $output)
