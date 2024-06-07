@@ -132,16 +132,16 @@ class student_data
         $behaviour2sum = array_sum(array_slice($table[1], 1));
         $behaviour3sum = array_sum(array_slice($table[2], 1));
         $behaviour4sum = array_sum(array_slice($table[3], 1));
-        $numberoffortnights = count($table[1]);
+        $numberoffortnights = count($table[1]) - 1;
         $avarage = $behaviour2sum / $numberoffortnights;
         if ($avarage >= 7) {
-            return '<span class="badge badge-primary">' . get_string('lowrisk', 'report_dropout') . $avarage . '</span>';
+            return '<span class="badge badge-primary">' . get_string('lowrisk', 'report_dropout') . '</span>';
         } else if ($avarage >= 5) {
-            return '<span class="badge badge-secondary">' . get_string('mediumrisk', 'report_dropout') . $avarage .'</span>';
+            return '<span class="badge badge-secondary">' . get_string('mediumrisk', 'report_dropout') .'</span>';
         } else if ($avarage >= 3) {
-            return '<span class="badge badge-warning">' . get_string('highrisk', 'report_dropout') . $avarage .'</span>';
+            return '<span class="badge badge-warning">' . get_string('highrisk', 'report_dropout') . '</span>';
         } else {
-            return '<span class="badge badge-danger">' . get_string('veryhighrisk', 'report_dropout') . $avarage .'</span>';
+            return '<span class="badge badge-danger">' . get_string('veryhighrisk', 'report_dropout') . '</span>';
         }
     }
 
