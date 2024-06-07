@@ -101,7 +101,7 @@ class student_data
                 $this->get_behaviour_risk($row + 1, array_sum(array_slice($this->behaviourtable[$row], 1)), $i);
         }
 
-        $this->behaviour4table4[0] = $allconditions[0];
+        $this->behaviourtable4[0] = $allconditions[0];
         $this->behaviourtable4[0][0] = get_string('behaviourindicator4', 'report_dropout');
         $this->behaviourtable4[] = array_column($this->behaviourcondition4, 1);
         $this->behaviourtable4[1][$i+1] =
