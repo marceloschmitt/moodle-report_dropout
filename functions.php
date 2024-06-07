@@ -95,6 +95,7 @@ function generate_charts($studentdata)
         var chart = new google.visualization.LineChart(document.getElementById('line_chart_social'));
         chart.draw(data, options);
 
+        // Cognitive conditions.
         var passedArray = " . $jsoncognitive . ";
         var data = google.visualization.arrayToDataTable(passedArray);
         options.title = '" . $titlecognitive . "';
@@ -106,10 +107,8 @@ function generate_charts($studentdata)
 
 
     function drawChartColumn() {
-        var passedArray = " . $jsonbehaviour . ";
-        var data = google.visualization.arrayToDataTable(passedArray);
+        // Global options.
         var options = {
-            title: '" . $titlebehaviour . "',
             legend: { position: 'bottom' },
             height: 250,
             chartArea: {left: 60, width: '100%'},
@@ -117,16 +116,25 @@ function generate_charts($studentdata)
             vAxis: { viewWindow: { min: 0 },
                 gridlines: { count: 5 } },
         };
+        
+     // Behaviour conditions.
+        var passedArray = " . $jsonbehaviour . ";
+        var data = google.visualization.arrayToDataTable(passedArray);
+        options.title = '" . $titlebehaviour . "';
+        options.vAxis.viewWindow.max = 20;
         var chart = new google.visualization.ColumnChart(document.getElementById('column_chart_behaviour'));
         chart.draw(data, options);
 
+        // Behaviour4 condition.
         var passedArray = " . $jsonbehaviour4 . ";
         var data = google.visualization.arrayToDataTable(passedArray);
         options.title = '';
+        options.vAxis.viewWindow.max = '';
         options.vAxis.format = 'percent';
         var chart = new google.visualization.ColumnChart(document.getElementById('column_chart_behaviour4'));
         chart.draw(data, options);
-        
+               
+        // Social conditions.
         var passedArray = " . $jsonsocial . ";
         var data = google.visualization.arrayToDataTable(passedArray);
         options.title = '" . $titlesocial . "';
@@ -134,11 +142,13 @@ function generate_charts($studentdata)
         options.vAxis.format = '';
         var chart = new google.visualization.ColumnChart(document.getElementById('column_chart_social'));
         chart.draw(data, options);
-    
+ 
+         // Cognitive conditions.
         var passedArray = " . $jsoncognitive . ";
         var data = google.visualization.arrayToDataTable(passedArray);
         options.title = '" . $titlecognitive . "';
         options.vAxis.viewWindow.max = 10;
+        options.vAxis.format = 'decimal';
         var chart = new google.visualization.ColumnChart(document.getElementById('column_chart_cognitive'));
         chart.draw(data, options);
     }
