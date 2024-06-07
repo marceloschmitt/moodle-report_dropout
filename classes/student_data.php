@@ -190,6 +190,7 @@ class student_data
 
     private function get_behaviour4_risk($sum, $numberoffortnights)
     {
+
         $avarage = $sum / $numberoffortnights;
         if ($avarage >= 0.7) {
             return '<span class="badge badge-primary">' . get_string('lowrisk', 'report_dropout') . '</span>';
