@@ -31,6 +31,7 @@ function generate_charts($studentdata)
     $jsonsocial = json_encode($studentdata->socialconditions);
     $jsoncognitive = json_encode($studentdata->cognitiveconditions);
     $jsonbehaviourtable = json_encode($studentdata->behaviourtable);
+    $jsonbehaviourtable4 = json_encode($studentdata->behaviourtable4);
     $jsonsocialtable = json_encode($studentdata->socialtable);
     $jsoncognitivetable = json_encode($studentdata->cognitivetable);
 
@@ -47,6 +48,7 @@ function generate_charts($studentdata)
     google.charts.setOnLoadCallback(drawChartLine);
     google.charts.setOnLoadCallback(drawChartColumn);
     google.charts.setOnLoadCallback(drawBehaviourTable);
+    google.charts.setOnLoadCallback(drawBehaviourTable4);
     google.charts.setOnLoadCallback(drawSocialTable);
     google.charts.setOnLoadCallback(drawCognitiveTable);
 
@@ -117,6 +119,13 @@ function generate_charts($studentdata)
         options.vAxis.viewWindow.max = 20;
         var chart = new google.visualization.ColumnChart(document.getElementById('column_chart_social'));
         chart.draw(data, options);
+        
+        var passedArray = " . $jsonsocial . ";
+        var data = google.visualization.arrayToDataTable(passedArray);
+        options.title = '" . $titlesocial . "';
+        options.vAxis.viewWindow.max = 20;
+        var chart = new google.visualization.ColumnChart(document.getElementById('column_chart_social'));
+        chart.draw(data, options);
     
         var passedArray = " . $jsoncognitive . ";
         var data = google.visualization.arrayToDataTable(passedArray);
@@ -134,6 +143,13 @@ function generate_charts($studentdata)
         chart.draw(data, {allowHtml: true, showRowNumber: true, width: '100%', height: '100%'});
     }
 
+    function drawBehaviourTable4() {
+        var passedArray = " . $jsonbehaviourtable4 . ";
+        var data = google.visualization.arrayToDataTable(passedArray);
+        var chart = new google.visualization.Table(document.getElementById('behaviour_table4'));
+        chart.draw(data, {allowHtml: true, showRowNumber: true, width: '100%', height: '100%'});
+    }
+    
     function drawSocialTable() {
         var passedArray = " . $jsonsocialtable . ";
         var data = google.visualization.arrayToDataTable(passedArray);
