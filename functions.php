@@ -136,33 +136,7 @@ function generate_charts($studentdata)
     }
 
     
-    function drawBehaviourTable() {
-        var passedArray = " . $jsonbehaviourtable . ";
-        var data = google.visualization.arrayToDataTable(passedArray);
-        var chart = new google.visualization.Table(document.getElementById('behaviour_table'));
-        chart.draw(data, {allowHtml: true, showRowNumber: true, width: '100%', height: '100%'});
-    }
-
-    function drawBehaviourTable4() {
-        var passedArray = " . $jsonbehaviourtable4 . ";
-        var data = google.visualization.arrayToDataTable(passedArray);
-        var chart = new google.visualization.Table(document.getElementById('behaviour_table4'));
-        chart.draw(data, {allowHtml: true, showRowNumber: true, width: '100%', height: '100%'});
-    }
-    
-    function drawSocialTable() {
-        var passedArray = " . $jsonsocialtable . ";
-        var data = google.visualization.arrayToDataTable(passedArray);
-        var chart = new google.visualization.Table(document.getElementById('social_table'));
-        chart.draw(data, {allowHtml: true, showRowNumber: true, width: '100%', height: '100%'});
-    }
-
-    function drawCognitiveTable() {
-        var passedArray = " . $jsoncognitivetable . ";
-        var data = google.visualization.arrayToDataTable(passedArray);
-        var chart = new google.visualization.Table(document.getElementById('cognitive_table'));
-        chart.draw(data, {allowHtml: true, showRowNumber: true, width: '100%', height: '100%'});
-    }
+   
  
     function button_table_charts() {
        var x = document.getElementById('table_charts');
