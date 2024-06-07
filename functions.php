@@ -28,6 +28,9 @@ function generate_charts($studentdata)
     // Arrays defined PHP and will be used in JavaScript.
     $jsonbehaviour = json_encode($studentdata->behaviourconditions);
     $jsonbehaviour4 = json_encode($studentdata->behaviourcondition4);
+
+    echo var_dump($jsonbehavour) . '<br>';
+    echo var_dump($jsonbehaviour4); exit;
     $jsonsocial = json_encode($studentdata->socialconditions);
     $jsoncognitive = json_encode($studentdata->cognitiveconditions);
     $jsonbehaviourtable = json_encode($studentdata->behaviourtable);
@@ -67,7 +70,7 @@ function generate_charts($studentdata)
                 3: { pointShape: 'diamond', lineWidth: 1 },
             },
             vAxis: { viewWindow: { min: 0 },
-                gridlines: { count: 10 } },
+                gridlines: { count: 5 } },
         };
         var chart = new google.visualization.LineChart(document.getElementById('line_chart_behaviour'));
         chart.draw(data, options);
