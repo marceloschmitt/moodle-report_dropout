@@ -65,7 +65,7 @@ function generate_charts($studentdata)
                 2: { pointShape: 'square', lineWidth: 1 },
                 3: { pointShape: 'diamond', lineWidth: 1 },
             },
-            vAxis: {viewWindow: {min: 0},
+            vAxis: { viewWindow: { min: 0 },
                 gridlines: { count: 5 } },
         };
         var chart = new google.visualization.LineChart(document.getElementById('line_chart_behaviour'));
@@ -80,6 +80,7 @@ function generate_charts($studentdata)
 
         var passedArray = " . $jsoncognitive . ";
         options.title = '" . $titlecognitive . "';
+        options.vAxis.viewWindow.max = 20;
         var data = google.visualization.arrayToDataTable(passedArray);
         var chart = new google.visualization.LineChart(document.getElementById('line_chart_cognitive'));
         chart.draw(data, options);
@@ -95,7 +96,7 @@ function generate_charts($studentdata)
           height: 300,
         chartArea: {left: 20, width: '100%'},
           bar: {groupWidth: 50},
-          vAxis: { viewWindow: {min: 0, max: 30},
+          vAxis: { viewWindow: { min: 0 },
                    gridlines: { count: 5 } },
         };
         var chart = new google.visualization.ColumnChart(document.getElementById('column_chart_behaviour'));
@@ -104,12 +105,14 @@ function generate_charts($studentdata)
         var passedArray = " . $jsonsocial . ";
         var data = google.visualization.arrayToDataTable(passedArray);
         options.title = '" . $titlesocial . "';
+        options.vAxis.viewWindow.max = 20;
         var chart = new google.visualization.ColumnChart(document.getElementById('column_chart_social'));
         chart.draw(data, options);
     
         var passedArray = " . $jsoncognitive . ";
         var data = google.visualization.arrayToDataTable(passedArray);
         options.title = '" . $titlecognitive . "';
+        options.vAxis.viewWindow.max = 10;
         var chart = new google.visualization.ColumnChart(document.getElementById('column_chart_cognitive'));
         chart.draw(data, options);
     }
