@@ -66,7 +66,6 @@ function generate_charts($studentdata)
                 3: { pointShape: 'diamond', lineWidth: 1 },
             },
             vAxis: { viewWindow: { min: 0 },
-  
         };
         var chart = new google.visualization.LineChart(document.getElementById('line_chart_behaviour'));
         chart.draw(data, options);
