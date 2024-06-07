@@ -66,6 +66,7 @@ $string['triedcourses'] = 'Total de disciplinas cursadas';
 $string['mandatorycourses'] = 'Disciplinas obrigatórias no semestre';
 $string['nonmandatorycourses'] = 'Disciplinas não obrigatórias no semestre';
 $string['schedule'] = 'Acompanhamento ao cronograma';
+$string['notready'] = 'depende de integração futura';
 
 
 

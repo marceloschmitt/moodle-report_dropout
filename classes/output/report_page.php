@@ -44,6 +44,7 @@ class report_page implements renderable, templatable
         $data->mandatorycourses = get_string('mandatorycourses', 'report_dropout');
         $data->nonmandatorycourses = get_string('nonmandatorycourses', 'report_dropout');
         $data->schedule = get_string('schedule', 'report_dropout');
+        $data->notready = get_string('notready', 'report_dropout');
         return $data;
     }
 }

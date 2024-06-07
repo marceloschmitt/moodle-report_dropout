@@ -26,6 +26,7 @@ class index_page implements renderable, templatable
         $data = new stdClass();
         $data->students = $this->students;
         $data->courseid = $this->courseid;
+        $data->noteady = get_string('notready', 'report_dropout');
         return $data;
     }
 
