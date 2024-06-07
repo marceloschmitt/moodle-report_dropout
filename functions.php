@@ -73,8 +73,9 @@ function generate_charts($studentdata)
         chart.draw(data, options);
        
         var passedArray = " . $jsonbehaviour4 . ";
-        options.title = ' aa';
+        options.title = '';
         options.vAxis.viewWindow.max = 100;
+        var data = google.visualization.arrayToDataTable(passedArray);
         var chart = new google.visualization.LineChart(document.getElementById('line_chart_behaviour4'));
         chart.draw(data, options);
        
