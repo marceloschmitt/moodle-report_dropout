@@ -132,7 +132,7 @@ class student_data
         $behaviour2sum = array_sum(array_slice($this->behaviourtable[1], 1));
         $behaviour3sum = array_sum(array_slice($this->behaviourtable[2], 1));
         $behaviour4sum = array_sum(array_slice($this->behaviourtable[3], 1));
-        echo var_dump($table) . "<br>";
+        echo count($table[1]) . "<br>";
         echo     $behaviour2sum . "<br>" . $numberoffortnights; exit;
         $avarage = $behaviour2sum / $numberoffortnights;
         if ($avarage >= 7) {
