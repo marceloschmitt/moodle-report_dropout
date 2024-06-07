@@ -66,7 +66,7 @@ function generate_charts($studentdata)
                 3: { pointShape: 'diamond', lineWidth: 1 },
             },
             vAxis: { viewWindow: { min: 0 },
-                gridlines: { count: 5 } },
+  
         };
         var chart = new google.visualization.LineChart(document.getElementById('line_chart_behaviour'));
         chart.draw(data, options);
@@ -80,7 +80,7 @@ function generate_charts($studentdata)
 
         var passedArray = " . $jsoncognitive . ";
         options.title = '" . $titlecognitive . "';
-        options.vAxis.viewWindow.max = 20;
+        options.vAxis.viewWindow.max = 10;
         var data = google.visualization.arrayToDataTable(passedArray);
         var chart = new google.visualization.LineChart(document.getElementById('line_chart_cognitive'));
         chart.draw(data, options);
