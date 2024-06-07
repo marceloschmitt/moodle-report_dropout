@@ -100,13 +100,13 @@ function generate_charts($studentdata)
         var passedArray = " . $jsonbehaviour . ";
         var data = google.visualization.arrayToDataTable(passedArray);
         var options = {
-          title: '" . $titlebehaviour . "',
-          legend: { position: 'bottom' },
-          height: 300,
-        chartArea: {left: 20, width: '100%'},
-          bar: { groupWidth: 50 },
-          vAxis: { viewWindow: { min: 0 },
-                   gridlines: { count: 5 } },
+            title: '" . $titlebehaviour . "',
+            legend: { position: 'bottom' },
+            height: 300,
+            chartArea: {left: 60, width: '100%'},
+            bar: { groupWidth: 50 },
+            vAxis: { viewWindow: { min: 0 },
+                gridlines: { count: 5 } },
         };
         var chart = new google.visualization.ColumnChart(document.getElementById('column_chart_behaviour'));
         chart.draw(data, options);
@@ -114,6 +114,7 @@ function generate_charts($studentdata)
         var passedArray = " . $jsonbehaviour4 . ";
         var data = google.visualization.arrayToDataTable(passedArray);
         options.title = '';
+        options.vAxis.format = 'percent';
         var chart = new google.visualization.ColumnChart(document.getElementById('column_chart_behaviour4'));
         chart.draw(data, options);
         
@@ -121,6 +122,7 @@ function generate_charts($studentdata)
         var data = google.visualization.arrayToDataTable(passedArray);
         options.title = '" . $titlesocial . "';
         options.vAxis.viewWindow.max = 20;
+        options.vAxis.format = '';
         var chart = new google.visualization.ColumnChart(document.getElementById('column_chart_social'));
         chart.draw(data, options);
     
