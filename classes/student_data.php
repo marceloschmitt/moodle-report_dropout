@@ -191,11 +191,11 @@ class student_data
     private function get_behaviour4_risk($sum, $numberoffortnights)
     {
         $avarage = $sum / $numberoffortnights;
-        if ($avarage >= 7) {
+        if ($avarage >= 0.7) {
             return '<span class="badge badge-primary">' . get_string('lowrisk', 'report_dropout') . '</span>';
-        } else if ($avarage >= 5) {
+        } else if ($avarage >= 0.5) {
             return '<span class="badge badge-secondary">' . get_string('mediumrisk', 'report_dropout') . '</span>';
-        } else if ($avarage >= 3) {
+        } else if ($avarage >= 0.3) {
             return '<span class="badge badge-warning">' . get_string('highrisk', 'report_dropout') . '</span>';
         } else {
             return '<span class="badge badge-danger">' . get_string('veryhighrisk', 'report_dropout') . '</span>';
