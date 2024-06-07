@@ -72,6 +72,12 @@ function generate_charts($studentdata)
         var chart = new google.visualization.LineChart(document.getElementById('line_chart_behaviour'));
         chart.draw(data, options);
        
+        var passedArray = " . $jsonbehaviour4 . ";
+        options.title = ' ';
+        options.vAxis.viewWindow.max = 100;
+        var chart = new google.visualization.LineChart(document.getElementById('line_chart_behaviour4'));
+        chart.draw(data, options);
+       
         var passedArray = " . $jsonsocial . ";
         options.title = '" . $titlesocial . "';
         options.vAxis.viewWindow.max = 20;
