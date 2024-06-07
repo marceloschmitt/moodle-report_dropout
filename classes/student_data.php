@@ -92,6 +92,7 @@ class student_data
         $allconditions[0][0] = get_string('indicators', 'report_dropout');
         $index = 1;
 
+        //Create behaviour table
         $this->behaviourtable[0] = $allconditions[0];
         for ($row = 1; $row < 3; $row++) {
             $this->behaviourtable[] = array_column($this->behaviourconditions, $row);
@@ -126,74 +127,17 @@ class student_data
     }
 
 
-    private function get_behaviour_risk($behaviourid, $sum, $numberoffortnights)
+    private function get_behaviour_risk($table, $numberoffortnights)
     {
-        switch ($behaviourid) {
-            case 1:
-                return $this->get_behaviour1_risk($sum, $numberoffortnights);
-            case 2:
-                return $this->get_behaviour2_risk($sum, $numberoffortnights);
-            case 3:
-                return $this->get_behaviour3_risk($sum, $numberoffortnights);
-            case 4:
-                return $this->get_behaviour4_risk($sum, $numberoffortnights);
-        }
-    }
-
-    // Os métodos a seguir serão subsituídos após a mineração.
-    private function get_behaviour1_risk($sum, $numberoffortnights)
-    {
-        $avarage = $sum / $numberoffortnights;
+        $behaviour2sum = array_sum(array_slice($this->behaviourtable[1], 1);
+        $behaviour3sum = array_sum(array_slice($this->behaviourtable[1], 2);
+        $behaviour4sum = array_sum(array_slice($this->behaviourtable[1], 3);
+        $avarage = $behaviour2sum / $numberoffortnights;
         if ($avarage >= 7) {
             return '<span class="badge badge-primary">' . get_string('lowrisk', 'report_dropout') . '</span>';
         } else if ($avarage >= 5) {
             return '<span class="badge badge-secondary">' . get_string('mediumrisk', 'report_dropout') . '</span>';
         } else if ($avarage >= 3) {
-            return '<span class="badge badge-warning">' . get_string('highrisk', 'report_dropout') . '</span>';
-        } else {
-            return '<span class="badge badge-danger">' . get_string('veryhighrisk', 'report_dropout') . '</span>';
-        }
-    }
-
-
-    private function get_behaviour2_risk($sum, $numberoffortnights)
-    {
-        $avarage = $sum / $numberoffortnights;
-        if ($avarage >= 7) {
-            return '<span class="badge badge-primary">' . get_string('lowrisk', 'report_dropout') . '</span>';
-        } else if ($avarage >= 5) {
-            return '<span class="badge badge-secondary">' . get_string('mediumrisk', 'report_dropout') . '</span>';
-        } else if ($avarage >= 3) {
-            return '<span class="badge badge-warning">' . get_string('highrisk', 'report_dropout') . '</span>';
-        } else {
-            return '<span class="badge badge-danger">' . get_string('veryhighrisk', 'report_dropout') . '</span>';
-        }
-    }
-
-
-    private function get_behaviour3_risk($sum, $numberoffortnights)
-    {
-        $avarage = $sum / $numberoffortnights;
-        if ($avarage >= 7) {
-            return '<span class="badge badge-primary">' . get_string('lowrisk', 'report_dropout') . '</span>';
-        } else if ($avarage >= 5) {
-            return '<span class="badge badge-secondary">' . get_string('mediumrisk', 'report_dropout') . '</span>';
-        } else if ($avarage >= 3) {
-            return '<span class="badge badge-warning">' . get_string('highrisk', 'report_dropout') . '</span>';
-        } else {
-            return '<span class="badge badge-danger">' . get_string('veryhighrisk', 'report_dropout') . '</span>';
-        }
-    }
-
-
-    private function get_behaviour4_risk($sum, $numberoffortnights)
-    {
-        $avarage = $sum / $numberoffortnights;
-        if ($avarage >= 0.7) {
-            return '<span class="badge badge-primary">' . get_string('lowrisk', 'report_dropout') . '</span>';
-        } else if ($avarage >= 0.5) {
-            return '<span class="badge badge-secondary">' . get_string('mediumrisk', 'report_dropout') . '</span>';
-        } else if ($avarage >= 0.3) {
             return '<span class="badge badge-warning">' . get_string('highrisk', 'report_dropout') . '</span>';
         } else {
             return '<span class="badge badge-danger">' . get_string('veryhighrisk', 'report_dropout') . '</span>';
