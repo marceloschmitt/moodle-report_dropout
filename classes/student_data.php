@@ -29,8 +29,8 @@ class student_data
             $this->behaviourindicator3[] = (object)array('value' => $value);
         }
         for ($i = 0; $i < ($contador_temp * 2); $i++) {
-            $value = rand(0, 1);
-            $this->behaviourindicator4[] = (object)array('value' => $value);
+            $value = rand(0, 100);
+            $this->behaviourindicator4[] = (object)array('value' => (float)$value/100);
         }
 
         // Social data.
@@ -49,8 +49,8 @@ class student_data
         // Cognitive data.
         $numberofgrades = 6;
         for ($i = 0; $i < $numberofgrades; $i++) {
-            $value = rand(0, 10);
-            $this->cognitiveindicator1[] = (object)array('value' => $value);
+            $value = rand(0, 100);
+            $this->cognitiveindicator1[] = (object)array('value' => (float)$value/10);
         }
 
         // Graph lines/bars.
