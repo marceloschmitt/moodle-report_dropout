@@ -100,6 +100,9 @@ class student_data
                 $this->get_behaviour_risk($row + 1, array_sum(array_slice($this->behaviourtable[$row], 1)), $i);
         }
         $this->behaviourtable[] = array_column($this->behaviourcondition4, 1);
+        for($index = 1; $index < $i+1 ; $index++) {
+            $this->behaviourtable[$row][$index] = $this->behaviourtable[$row][$index] * 100;
+        }
         $this->behaviourtable[$row][$i + 1] =
             $this->get_behaviour_risk($row + 1, array_sum(array_slice($this->behaviourtable[$row], 1)), $i);
 
