@@ -31,7 +31,6 @@ function generate_charts($studentdata)
     $jsonsocial = json_encode($studentdata->socialconditions);
     $jsoncognitive = json_encode($studentdata->cognitiveconditions);
     $jsonbehaviourtable = json_encode($studentdata->behaviourtable);
-    $jsonbehaviourtable4 = json_encode($studentdata->behaviourtable4);
     $jsonsocialtable = json_encode($studentdata->socialtable);
     $jsoncognitivetable = json_encode($studentdata->cognitivetable);
 
@@ -48,7 +47,6 @@ function generate_charts($studentdata)
     google.charts.setOnLoadCallback(drawChartLine);
     google.charts.setOnLoadCallback(drawChartColumn);
     google.charts.setOnLoadCallback(drawBehaviourTable);
-    google.charts.setOnLoadCallback(drawBehaviourTable4);
     google.charts.setOnLoadCallback(drawSocialTable);
     google.charts.setOnLoadCallback(drawCognitiveTable);
 
@@ -136,7 +134,26 @@ function generate_charts($studentdata)
     }
 
     
-   
+    function drawBehaviourTable() {
+        var passedArray = " . $jsonbehaviourtable . ";
+        var data = google.visualization.arrayToDataTable(passedArray);
+        var chart = new google.visualization.Table(document.getElementById('behaviour_table'));
+        chart.draw(data, {allowHtml: true, showRowNumber: true, width: '100%', height: '100%'});
+    }
+    
+    function drawSocialTable() {
+        var passedArray = " . $jsonsocialtable . ";
+        var data = google.visualization.arrayToDataTable(passedArray);
+        var chart = new google.visualization.Table(document.getElementById('social_table'));
+        chart.draw(data, {allowHtml: true, showRowNumber: true, width: '100%', height: '100%'});
+    }
+
+    function drawCognitiveTable() {
+        var passedArray = " . $jsoncognitivetable . ";
+        var data = google.visualization.arrayToDataTable(passedArray);
+        var chart = new google.visualization.Table(document.getElementById('cognitive_table'));
+        chart.draw(data, {allowHtml: true, showRowNumber: true, width: '100%', height: '100%'});
+    }
  
     function button_table_charts() {
        var x = document.getElementById('table_charts');
