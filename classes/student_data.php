@@ -10,6 +10,7 @@ class student_data
     public $socialconditions = array();
     public $cognitiveconditions = array();
     public $behaviourtable = array();
+    public $behaviourtable4 = array();
     public $socialtable = array();
     public $cognitivetable = array();
 
@@ -35,11 +36,11 @@ class student_data
 
         // Social data.
         for ($i = 0; $i < ($contador_temp * 2); $i++) {
-            $value = rand(0, 4);
+            $value = rand(0, 10);
             $this->socialindicator2[] = (object)array('value' => $value);
         }
         for ($i = 0; $i < ($contador_temp * 2); $i++) {
-            $value = rand(0, 4);
+            $value = rand(0, 10);
             $this->socialindicator3[] = (object)array('value' => $value);
         }
         foreach ($this->socialindicator2 as $index => $value) {
@@ -100,6 +101,12 @@ class student_data
                 $this->get_behaviour_risk($row + 1, array_sum(array_slice($this->behaviourtable[$row], 1)), $i);
         }
 
+        $this->behaviour4table4[0] = $allconditions[0];
+        $this->behaviourtable4[0][0] = get_string('behaviourindicator4', 'report_dropout');
+        $this->behaviourtable4[] = array_column($this->behaviourcondition4, $row);
+        $this->behaviourtable4[1][$i+1] =
+            $this->get_behaviour_risk(4, array_sum(array_slice($this->behaviourtable4[1], 1)), $i);
+echo var_dump($this->behaviourtable4); exit;
         $this->socialtable[0] = $allconditions[0];
         $this->socialtable[0][0] = get_string('socialindicators', 'report_dropout');
         for ($row = 1; $row < 4; $row++) {
