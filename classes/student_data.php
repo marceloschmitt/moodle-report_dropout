@@ -21,11 +21,11 @@ class student_data
         $contador_temp = 5;
         // Behaviour data.
         for ($i = 0; $i < ($contador_temp * 2); $i++) {
-            $value = rand(0, 20);
+            $value = rand(0, 10);
             $this->behaviourindicator2[] = (object)array('value' => $value);
         }
         for ($i = 0; $i < ($contador_temp * 2); $i++) {
-            $value = rand(0, 20);
+            $value = rand(0, 15);
             $this->behaviourindicator3[] = (object)array('value' => $value);
         }
         for ($i = 0; $i < ($contador_temp * 2); $i++) {
@@ -88,25 +88,22 @@ class student_data
         foreach ($allconditions[0] as $x => $y) {
             $allconditions[0][$x] = str_replace("\n", "<BR>", $y);
         }
-        $allconditions[0][$i + 1] = "Risco parcial";
+
         $allconditions[0][0] = get_string('indicators', 'report_dropout');
         $index = 1;
 
         $this->behaviourtable[0] = $allconditions[0];
         for ($row = 1; $row < 3; $row++) {
             $this->behaviourtable[] = array_column($this->behaviourconditions, $row);
-            $this->behaviourtable[$row][$i + 1] =
-                $this->get_behaviour_risk($row + 1, array_sum(array_slice($this->behaviourtable[$row], 1)), $i);
         }
         $this->behaviourtable[] = array_column($this->behaviourcondition4, 1);
-        $this->behaviourtable[$row][$i + 1] =
-            $this->get_behaviour_risk($row + 1, array_sum(array_slice($this->behaviourtable[$row], 1)), $i);
         for($index = 1; $index < $i+1 ; $index++) {
             $this->behaviourtable[$row][$index] = $this->behaviourtable[$row][$index] * 100;
         }
         $this->behaviourtable[0][0] = get_string('behaviourindicators', 'report_dropout') . '<br>' .
             $this->get_behaviour_risk($row + 1, array_sum(array_slice($this->behaviourtable[$row], 1)), 1);
 
+        $allconditions[0][$i + 1] = "Risco parcial";
         $this->socialtable[0] = $allconditions[0];
         $this->socialtable[0][0] = get_string('socialindicators', 'report_dropout');
         for ($row = 1; $row < 4; $row++) {
