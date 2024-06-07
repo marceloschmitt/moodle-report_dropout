@@ -65,7 +65,7 @@ function generate_charts($studentdata)
                 2: { pointShape: 'square', lineWidth: 1 },
                 3: { pointShape: 'diamond', lineWidth: 1 },
             },
-          vAxis: { viewWindow: {min: 0,},
+          vAxis: {viewWindow: {min: 0, max: 30},
                    gridlines: { count: 5 } },
         };
         var chart = new google.visualization.LineChart(document.getElementById('line_chart_behaviour'));
