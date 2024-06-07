@@ -65,7 +65,7 @@ function generate_charts($studentdata)
                 2: { pointShape: 'square', lineWidth: 1 },
                 3: { pointShape: 'diamond', lineWidth: 1 },
             },
-            vAxis: {viewWindow: {min: 20},
+            vAxis: {viewWindow: {min: 0},
                 gridlines: { count: 5 } },
         };
         var chart = new google.visualization.LineChart(document.getElementById('line_chart_behaviour'));
@@ -73,7 +73,7 @@ function generate_charts($studentdata)
        
         var passedArray = " . $jsonsocial . ";
         options.title = '" . $titlesocial . "';
-        
+        options.vAxis.viewWindow.max = 20;
         var data = google.visualization.arrayToDataTable(passedArray);
         var chart = new google.visualization.LineChart(document.getElementById('line_chart_social'));
         chart.draw(data, options);
