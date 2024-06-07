@@ -58,7 +58,7 @@ function generate_charts($studentdata)
             title: '" . $titlebehaviour . "',
             legend: { position: 'bottom' },
             height: 300,
-            chartArea: {left: 20, width: '100%'},
+            chartArea: {left: 40, width: '100%'},
             pointSize: 7,
             series: {
                 0: { pointShape: 'circle',  lineWidth: 1  },
@@ -74,7 +74,6 @@ function generate_charts($studentdata)
        
         var passedArray = " . $jsonbehaviour4 . ";
         options.title = '';
-        options.vAxis.viewWindow.max = 100;
         options.vAxis.format = 'percent';
         var data = google.visualization.arrayToDataTable(passedArray);
         var chart = new google.visualization.LineChart(document.getElementById('line_chart_behaviour4'));
