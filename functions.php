@@ -111,11 +111,10 @@ function generate_charts($studentdata)
         var chart = new google.visualization.ColumnChart(document.getElementById('column_chart_behaviour'));
         chart.draw(data, options);
 
-        var passedArray = " . $jsonsocial . ";
+        var passedArray = " . $jsonbehaviour4 . ";
         var data = google.visualization.arrayToDataTable(passedArray);
-        options.title = '" . $titlesocial . "';
-        options.vAxis.viewWindow.max = 20;
-        var chart = new google.visualization.ColumnChart(document.getElementById('column_chart_social'));
+        options.title = '';
+        var chart = new google.visualization.ColumnChart(document.getElementById('column_chart_behaviour4'));
         chart.draw(data, options);
         
         var passedArray = " . $jsonsocial . ";
