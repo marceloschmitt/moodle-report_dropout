@@ -93,7 +93,6 @@ class student_data
         $index = 1;
 
         $this->behaviourtable[0] = $allconditions[0];
-        $this->behaviourtable[0][0] = get_string('behaviourindicators', 'report_dropout');
         for ($row = 1; $row < 3; $row++) {
             $this->behaviourtable[] = array_column($this->behaviourconditions, $row);
             $this->behaviourtable[$row][$i + 1] =
@@ -105,6 +104,7 @@ class student_data
         for($index = 1; $index < $i+1 ; $index++) {
             $this->behaviourtable[$row][$index] = $this->behaviourtable[$row][$index] * 100;
         }
+        $this->behaviourtable[0][0] = get_string('behaviourindicators', 'report_dropout') . '<br> ';
 
         $this->socialtable[0] = $allconditions[0];
         $this->socialtable[0][0] = get_string('socialindicators', 'report_dropout');
