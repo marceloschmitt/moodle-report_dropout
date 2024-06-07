@@ -57,7 +57,7 @@ function generate_charts($studentdata)
         var options = {
             title: '" . $titlebehaviour . "',
             legend: { position: 'bottom' },
-            height: 200,
+            height: 250,
             chartArea: {left: 60, width: '100%'},
             pointSize: 7,
             series: {
@@ -82,7 +82,7 @@ function generate_charts($studentdata)
         var passedArray = " . $jsonsocial . ";
         options.title = '" . $titlesocial . "';
         options.vAxis.viewWindow.max = 20;
-        options.vAxis.format = 'none';
+        options.vAxis.format = '';
         var data = google.visualization.arrayToDataTable(passedArray);
         var chart = new google.visualization.LineChart(document.getElementById('line_chart_social'));
         chart.draw(data, options);
