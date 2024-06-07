@@ -129,9 +129,9 @@ class student_data
 
     private function get_behaviour_risk($table, $numberoffortnights)
     {
-        $behaviour2sum = array_sum(array_slice($this->behaviourtable[1], 1);
-        $behaviour3sum = array_sum(array_slice($this->behaviourtable[1], 2);
-        $behaviour4sum = array_sum(array_slice($this->behaviourtable[1], 3);
+        $behaviour2sum = array_sum(array_slice($this->behaviourtable[1], 1));
+        $behaviour3sum = array_sum(array_slice($this->behaviourtable[1], 2));
+        $behaviour4sum = array_sum(array_slice($this->behaviourtable[1], 3));
         $avarage = $behaviour2sum / $numberoffortnights;
         if ($avarage >= 7) {
             return '<span class="badge badge-primary">' . get_string('lowrisk', 'report_dropout') . '</span>';
