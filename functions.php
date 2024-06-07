@@ -29,7 +29,7 @@ function generate_charts($studentdata)
     $jsonbehaviour = json_encode($studentdata->behaviourconditions);
     $jsonbehaviour4 = json_encode($studentdata->behaviourcondition4);
 
-    echo var_dump($jsonbehavour) . '<br>';
+    echo var_dump($jsonbehaviour) . '<br>';
     echo var_dump($jsonbehaviour4); exit;
     $jsonsocial = json_encode($studentdata->socialconditions);
     $jsoncognitive = json_encode($studentdata->cognitiveconditions);
