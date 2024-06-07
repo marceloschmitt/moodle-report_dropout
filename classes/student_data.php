@@ -103,7 +103,7 @@ class student_data
         $this->behaviourtable[$row][$i + 1] =
             $this->get_behaviour_risk($row + 1, array_sum(array_slice($this->behaviourtable[$row], 1)), $i);
         for($index = 1; $index < $i+1 ; $index++) {
-            $x = $this->behaviourtable[$row][$index] * 100;
+            $this->behaviourtable[$row][$index] = $this->behaviourtable[$row][$index] * 100;
         }
 
         $this->socialtable[0] = $allconditions[0];
