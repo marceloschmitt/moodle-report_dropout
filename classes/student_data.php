@@ -56,7 +56,7 @@ class student_data
         // Graph lines/bars.
         $this->behaviourconditions[] = array('Term', get_string('Behaviour2', 'report_dropout'),
             get_string('Behaviour3', 'report_dropout'));
-        $this->behaviourcondition4[] = array('Term', get_string('Behaviour4', 'report_dropout'));
+        $this->behaviourcondition4[] = array('Term', get_string('Behaviour4', 'report_dropout') . '(%)');
         $this->socialconditions[] = array('Term', get_string('Social1', 'report_dropout'),
             get_string('Social2', 'report_dropout'),
             get_string('Social3', 'report_dropout'));
