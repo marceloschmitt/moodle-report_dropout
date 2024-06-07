@@ -52,10 +52,9 @@ function generate_charts($studentdata)
 
 
     function drawChartLine() {
-        var passedArray = " . $jsonbehaviour . ";
-        var data = google.visualization.arrayToDataTable(passedArray);
+        
+        //Global options.
         var options = {
-            title: '" . $titlebehaviour . "',
             legend: { position: 'bottom' },
             height: 250,
             chartArea: {left: 60, width: '100%'},
@@ -69,28 +68,38 @@ function generate_charts($studentdata)
             vAxis: { viewWindow: { min: 0 },
                 gridlines: { count: 5 } },
         };
+  
+        // Behaviour conditions.
+        var passedArray = " . $jsonbehaviour . ";
+        var data = google.visualization.arrayToDataTable(passedArray);
+        options.title = '" . $titlebehaviour . "';
+        options.vAxis.viewWindow.max = 20;
         var chart = new google.visualization.LineChart(document.getElementById('line_chart_behaviour'));
         chart.draw(data, options);
        
+        // Behaviour4 condition.
         var passedArray = " . $jsonbehaviour4 . ";
-        options.title = '';
-        options.vAxis.format = 'percent';
         var data = google.visualization.arrayToDataTable(passedArray);
+        options.title = '';
+        options.vAxis.viewWindow.max = '';
+        options.vAxis.format = 'percent';
         var chart = new google.visualization.LineChart(document.getElementById('line_chart_behaviour4'));
         chart.draw(data, options);
        
+        // Social conditions.
         var passedArray = " . $jsonsocial . ";
+        var data = google.visualization.arrayToDataTable(passedArray);
         options.title = '" . $titlesocial . "';
         options.vAxis.viewWindow.max = 20;
         options.vAxis.format = '';
-        var data = google.visualization.arrayToDataTable(passedArray);
         var chart = new google.visualization.LineChart(document.getElementById('line_chart_social'));
         chart.draw(data, options);
 
         var passedArray = " . $jsoncognitive . ";
+        var data = google.visualization.arrayToDataTable(passedArray);
         options.title = '" . $titlecognitive . "';
         options.vAxis.viewWindow.max = 10;
-        var data = google.visualization.arrayToDataTable(passedArray);
+        options.vAxis.format = 'decimal';
         var chart = new google.visualization.LineChart(document.getElementById('line_chart_cognitive'));
         chart.draw(data, options);
     }
@@ -102,7 +111,7 @@ function generate_charts($studentdata)
         var options = {
             title: '" . $titlebehaviour . "',
             legend: { position: 'bottom' },
-            height: 300,
+            height: 250,
             chartArea: {left: 60, width: '100%'},
             bar: { groupWidth: 50 },
             vAxis: { viewWindow: { min: 0 },
