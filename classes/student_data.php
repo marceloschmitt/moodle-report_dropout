@@ -135,13 +135,13 @@ class student_data
         $numberoffortnights = count($table[1]);
         $avarage = $behaviour2sum / $numberoffortnights;
         if ($avarage >= 7) {
-            return '<span class="badge badge-primary">' . get_string('lowrisk', 'report_dropout') . '</span>';
+            return '<span class="badge badge-primary">' . get_string('lowrisk', 'report_dropout') . $avarage . '</span>';
         } else if ($avarage >= 5) {
-            return '<span class="badge badge-secondary">' . get_string('mediumrisk', 'report_dropout') . '</span>';
+            return '<span class="badge badge-secondary">' . get_string('mediumrisk', 'report_dropout') . $avarage .'</span>';
         } else if ($avarage >= 3) {
-            return '<span class="badge badge-warning">' . get_string('highrisk', 'report_dropout') . '</span>';
+            return '<span class="badge badge-warning">' . get_string('highrisk', 'report_dropout') . $avarage .'</span>';
         } else {
-            return '<span class="badge badge-danger">' . get_string('veryhighrisk', 'report_dropout') . '</span>';
+            return '<span class="badge badge-danger">' . get_string('veryhighrisk', 'report_dropout') . $avarage .'</span>';
         }
     }
 
