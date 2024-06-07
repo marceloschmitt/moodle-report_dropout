@@ -28,9 +28,6 @@ function generate_charts($studentdata)
     // Arrays defined PHP and will be used in JavaScript.
     $jsonbehaviour = json_encode($studentdata->behaviourconditions);
     $jsonbehaviour4 = json_encode($studentdata->behaviourcondition4);
-
-    echo var_dump($jsonbehaviour) . '<br>';
-    echo var_dump($jsonbehaviour4); exit;
     $jsonsocial = json_encode($studentdata->socialconditions);
     $jsoncognitive = json_encode($studentdata->cognitiveconditions);
     $jsonbehaviourtable = json_encode($studentdata->behaviourtable);
