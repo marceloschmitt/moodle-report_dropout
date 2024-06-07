@@ -75,6 +75,7 @@ function generate_charts($studentdata)
         var passedArray = " . $jsonbehaviour4 . ";
         options.title = '';
         options.vAxis.viewWindow.max = 100;
+        options.vAxis.format = 'percent';
         var data = google.visualization.arrayToDataTable(passedArray);
         var chart = new google.visualization.LineChart(document.getElementById('line_chart_behaviour4'));
         chart.draw(data, options);
