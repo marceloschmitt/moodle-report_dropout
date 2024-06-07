@@ -6,6 +6,7 @@ class student_data
 {
     public $userid;
     public $behaviourconditions = array();
+    public $behaviourcondition1 = array();
     public $socialconditions = array();
     public $cognitiveconditions = array();
     public $behaviourtable = array();
@@ -53,8 +54,7 @@ class student_data
         }
 
         // Graph lines/bars.
-        $this->behaviourconditions[] = array('Term', get_string('Behaviour2', 'report_dropout'),
-            get_string('Behaviour3', 'report_dropout'),
+        $this->behaviourconditions[] = array('Term', get_string('Behaviour3', 'report_dropout'),
             get_string('Behaviour4', 'report_dropout') . ' (%)');
         $this->socialconditions[] = array('Term', get_string('Social1', 'report_dropout'),
             get_string('Social2', 'report_dropout'),
@@ -67,7 +67,7 @@ class student_data
         date_add($enddate, date_interval_create_from_date_string("13 days"));
         for ($i = 0; $i < ($contador_temp * 2); $i++) {
             $dateinterval = date_format($date, "d/m") . "\n" . date_format($enddate, "d/m");
-            $this->behaviourconditions[] = array($dateinterval, $this->behaviourindicator2[$i]->value, $this->behaviourindicator3[$i]->value, $this->behaviourindicator4[$i]->value);
+            $this->behaviourconditions[] = array($dateinterval, $this->behaviourindicator3[$i]->value, $this->behaviourindicator4[$i]->value);
             $this->socialconditions[] = array($dateinterval, $this->socialindicator1[$i]->value, $this->socialindicator2[$i]->value, $this->socialindicator3[$i]->value);
             date_add($date, date_interval_create_from_date_string("14 days"));
             date_add($enddate, date_interval_create_from_date_string("14 days"));
@@ -90,10 +90,10 @@ class student_data
 
         $this->behaviourtable[0] = $allconditions[0];
         $this->behaviourtable[0][0] = get_string('behaviourindicators', 'report_dropout');
-        for ($row = 1; $row < 4; $row++) {
+        for ($row = 1; $row < 3; $row++) {
             $this->behaviourtable[] = array_column($this->behaviourconditions, $row);
             $this->behaviourtable[$row][$i + 1] =
-                $this->get_behaviour_risk($row + 1, array_sum(array_slice($this->behaviourtable[$row], 1)), $i);
+                $this->get_behaviour_risk($row + 2, array_sum(array_slice($this->behaviourtable[$row], 1)), $i);
         }
 
         $this->socialtable[0] = $allconditions[0];
