@@ -10,7 +10,6 @@ class student_data
     public $socialconditions = array();
     public $cognitiveconditions = array();
     public $behaviourtable = array();
-    public $behaviourtable4 = array();
     public $socialtable = array();
     public $cognitivetable = array();
 
@@ -100,12 +99,6 @@ class student_data
             $this->behaviourtable[$row][$i + 1] =
                 $this->get_behaviour_risk($row + 1, array_sum(array_slice($this->behaviourtable[$row], 1)), $i);
         }
-
-        $this->behaviourtable4[0] = $allconditions[0];
-        $this->behaviourtable4[0][0] = get_string('behaviourindicator4', 'report_dropout');
-        $this->behaviourtable4[] = array_column($this->behaviourcondition4, 1);
-        $this->behaviourtable4[1][$i+1] =
-            $this->get_behaviour_risk(4, array_sum(array_slice($this->behaviourtable4[1], 1)), $i);
 
         $this->socialtable[0] = $allconditions[0];
         $this->socialtable[0][0] = get_string('socialindicators', 'report_dropout');
