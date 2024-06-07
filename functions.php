@@ -58,7 +58,7 @@ function generate_charts($studentdata)
             title: '" . $titlebehaviour . "',
             legend: { position: 'bottom' },
             height: 300,
-            chartArea: {left: 40, width: '100%'},
+            chartArea: {left: 60, width: '100%'},
             pointSize: 7,
             series: {
                 0: { pointShape: 'circle',  lineWidth: 1  },

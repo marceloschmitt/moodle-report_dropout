@@ -29,7 +29,7 @@ class student_data
             $this->behaviourindicator3[] = (object)array('value' => $value);
         }
         for ($i = 0; $i < ($contador_temp * 2); $i++) {
-            $value = rand(0, 100);
+            $value = rand(0, 1);
             $this->behaviourindicator4[] = (object)array('value' => $value);
         }
 
