@@ -1,9 +1,17 @@
+<!-- {{! This style corrects bug when googlecharts is used withBootstrap. }} -->
 <style>
-    .custom-table tbody:nth-child(even) {
-        background-color: #f1f1f1; /* Background color for odd rows */
-    }
+   .tab-content>.tab-pane {
+     height: 1px;
+     overflow: hidden;
+     display: block;
+    visibility: hidden;
+   }
+   .tab-content>.active {
+     height: auto;
+     overflow: auto;
+     visibility: visible;
+   }
 </style>
-<!-- {{! moodle usa bootstrap 4.6 }} -->
 
 <div class="card mb-2 info-course" >
     <div class="card-header">
@@ -77,10 +85,10 @@
         </div>
         <div id="menu1" class="tab-pane fade">
           <h3>Gráfico de linha</h3>
-            <div id="line_chart_behaviour" width="max-content"></div>
-            <div id="line_chart_behaviour4" width="max-content"></div><BR>
-            <div id="line_chart_social" width="max-content"></div><BR>
-            <div id="line_chart_cognitive" width="max-content"></div><BR>
+            <div id="line_chart_behaviour"></div>
+            <div id="line_chart_behaviour4"></div><BR>
+            <div id="line_chart_social"></div><BR>
+            <div id="line_chart_cognitive"></div><BR>
             </div>
         <div id="menu2" class="tab-pane fade">
           <h3>Menu 2</h3>
