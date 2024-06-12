@@ -16,7 +16,7 @@ class report_page implements renderable, templatable
         $this->course = $course;
         $this->studentfullname = $studentfullname;
         $this->risk = $risk;
-        $this->riskclass = get_risk_class($>risk);
+        $this->riskclass = get_risk_class($risk);
 
 
     }
