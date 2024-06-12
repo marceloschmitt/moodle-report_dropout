@@ -56,7 +56,7 @@ class student_data
         // Graph lines/bars.
         $this->behaviourconditions[] = array('Term', get_string('Behaviour2', 'report_dropout'),
             get_string('Behaviour3', 'report_dropout'));
-        $this->behaviourcondition4[] = array('Term', get_string('Behaviour4', 'report_dropout') . '(%)');
+        $this->behaviourcondition4[] = array('Term', get_string('Behaviour4', 'report_dropout') .  ' (%)');
         $this->socialconditions[] = array('Term', get_string('Social1', 'report_dropout'),
             get_string('Social2', 'report_dropout'),
             get_string('Social3', 'report_dropout'));
@@ -102,7 +102,7 @@ class student_data
             $this->behaviourtable[$row][$index] = $this->behaviourtable[$row][$index] * 100;
         }
         $this->behaviourtable[0][0] = get_string('behaviourindicators', 'report_dropout') . '<br>' .
-            $this->get_behaviour_risk($this->behaviourtable, $row + 1);
+            $this->get_behaviour_risk($this->behaviourtable);
 
         $allconditions[0][$i + 1] = "Risco parcial";
         $this->socialtable[0] = $allconditions[0];
@@ -127,7 +127,7 @@ class student_data
     }
 
 
-    private function get_behaviour_risk($table, $numberoffortnights)
+    private function get_behaviour_risk($table)
     {
         $behaviour2sum = array_sum(array_slice($table[1], 1));
         $behaviour3sum = array_sum(array_slice($table[2], 1));
