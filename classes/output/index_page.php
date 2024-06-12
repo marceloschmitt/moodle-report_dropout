@@ -33,6 +33,6 @@ class index_page implements renderable, templatable
     }
 
     private function compute_risk($userid, $courseid) {
-        return 'mediumrisk';
+        return 'highrisk';
     }
 }
