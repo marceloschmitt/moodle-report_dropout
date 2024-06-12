@@ -7,6 +7,8 @@ use renderer_base;
 use templatable;
 use stdClass;
 
+require_once('../../functions.php');
+
 class index_page implements renderable, templatable
 {
     private $courseid;
