@@ -209,7 +209,7 @@ function generate_charts($studentdata)
     return $chartScript;
 }
 
-print_risk_line($risk) {
+function print_risk_line($risk) {
     $text = get_string($risk, 'report_dropout');
     switch($risk) {
         case 'lowrisk': $class = 'alert-success';
