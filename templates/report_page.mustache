@@ -53,29 +53,31 @@
         <h5 class="font-weight-bold">{{graphs}}</h5>
     </div>
     <div class="container-fluid">
-        <ul class="nav navbar-expand-lg navbar-light bg-light">
-            <li class="active navitem"><a data-toggle="pill" href="#home">Tabela</a></li>
-            <li class="navitem"><a data-toggle="pill" href="#menu1">Gráfico de linhas</a></li>
-            <li class="navitem"><a data-toggle="pill" href="#menu2">Gráfico de barras</a></li>
-        </ul>
-        <br>
-        <div class="tab-content">
-            <div id="home" class="tab-pane fade in active" width="max-content">
-                <div id="behaviour_table"></div><BR>
-                <div id="social_table"></div><BR>
-                <div id="cognitive_table"></div><BR>
-            </div>
-            <div id="menu1" class="tab-pane fade" width="max-content">
-                <div id="line_chart_behaviour"></div>
-                <div id="line_chart_behaviour4"></div><BR>
-                <div id="line_chart_social"></div><BR>
-                <div id="line_chart_cognitive"></div><BR>
-            </div>
-            <div id="menu2" class="tab-pane fade">
-                <div id="column_chart_behaviour" width="max-content"></div><BR>
-                <div id="column_chart_behaviour4" width="max-content"></div><BR>
-                <div id="column_chart_social" width="max-content"></div><BR>
-                <div id="column_chart_cognitive" width="max-content"></div><BR>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <ul "navbar-nav mr-auto">
+                <li class="active navitem"><a data-toggle="pill" href="#home">Tabela</a></li>
+                <li class="navitem"><a data-toggle="pill" href="#menu1">Gráfico de linhas</a></li>
+                <li class="navitem"><a data-toggle="pill" href="#menu2">Gráfico de barras</a></li>
+            </ul>
+            <br>
+            <div class="tab-content">
+                <div id="home" class="tab-pane fade in active" width="max-content">
+                    <div id="behaviour_table"></div><BR>
+                    <div id="social_table"></div><BR>
+                    <div id="cognitive_table"></div><BR>
+                </div>
+                <div id="menu1" class="tab-pane fade" width="max-content">
+                    <div id="line_chart_behaviour"></div>
+                    <div id="line_chart_behaviour4"></div><BR>
+                    <div id="line_chart_social"></div><BR>
+                    <div id="line_chart_cognitive"></div><BR>
+                </div>
+                <div id="menu2" class="tab-pane fade">
+                    <div id="column_chart_behaviour" width="max-content"></div><BR>
+                    <div id="column_chart_behaviour4" width="max-content"></div><BR>
+                    <div id="column_chart_social" width="max-content"></div><BR>
+                    <div id="column_chart_cognitive" width="max-content"></div><BR>
+                </div>
             </div>
         </div>
     </div>
