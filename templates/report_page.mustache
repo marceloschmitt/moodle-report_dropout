@@ -41,18 +41,11 @@
 <button onclick="button_table_charts()"><H3>Tabelas com evolução de indicadores de risco</h3></button>
 <br>
 <div id="table_charts" width="max-content" style="display: block">
-    <BR><BR>
-    <div id="behaviour_table" width="max-content" style="display: block"></div><BR>
-    <div id="social_table" width="max-content" style="display: block"></div><BR>
-    <div id="cognitive_table" width="max-content" style="display: block"></div><BR>
 </div>
 <BR><BR>
 <button onclick="button_line_charts()"><H3>Gráficos de linha com evolução de indicadores de risco</h3></button>
 <div id="line_charts" width="max-content" style="display: block">
-    <div id="line_chart_behaviour" width="max-content"></div>
-    <div id="line_chart_behaviour4" width="max-content"></div><BR>
-    <div id="line_chart_social" width="max-content"></div><BR>
-    <div id="line_chart_cognitive" width="max-content"></div><BR>
+
 </div>
 <BR><BR>
 <button onclick="button_column_charts()"><H3> Gráficos de coluna com evolução de indicadores de risco</h3></button>
@@ -78,15 +71,17 @@
       <div class="tab-content">
         <div id="home" class="tab-pane fade in active">
           <h3>HOME</h3>
-          <div id="behaviour_table" width="max-content"></div><BR>
-              <div id="social_table" width="max-content"></div><BR>
-              <div id="cognitive_table" width="max-content"></div><BR>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <div id="behaviour_table"></div><BR>
+          <div id="social_table"></div><BR>
+          <div id="cognitive_table"></div><BR>
         </div>
         <div id="menu1" class="tab-pane fade">
-          <h3>Menu 1</h3>
-          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div>
+          <h3>Gráfico de linha</h3>
+            <div id="line_chart_behaviour" width="max-content"></div>
+            <div id="line_chart_behaviour4" width="max-content"></div><BR>
+            <div id="line_chart_social" width="max-content"></div><BR>
+            <div id="line_chart_cognitive" width="max-content"></div><BR>
+            </div>
         <div id="menu2" class="tab-pane fade">
           <h3>Menu 2</h3>
           <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
