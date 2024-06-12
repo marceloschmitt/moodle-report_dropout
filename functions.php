@@ -209,3 +209,19 @@ function generate_charts($studentdata)
     return $chartScript;
 }
 
+print_risk_line($risk) {
+    $text = get_string($risk, 'report_dropout');
+    switch($risk) {
+        case 'lowrisk': $class = 'alert-success';
+                        break;
+        case 'mediurisk': $class = 'alert-info';
+                        break;
+        case 'highrisk': $class = 'alert-warning';
+                        break;
+        case 'veryrisk': $class = 'alert-danger';
+                        break;
+    }
+    return '<div class="alert '. $class . '" role="alert"> . $text . '</div>';
+    
+}
+

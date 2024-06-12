@@ -36,7 +36,7 @@ class report_page implements renderable, templatable
         $data->programinformation = get_string('programinformation', 'report_dropout');
         $data->studentinformation = get_string('studentinformation', 'report_dropout');
         $data->graphs = get_string('graphs', 'report_dropout');
-        $data->risk = $this->risk;
+        $data->risk = print_risk_line($this->risk);
         $data->studentname = get_string('studentname', 'report_dropout');
         $data->program = get_string('program', 'report_dropout');
         $data->class = get_string('class', 'report_dropout');
