@@ -10,12 +10,12 @@ use stdClass;
 class report_page implements renderable, templatable
 {
 
-    public function __construct($course, $script, $studentfullname, $studentdata)
+    public function __construct($course, $script, $studentfullname, $risk)
     {
         $this->script = $script;
         $this->course = $course;
         $this->studentfullname = $studentfullname;
-        $this->risk = $studentdata->risk;
+        $this->risk = $risk;
 
     }
 

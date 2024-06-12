@@ -33,6 +33,7 @@ global $DB;
 // Security.
 $courseid = required_param('id', PARAM_INT);
 $userid = required_param('userid', PARAM_INT);
+$risk = required_param('risk', PARAM_STRING);
 require_login($courseid);
 $context = context_course::instance($courseid);
 require_capability('report/dropout:view', $context);
@@ -55,7 +56,7 @@ $output = $PAGE->get_renderer('report_dropout');
 echo $output->header();
 echo $output->heading(get_string('pluginname', 'report_dropout'));
 
-$renderable = new \report_dropout\output\report_page($course, $lineChart, $studentname, $studentdata);
+$renderable = new \report_dropout\output\report_page($course, $lineChart, $studentname, $risk);
 echo $output->render($renderable);
 echo $output->footer();
 
