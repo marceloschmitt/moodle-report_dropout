@@ -213,7 +213,7 @@ function get_risk_class($risk) {
     switch($risk) {
         case 'lowrisk':     $class = 'alert-success';
                             break;
-        case 'mediurisk':   $class = 'alert-info';
+        case 'mediumrisk':   $class = 'alert-info';
                             break;
         case 'highrisk':    $class = 'alert-warning';
                             break;
