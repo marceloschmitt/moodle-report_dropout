@@ -33,7 +33,7 @@ global $DB;
 // Security.
 $courseid = required_param('id', PARAM_INT);
 $userid = required_param('userid', PARAM_INT);
-$risk = required_param('risk', PARAM_STRING);
+$risk = required_param('risk', PARAM_ALPHA);
 require_login($courseid);
 $context = context_course::instance($courseid);
 require_capability('report/dropout:view', $context);
