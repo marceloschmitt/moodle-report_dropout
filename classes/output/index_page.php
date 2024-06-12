@@ -18,7 +18,7 @@ class index_page implements renderable, templatable
         $this->students = array_values(get_enrolled_users($context));
         foreach($this->students as $index => $value) {
             $risk = $this->compute_risk($this->students[$index]->userid, $courseid);
-            $this->students[$index]->printrisk = get_string($risk, 'dropout_report');
+            $this->students[$index]->printrisk = get_string($risk, 'report_dropout');
             $this->students[$index]->risk = $risk;
         }
     }
