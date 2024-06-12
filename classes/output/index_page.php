@@ -17,7 +17,9 @@ class index_page implements renderable, templatable
         $this->courseid = $courseid;
         $this->students = array_values(get_enrolled_users($context));
         foreach($this->students as $index => $value) {
-            $this->students[$index]->risk = $this->compute_risk($this->students[$index]->userid, $courseid);
+            $risk = $this->compute_risk($this->students[$index]->userid, $courseid);
+            $this->students[$index]->printrisk = get_string($risk, 'dropout_report');
+            $this->students[$index]->risk = $risk;
         }
     }
 
@@ -31,6 +33,6 @@ class index_page implements renderable, templatable
     }
 
     private function compute_risk($userid, $courseid) {
-        return get_string('mediumrisk', 'report_dropout');
+        return 'mediumrisk';
     }
 }
