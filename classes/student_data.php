@@ -101,16 +101,12 @@ class student_data
         for($index = 1; $index < $i+1 ; $index++) {
             $this->behaviourtable[$row][$index] = $this->behaviourtable[$row][$index] * 100;
         }
-        $this->behaviourtable[0][0] = get_string('behaviourindicators', 'report_dropout') . '<br>' .
-            $this->get_behaviour_risk($this->behaviourtable);
+        $this->behaviourtable[0][0] = get_string('behaviourindicators', 'report_dropout');
 
-        $allconditions[0][$i + 1] = "Risco parcial";
         $this->socialtable[0] = $allconditions[0];
         $this->socialtable[0][0] = get_string('socialindicators', 'report_dropout');
         for ($row = 1; $row < 4; $row++) {
             $this->socialtable[] = array_column($this->socialconditions, $row);
-            $this->socialtable[$row][$i + 1] =
-                $this->get_social_risk($row, array_sum(array_slice($this->socialtable[$row], 1)), $i);
         }
 
 
@@ -118,11 +114,8 @@ class student_data
         for ($column = 1; $column <= $numberofgrades; $column++) {
             $this->cognitivetable[0][$column] = '-';
         }
-        $this->cognitivetable[0][$numberofgrades + 1] = 'Risco parcial';
         for ($row = 1; $row < 2; $row++) {
             $this->cognitivetable[] = array_column($this->cognitiveconditions, $row);
-            $this->cognitivetable[$row][$numberofgrades + 1] =
-                $this->get_cognitive_risk($row, array_sum(array_slice($this->cognitivetable[$row], 1)), $numberofgrades);
         }
     }
 
