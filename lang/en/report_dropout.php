@@ -56,6 +56,7 @@ $string['veryhighrisk'] = 'Risco altíssimo';
 // Titles of report_dropout template
 $string['programinformation'] = 'Informações gerais';
 $string['studentinformation'] = 'Informações do aluno';
+$string['graphs'] = 'Gráficos';
 $string['studentname'] = 'Nome do aluno';
 $string['program'] = 'Nome do curso';
 $string['class'] = 'Turma';
@@ -67,6 +68,7 @@ $string['mandatorycourses'] = 'Disciplinas obrigatórias no semestre';
 $string['nonmandatorycourses'] = 'Disciplinas não obrigatórias no semestre';
 $string['schedule'] = 'Acompanhamento ao cronograma';
 $string['notready'] = 'depende de integração futura';
+
 
 
 
