@@ -7,7 +7,7 @@ use renderer_base;
 use templatable;
 use stdClass;
 
-require_once('../../functions.php');
+require_once('functions.php');
 
 class index_page implements renderable, templatable
 {
@@ -36,6 +36,10 @@ class index_page implements renderable, templatable
     }
 
     private function compute_risk($userid, $courseid) {
-        return 'highrisk';
+        $risk[] = 'lowrisk';
+        $risk[] = 'mediumrisk';
+        $risk[] = 'highrisk';
+        $risk[] = 'veryhighrisk';
+        return $risk[rand(0, 3)];
     }
 }
