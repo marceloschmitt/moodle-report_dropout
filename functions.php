@@ -211,13 +211,13 @@ function generate_charts($studentdata)
 
 function get_risk_class($risk) {
     switch($risk) {
-        case 'lowrisk':     $class = 'alert-success';
+        case 'lowrisk':     $class = 'success';
                             break;
-        case 'mediumrisk':   $class = 'alert-info';
+        case 'mediumrisk':   $class = 'info';
                             break;
-        case 'highrisk':    $class = 'alert-warning';
+        case 'highrisk':    $class = 'warning';
                             break;
-        case 'veryrisk':    $class = 'alert-danger';
+        case 'veryrisk':    $class = 'danger';
                             break;
         default:            $class = 'ERROR';
     }
