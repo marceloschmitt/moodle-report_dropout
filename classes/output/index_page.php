@@ -19,7 +19,7 @@ class index_page implements renderable, templatable
         foreach($this->students as $index => $value) {
             $risk = $this->compute_risk($this->students[$index]->userid, $courseid);
             $this->students[$index]->risk = get_string($risk, 'report_dropout');
-            $this->students[$index]->riskclass = get_risk_class($risk);
+            $this->students[$index]->riskclass = 'warning';
         }
     }
 
