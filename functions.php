@@ -221,6 +221,6 @@ function print_risk_line($risk) {
         case 'veryrisk': $class = 'alert-danger';
                         break;
     }
-    return '<div class="alert '. $class . '" role="alert"> . $text . '</div>';
+    return '<div class="alert '. $class . '" role="alert">' . $text . '</div>';
 }
 
