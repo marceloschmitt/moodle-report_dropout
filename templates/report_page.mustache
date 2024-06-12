@@ -46,59 +46,37 @@
 </div>
 <br><br>
 {{{script}}}
-<button onclick="button_table_charts()"><H3>Tabelas com evolução de indicadores de risco</h3></button>
-<br>
-<div id="table_charts" width="max-content" style="display: block">
-</div>
-<BR><BR>
-<button onclick="button_line_charts()"><H3>Gráficos de linha com evolução de indicadores de risco</h3></button>
-<div id="line_charts" width="max-content" style="display: block">
-
-</div>
-<BR><BR>
-<button onclick="button_column_charts()"><H3> Gráficos de coluna com evolução de indicadores de risco</h3></button>
-<div id="column_charts" width="max-content" style="display: block">
-    <div id="column_chart_behaviour" width="max-content"></div><BR>
-    <div id="column_chart_behaviour4" width="max-content"></div><BR>
-    <div id="column_chart_social" width="max-content"></div><BR>
-    <div id="column_chart_cognitive" width="max-content"></div><BR>
-</div>
-
 
 <div class="container-fluid">
-   <h2>Visualização</h2>
-      <div class="row">
-    <div class="col-xs-3">
-      <ul class="nav nav-pills nav-stacked">
-        <li class="active"><a data-toggle="pill" href="#home">Tabela</a></li>
-        <li><a data-toggle="pill" href="#menu1">Gráfico de linhas</a></li>
-        <li><a data-toggle="pill" href="#menu2">Gráfico de barras</a></li>
-      </ul>
-    </div>
-    <div class="col-xs-9" width="max-content">
-      <div class="tab-content" width="max-content">
-        <div id="home" class="tab-pane fade in active" width="max-content">
-          <h3>HOME</h3>
-          <div id="behaviour_table" width="max-content"></div><BR>
-          <div id="social_table" width="max-content"></div><BR>
-          <div id="cognitive_table" width="max-content"></div><BR>
+    <h2>Visualização</h2>
+    <div class="row">
+        <div class="col-xs-3">
+            <ul class="nav nav-pills nav-stacked">
+                <li class="active"><a data-toggle="pill" href="#home">Tabela</a></li>
+                <li><a data-toggle="pill" href="#menu1">Gráfico de linhas</a></li>
+                <li><a data-toggle="pill" href="#menu2">Gráfico de barras</a></li>
+            </ul>
         </div>
-        <div id="menu1" class="tab-pane fade">
-          <h3>Gráfico de linha</h3>
-            <div id="line_chart_behaviour"></div>
-            <div id="line_chart_behaviour4"></div><BR>
-            <div id="line_chart_social"></div><BR>
-            <div id="line_chart_cognitive"></div><BR>
+        <div class="col-xs-9" width="max-content">
+            <div class="tab-content">
+                <div id="home" class="tab-pane fade in active" width="max-content">
+                    <div id="behaviour_table"></div><BR>
+                    <div id="social_table"></div><BR>
+                    <div id="cognitive_table></div><BR>
+                </div>
+                <div id="menu1" class="tab-pane fade">
+                    <div id="line_chart_behaviour"></div>
+                    <div id="line_chart_behaviour4"></div><BR>
+                    <div id="line_chart_social"></div><BR>
+                    <div id="line_chart_cognitive"></div><BR>
+                </div>
+                <div id="menu2" class="tab-pane fade">
+                    <div id="column_chart_behaviour" width="max-content"></div><BR>
+                    <div id="column_chart_behaviour4" width="max-content"></div><BR>
+                    <div id="column_chart_social" width="max-content"></div><BR>
+                    <div id="column_chart_cognitive" width="max-content"></div><BR>
+                </div>
             </div>
-        <div id="menu2" class="tab-pane fade">
-          <h3>Menu 2</h3>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
         </div>
-        <div id="menu3" class="tab-pane fade">
-          <h3>Menu 3</h3>
-          <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-        </div>
-      </div>
     </div>
-  </div>
 </div>
