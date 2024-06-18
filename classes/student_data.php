@@ -14,7 +14,7 @@ class student_data
     public $cognitivetable = array();
 
 
-    public function __construct($userid)
+    public function __construct($userid,$risk)
     {
         $this->userid = $userid;
 
@@ -119,67 +119,6 @@ class student_data
         }
     }
 
-
-    private function get_behaviour_risk($table)
-    {
-        $behaviour2sum = array_sum(array_slice($table[1], 1));
-        $behaviour3sum = array_sum(array_slice($table[2], 1));
-        $behaviour4sum = array_sum(array_slice($table[3], 1));
-        $numberoffortnights = count($table[1]) - 1;
-        $avarage = $behaviour2sum / $numberoffortnights;
-        if ($avarage >= 7) {
-            return '<span class="badge badge-primary">' . get_string('lowrisk', 'report_dropout') . '</span>';
-        } else if ($avarage >= 5) {
-            return '<span class="badge badge-secondary">' . get_string('mediumrisk', 'report_dropout') .'</span>';
-        } else if ($avarage >= 3) {
-            return '<span class="badge badge-warning">' . get_string('highrisk', 'report_dropout') . '</span>';
-        } else {
-            return '<span class="badge badge-danger">' . get_string('veryhighrisk', 'report_dropout') . '</span>';
-        }
-    }
-
-
-    private function get_social_risk($behaviourid, $sum, $numberoffortnights)
-    {
-        switch ($behaviourid) {
-            case 1:
-                return $this->get_social1_risk($sum, $numberoffortnights);
-            case 2:
-                return '-';
-            case 3:
-                return '-';
-        }
-    }
-
-    // Os métodos a seguir serão subsituídos após a mineração.
-    private function get_social1_risk($sum, $numberoffortnights)
-    {
-        $avarage = $sum / $numberoffortnights;
-        if ($avarage >= 3) {
-            return '<span class="badge badge-primary">' . get_string('lowrisk', 'report_dropout') . '</span>';
-        } else if ($avarage >= 2) {
-            return '<span class="badge badge-secondary">' . get_string('mediumrisk', 'report_dropout') . '</span>';
-        } else if ($avarage >= 1) {
-            return '<span class="badge badge-warning">' . get_string('highrisk', 'report_dropout') . '</span>';
-        } else {
-            return '<span class="badge badge-danger">' . get_string('veryhighrisk', 'report_dropout') . '</span>';
-        }
-    }
-
-
-    private function get_cognitive_risk($cognitiveid, $sum, $numberofgrades)
-    {
-        $avarage = $sum / $numberofgrades;
-        if ($avarage >= 7) {
-            return '<span class="badge badge-primary">' . get_string('lowrisk', 'report_dropout') . '</span>';
-        } else if ($avarage >= 5) {
-            return '<span class="badge badge-secondary">' . get_string('mediumrisk', 'report_dropout') . '</span>';
-        } else if ($avarage >= 2) {
-            return '<span class="badge badge-warning">' . get_string('highrisk', 'report_dropout') . '</span>';
-        } else {
-            return '<span class="badge badge-danger">' . get_string('veryhighrisk', 'report_dropout') . '</span>';
-        }
-    }
 
 
 }

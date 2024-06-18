@@ -43,7 +43,7 @@ $student = $DB->get_record('user', ['id' => $userid]);
 $studentname = "$student->firstname $student->lastname";
 
 // Get student data.
-$studentdata = new \report_dropout\student_data($userid);
+$studentdata = new \report_dropout\student_data($userid, $risk);
 $lineChart = generate_charts($studentdata);
 
 // Set $PAGE parameters.
