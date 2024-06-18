@@ -6,7 +6,7 @@ class student_data
 {
     public $userid;
     public $programname = 'Curso Superior de Tecnologia em XYZ';
-    public $classname = '2023/10';
+    public $classname = '2023/1';
     public $numberofterms = '6';
 
     public $behaviourconditions = array();

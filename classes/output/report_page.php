@@ -37,7 +37,7 @@ class report_page implements renderable, templatable
         $data->studentfullname = $this->studentfullname;
         $data->programname = $this->programname;
         $data->classname = $this->classname;
-        $data->numberoftermes = $this->numberofterms;
+        $data->numberofterms = $this->numberofterms;
         $data->script = $this->script;
 
         // Titles for all users
@@ -48,7 +48,7 @@ class report_page implements renderable, templatable
         $data->studentname = get_string('studentname', 'report_dropout');
         $data->program = get_string('program', 'report_dropout');
         $data->class = get_string('class', 'report_dropout');
-        $data->numberofterms = get_string('numberofterms', 'report_dropout');
+        $data->terms = get_string('numberofterms', 'report_dropout');
         $data->situation = get_string('situation', 'report_dropout');
         $data->passedterms = get_string('passedterms', 'report_dropout');
         $data->triedcourses = get_string('triedcourses', 'report_dropout');
