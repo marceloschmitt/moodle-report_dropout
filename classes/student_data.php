@@ -5,9 +5,9 @@ namespace report_dropout;
 class student_data
 {
     public $userid;
-    public $program = 'Curso Superior de Tecnologia em XYZ';
-    public $class = '2023/10';
-    public $terms = '6';
+    public $programname = 'Curso Superior de Tecnologia em XYZ';
+    public $classname = '2023/10';
+    public $numberofterms = '6';
 
     public $behaviourconditions = array();
     public $behaviourcondition4 = array();
