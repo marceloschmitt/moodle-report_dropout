@@ -80,7 +80,7 @@ class student_data
             date_add($date, date_interval_create_from_date_string("14 days"));
             date_add($enddate, date_interval_create_from_date_string("14 days"));
         }
-        for ($column = 1; $column <= $numberofgrades; $column++) {
+        for ($column = 0; $column < $numberofgrades; $column++) {
             $this->cognitiveconditions[] = array('Prova ' . $column, $this->cognitiveindicator1[$column]->value);
         }
 
