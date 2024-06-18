@@ -54,9 +54,9 @@ $string['highrisk'] = 'Risco alto';
 $string['veryhighrisk'] = 'Risco altíssimo';
 
 // Titles of report_dropout template
-$string['programinformation'] = 'Informações gerais';
-$string['studentinformation'] = 'Informações do aluno';
-$string['graphs'] = 'Gráficos';
+$string['programinformation'] = '1 - Informações gerais';
+$string['studentinformation'] = '2 - Informações do aluno';
+$string['graphs'] = '3 - Gráficos';
 $string['studentname'] = 'Nome do aluno';
 $string['program'] = 'Nome do curso';
 $string['class'] = 'Turma';
