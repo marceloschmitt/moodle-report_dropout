@@ -113,7 +113,7 @@ class student_data
             $this->socialtable[] = array_column($this->socialconditions, $row);
         }
 
-
+        $this->cognitivetable[0] = array_column($this->cognitiveconditions, 0);
         $this->cognitivetable[0][0] = get_string('cognitiveindicators', 'report_dropout');
         for ($column = 1; $column <= $numberofgrades; $column++) {
             $this->cognitivetable[0][$column] = '-';
