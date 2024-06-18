@@ -118,7 +118,7 @@ class student_data
         for ($column = 1; $column <= $numberofgrades; $column++) {
             $this->cognitivetable[0][$column] = '-';
         }
-        for ($row = 1; $row < 2; $row++) {
+        for ($row = 0; $row < 2; $row++) {
             $this->cognitivetable[] = array_column($this->cognitiveconditions, $row);
         }
     }
