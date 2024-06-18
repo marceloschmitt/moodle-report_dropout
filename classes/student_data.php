@@ -115,9 +115,6 @@ class student_data
 
         $this->cognitivetable[0] = array_column($this->cognitiveconditions, 0);
         $this->cognitivetable[0][0] = get_string('cognitiveindicators', 'report_dropout');
-        for ($column = 1; $column <= $numberofgrades; $column++) {
-            $this->cognitivetable[0][$column] = '-';
-        }
         for ($row = 1; $row < 2; $row++) {
             $this->cognitivetable[] = array_column($this->cognitiveconditions, $row);
         }
