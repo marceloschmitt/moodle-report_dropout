@@ -112,7 +112,7 @@ function generate_charts($studentdata)
             legend: { position: 'bottom' },
             height: 250,
             chartArea: {left: 60, width: '100%'},
-            bar: { groupWidth: 50 },
+            bar: { groupWidth: 30 },
             vAxis: { viewWindow: { min: 0 },
                 gridlines: { count: 5 } },
         };
@@ -129,15 +129,17 @@ function generate_charts($studentdata)
         var passedArray = " . $jsonbehaviour4 . ";
         var data = google.visualization.arrayToDataTable(passedArray);
         options.title = '';
+        options.bar.groupWidth = 15;
         options.vAxis.viewWindow.max = '';
         options.vAxis.format = 'percent';
         var chart = new google.visualization.ColumnChart(document.getElementById('column_chart_behaviour4'));
         chart.draw(data, options);
-               
+
         // Social conditions.
         var passedArray = " . $jsonsocial . ";
         var data = google.visualization.arrayToDataTable(passedArray);
         options.title = '" . $titlesocial . "';
+        options.bar.groupWidth = 45;
         options.vAxis.viewWindow.max = 20;
         options.vAxis.format = '';
         var chart = new google.visualization.ColumnChart(document.getElementById('column_chart_social'));
@@ -147,6 +149,7 @@ function generate_charts($studentdata)
         var passedArray = " . $jsoncognitive . ";
         var data = google.visualization.arrayToDataTable(passedArray);
         options.title = '" . $titlecognitive . "';
+        options.bar.groupWidth = 15;
         options.vAxis.viewWindow.max = 10;
         options.vAxis.format = 'decimal';
         var chart = new google.visualization.ColumnChart(document.getElementById('column_chart_cognitive'));
