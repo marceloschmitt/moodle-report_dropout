@@ -1,13 +1,14 @@
 <div class="hero-unit">
-<div class="alert badge-info">Estes dados são simulados apenas para teste da interface!</div>
-    <table class="alert table-striped">
-        <tbody>
-        {{#students}}
-            <tr>
-                <td scope="row"><span class="badge badge-{{riskclass}}">{{riskprint}}</span></td>
-                <td><a href="report.php?id={{courseid}}&userid={{id}}&risk={{risk}}"> {{firstname}} {{lastname}} ({{username}}) - {{email}}</a></td>
-            </tr>
-        {{/students}}
-        </tbody>
-    </table>
+<div class="alert alert-info">Estes dados são simulados apenas para teste da interface!</div>
+<br/>
+<table class="alert table-striped">
+    <tbody>
+    {{#students}}
+        <tr>
+            <td scope="row"><span class="badge badge-{{riskclass}}">{{riskprint}}</span></td>
+            <td><a href="report.php?id={{courseid}}&userid={{id}}&risk={{risk}}"> {{firstname}} {{lastname}} ({{username}}) - {{email}}</a></td>
+        </tr>
+    {{/students}}
+    </tbody>
+</table>
 </div>
