@@ -19,11 +19,11 @@ class index_page implements renderable, templatable
         $this->courseid = $courseid;
         $this->students = array_values(get_enrolled_users($context, '', 0, 'u.*', 'firstname'));
         foreach($this->students as $index => $value) {
-            $risk = $this->compute_risk($this->students[$index]->userid, $courseid);
+            $risk = $this->compute_risk($this->students[$index]->id, $courseid);
             $this->students[$index]->risk = $risk;
             $this->students[$index]->riskprint = get_string($risk, 'report_dropout');
             $this->students[$index]->riskclass = get_risk_class($risk);
-            $this->students[$index]->firstname = "N" . $this->students[$index]->userid;
+            $this->students[$index]->firstname = "N" . $this->students[$index]->id;
             $this->students[$index]->lastname = "Sobrenome";
 
         }
