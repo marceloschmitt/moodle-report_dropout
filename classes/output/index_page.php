@@ -24,6 +24,8 @@ class index_page implements renderable, templatable
             $this->students[$index]->riskprint = get_string($risk, 'report_dropout');
             $this->students[$index]->riskclass = get_risk_class($risk);
             $this->students[$index]->firstname = str_shuffle($this->students[$index]->firstname);
+            $this->students[$index]->lastname = str_shuffle($this->students[$index]->lastname);
+
         }
     }
 
