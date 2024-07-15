@@ -15,7 +15,7 @@ class report_page implements renderable, templatable
         $this->script = $script;
         $this->course = $course;
         $this->studentfullname = $studentfullname;
-        $this->studentfullname =  "anonymous";
+        //$this->studentfullname =  "anonymous";
         $this->risk = $risk;
         $this->programname = $studentdata->programname;
         $this->classname = $studentdata->classname;

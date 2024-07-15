@@ -17,7 +17,8 @@ class index_page implements renderable, templatable
     public function __construct($courseid, $context)
     {
         $this->courseid = $courseid;
-        $this->students = array_values(get_enrolled_users($context, '', 0, 'u.*', 'firstname'));
+        $this->students = array_values(get_enrolled_users($context, 'moodle/course:isincompletionreports',
+            0, 'u.*', 'firstname'));
         foreach($this->students as $index => $value) {
             $risk = $this->compute_risk($this->students[$index]->id, $courseid);
             $this->students[$index]->risk = $risk;
