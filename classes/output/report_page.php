@@ -42,7 +42,9 @@ class report_page implements renderable, templatable
         $data->script = $this->script;
 
         // Titles for all users
-        $data->programinformation = get_string('programinformation', 'report_dropout');
+        // $data->programinformation = get_string('programinformation', 'report_dropout');
+        $data->programinformation = get_string('programinformation2', 'report_dropout');
+
         $data->studentinformation = get_string('studentinformation', 'report_dropout');
         $data->graphs = get_string('graphs', 'report_dropout');
         $data->risk = get_string($this->risk, 'report_dropout');
