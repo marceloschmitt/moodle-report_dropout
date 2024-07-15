@@ -67,6 +67,9 @@ function generate_charts($studentdata)
             },
             vAxis: { viewWindow: { min: 0 },
                 gridlines: { count: 5 } },
+            hAxis : {
+                textStyle : {
+                    fontSize: 12 } },
         };
   
         // Behaviour conditions.
@@ -115,6 +118,9 @@ function generate_charts($studentdata)
             bar: { groupWidth: 30 },
             vAxis: { viewWindow: { min: 0 },
                 gridlines: { count: 5 } },
+            hAxis : {
+                textStyle : {
+                    fontSize: 12 } },
         };
         
      // Behaviour conditions.
