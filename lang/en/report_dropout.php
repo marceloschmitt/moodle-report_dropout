@@ -55,7 +55,6 @@ $string['veryhighrisk'] = 'Risco altíssimo';
 
 // Titles of report_dropout template
 $string['programinformation'] = '1 - Informações gerais';
-$string['programinformation2'] = '1 - Informações gerais';
 
 $string['studentinformation'] = '2 - Informações do aluno';
 $string['graphs'] = '3 - Gráficos';
