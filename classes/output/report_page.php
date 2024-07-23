@@ -40,7 +40,6 @@ class report_page implements renderable, templatable
         $data->classname = $this->classname;
         $data->numberofterms = $this->numberofterms;
         $data->script = $this->script;
-        $data->situation2 = $this->situation2;
 
         // Titles for all users
         $data->programinformation = get_string('programinformation', 'report_dropout');
