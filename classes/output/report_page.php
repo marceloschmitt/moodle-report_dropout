@@ -44,6 +44,10 @@ class report_page implements renderable, templatable
         // Titles for all users
         $data->programinformation = get_string('programinformation', 'report_dropout');
 
+        $data->tabletest = get_string('tabletest', 'report_dropout');
+        //$data->linegraph = get_string('linegraph', 'report_dropout');
+        //$data->bargraph = get_string('bargraph', 'report_dropout');
+        
         $data->studentinformation = get_string('studentinformation', 'report_dropout');
         $data->graphs = get_string('graphs', 'report_dropout');
         $data->risk = get_string($this->risk, 'report_dropout');
@@ -58,11 +62,7 @@ class report_page implements renderable, templatable
         $data->nonmandatorycourses = get_string('nonmandatorycourses', 'report_dropout');
         $data->schedule = get_string('schedule', 'report_dropout');
         $data->notready = get_string('notready', 'report_dropout');
-
-        $data->table = get_string('table', 'report_dropout');
-        $data->linegraph = get_string('linegraph', 'report_dropout');
-        $data->bargraph = get_string('bargraph', 'report_dropout');
-
+        
         return $data;
     }
 }
