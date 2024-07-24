@@ -71,5 +71,5 @@ $string['schedule'] = 'Acompanhamento ao cronograma';
 $string['notready'] = 'depende de integração futura';
 
 $string['table'] = 'Tabela';
-$string['linegraph'] = 'Gráfico de';
-$string['bargraph'] = 'de Barras';
+$string['linegraph'] = 'Gráfico de linhas';
+$string['bargraph'] = 'Gráfico de Barras';
