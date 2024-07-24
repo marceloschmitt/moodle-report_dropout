@@ -62,6 +62,7 @@ class report_page implements renderable, templatable
         $data->linegraph = get_string('linegraph', 'report_dropout');
         $data->bargraph = get_string('bargraph', 'report_dropout');
         $data->interfacetest = get_string('interfacetest', 'report_dropout');
+        $data->risktest = get_string('risktest', 'report_dropout');
         
         return $data;
     }
