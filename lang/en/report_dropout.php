@@ -72,5 +72,5 @@ $string['notready'] = 'depende de integração futura';
 
 $string['table'] = 'Tabela';
 $string['linegraph'] = 'Gráfico de linhas';
-$string['bargraph'] = 'Gráfico de teste';
+$string['bargraph'] = 'Gráfico de barras';
 $string['interfacetest'] = 'Estes dados são simulados apenas para teste da interface!';
