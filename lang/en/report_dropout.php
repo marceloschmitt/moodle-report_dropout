@@ -63,6 +63,9 @@ $string['program'] = 'Nome do curso';
 $string['class'] = 'Turma';
 $string['numberofterms'] = 'Número de semestres do curso';
 $string['situation'] = 'Situação';
+
+$string['situation2'] = 'TESTE';
+
 $string['passedterms'] = 'Semestres transcorridos';
 $string['triedcourses'] = 'Total de disciplinas cursadas';
 $string['mandatorycourses'] = 'Disciplinas obrigatórias no semestre';
