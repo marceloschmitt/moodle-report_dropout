@@ -38,6 +38,7 @@ class index_page implements renderable, templatable
         $data->noteady = get_string('notready', 'report_dropout');
         $data->risktest = get_string('risktest', 'report_dropout');
         $data->interfacetest = get_string('interfacetest', 'report_dropout');
+        $data->studentname = get_string('studentname', 'report_dropout');
         return $data;
     }
 
