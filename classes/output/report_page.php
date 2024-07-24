@@ -52,15 +52,16 @@ class report_page implements renderable, templatable
         $data->class = get_string('class', 'report_dropout');
         $data->terms = get_string('numberofterms', 'report_dropout');
         $data->situation = get_string('situation', 'report_dropout');
-
-        $data->situation2 = get_string('situation2', 'report_dropout');
-
         $data->passedterms = get_string('passedterms', 'report_dropout');
         $data->triedcourses = get_string('triedcourses', 'report_dropout');
         $data->mandatorycourses = get_string('mandatorycourses', 'report_dropout');
         $data->nonmandatorycourses = get_string('nonmandatorycourses', 'report_dropout');
         $data->schedule = get_string('schedule', 'report_dropout');
         $data->notready = get_string('notready', 'report_dropout');
+
+        $data->table = get_string('table', 'report_dropout');
+        $data->linegraph = get_string('linegraph', 'report_dropout');
+        $data->bargraph = get_string('bargraph', 'report_dropout');
 
         return $data;
     }
