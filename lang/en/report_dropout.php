@@ -70,6 +70,6 @@ $string['nonmandatorycourses'] = 'Disciplinas não obrigatórias no semestre';
 $string['schedule'] = 'Acompanhamento ao cronograma';
 $string['notready'] = 'depende de integração futura';
 
-$string['situation2'] = 'Tabela';
+$string['situation3'] = 'Tabela';
 //$string['linegraph'] = 'Gráfico de linhas';
 //$string['bargraph'] = 'Gráfico de Barras';
