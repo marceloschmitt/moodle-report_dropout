@@ -74,3 +74,4 @@ $string['table'] = 'Tabela';
 $string['linegraph'] = 'Gráfico de linhas';
 $string['bargraph'] = 'Gráfico de barras';
 $string['interfacetest'] = 'Estes dados são simulados apenas para teste da interface!';
+$string['risktest'] = 'Risco';
