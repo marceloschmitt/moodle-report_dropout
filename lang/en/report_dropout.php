@@ -63,9 +63,6 @@ $string['program'] = 'Nome do curso';
 $string['class'] = 'Turma';
 $string['numberofterms'] = 'Número de semestres do curso';
 $string['situation'] = 'Situação';
-
-$string['situation2'] = 'TESTE';
-
 $string['passedterms'] = 'Semestres transcorridos';
 $string['triedcourses'] = 'Total de disciplinas cursadas';
 $string['mandatorycourses'] = 'Disciplinas obrigatórias no semestre';
@@ -73,7 +70,6 @@ $string['nonmandatorycourses'] = 'Disciplinas não obrigatórias no semestre';
 $string['schedule'] = 'Acompanhamento ao cronograma';
 $string['notready'] = 'depende de integração futura';
 
-
-
-
-
+$string['table'] = 'Tabela';
+$string['linegraph'] = 'Gráfico de';
+$string['bargraph'] = 'de Barras';
