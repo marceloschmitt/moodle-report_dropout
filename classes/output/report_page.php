@@ -44,7 +44,7 @@ class report_page implements renderable, templatable
         // Titles for all users
         $data->programinformation = get_string('programinformation', 'report_dropout');
 
-        $data->tabletest = get_string('tabletest', 'report_dropout');
+        $data->situation2 = get_string('situation2', 'report_dropout');
         //$data->linegraph = get_string('linegraph', 'report_dropout');
         //$data->bargraph = get_string('bargraph', 'report_dropout');
         
